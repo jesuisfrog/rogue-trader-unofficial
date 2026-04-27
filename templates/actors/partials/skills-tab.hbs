@@ -1,0 +1,39 @@
+{{!-- partials/skills-tab.hbs --}}
+<div class="rt-skills-tab">
+  <div class="item-header skills-header">
+    <span class="skill-name-col">Skill</span>
+    <span class="skill-char-col">Char.</span>
+    <span class="skill-level-col">Level</span>
+    <span class="skill-roll-col"></span>
+    <span class="skill-controls-col">
+      <a class="item-create" data-type="skill" title="Add Skill">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </span>
+  </div>
+
+  {{#if skills}}
+  <ul class="item-list skills-list">
+    {{#each skills as |item|}}
+    <li class="item skill-item" data-item-id="{{item.id}}">
+      <span class="skill-name">{{item.name}}</span>
+      <span class="skill-char">{{item.system.characteristic}}</span>
+      <span class="skill-level-badge level-{{item.system.level}}">
+        {{#if (eq item.system.level 0)}}Trained{{/if}}
+        {{#if (eq item.system.level 1)}}+10{{/if}}
+        {{#if (eq item.system.level 2)}}+20{{/if}}
+      </span>
+      <a class="skill-roll" data-item-id="{{item.id}}" title="Roll {{item.name}}">
+        <i class="fa-solid fa-dice-d10"></i>
+      </a>
+      <span class="item-controls">
+        <a class="item-edit" title="Edit"><i class="fa-solid fa-pen"></i></a>
+        <a class="item-delete" title="Delete"><i class="fa-solid fa-trash"></i></a>
+      </span>
+    </li>
+    {{/each}}
+  </ul>
+  {{else}}
+  <p class="empty-list">No skills trained. Add skills using the + button above.</p>
+  {{/if}}
+</div>

@@ -1,0 +1,159 @@
+{{!-- templates/actors/npc-sheet.hbs --}}
+<form class="rt-sheet npc-sheet" autocomplete="off">
+
+  <header class="sheet-header npc-header">
+    <div class="portrait-block">
+      <img class="actor-portrait" src="{{actor.img}}" alt="{{actor.name}}"
+           data-edit="img" title="Change portrait" />
+    </div>
+    <div class="header-main">
+      <div class="header-top-row">
+        <input class="actor-name" type="text" name="name"
+               value="{{actor.name}}" placeholder="Adversary Name" />
+        <div class="npc-meta">
+          <div class="npc-meta-field">
+            <label>Type</label>
+            <input type="text" name="system.biography.type"
+                   value="{{system.biography.type}}" placeholder="e.g. Ork, Chaos Cultist" />
+          </div>
+          <div class="npc-meta-field">
+            <label>Size</label>
+            <select name="system.size">
+              {{#each sizeOptions as |label value|}}
+              <option value="{{value}}" {{#if (eq value ../system.size)}}selected{{/if}}>
+                {{label}}
+              </option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="npc-meta-field">
+            <label>Fear</label>
+            <input type="number" name="system.fear"
+                   value="{{system.fear}}" min="0" max="4" class="fear-input"
+                   title="0=None, 1=Disturbing, 2=Frightening, 3=Horrifying, 4=Terrifying" />
+          </div>
+        </div>
+      </div>
+
+      {{!-- Wounds & Movement --}}
+      <div class="header-derived-row">
+        <div class="derived-block wounds-block">
+          <span class="derived-label">Wounds</span>
+          <div class="wounds-inline">
+            <a class="resource-control" data-action="decrease" data-field="wounds.value">
+              <i class="fa-solid fa-minus"></i>
+            </a>
+            <input type="number" name="system.wounds.value"
+                   value="{{system.wounds.value}}" min="0" class="wounds-val" />
+            <span>/</span>
+            <input type="number" name="system.wounds.max"
+                   value="{{system.wounds.max}}" min="0" class="wounds-max" />
+            <a class="resource-control" data-action="increase" data-field="wounds.value">
+              <i class="fa-solid fa-plus"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="derived-block movement-block">
+          <span class="derived-label">Move</span>
+          <div class="movement-values">
+            <span title="Half">{{movement.half}}</span><span class="mv-sep">/</span>
+            <span title="Full">{{movement.full}}</span><span class="mv-sep">/</span>
+            <span title="Charge">{{movement.charge}}</span><span class="mv-sep">/</span>
+            <span title="Run">{{movement.run}}</span>
+          </div>
+        </div>
+
+        <div class="derived-block">
+          <span class="derived-label">AP</span>
+          <div class="ap-mini">
+            <span title="Head">H:{{system.armourPoints.head}}</span>
+            <span title="Body">B:{{system.armourPoints.body}}</span>
+            <span title="Arms">A:{{system.armourPoints.arms}}</span>
+            <span title="Legs">L:{{system.armourPoints.legs}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Characteristics --}}
+  {{> "systems/rogue-trader-unofficial/templates/actors/partials/characteristics.hbs"
+      chars=chars editable=editable}}
+
+  {{!-- Tabs --}}
+  <nav class="sheet-tabs" data-group="primary">
+    <a class="item" data-tab="main">Main</a>
+    <a class="item" data-tab="notes">Notes</a>
+  </nav>
+
+  <section class="sheet-body">
+
+    <div class="tab" data-group="primary" data-tab="main">
+      {{!-- Weapons --}}
+      <div class="gear-section">
+        <div class="gear-section-header">
+          <span>Weapons</span>
+          <a class="item-create" data-type="weapon" title="Add Weapon">
+            <i class="fa-solid fa-plus"></i>
+          </a>
+        </div>
+        {{#if weapons}}
+        <table class="weapon-table">
+          <thead>
+            <tr>
+              <th>Name</th><th>Class</th><th>Range</th>
+              <th>Damage</th><th>Pen</th><th>RoF</th><th>Special</th><th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each weapons as |item|}}
+            <tr class="item" data-item-id="{{item.id}}">
+              <td>{{item.name}}</td>
+              <td>{{item.system.class}}</td>
+              <td>{{item.system.range}}</td>
+              <td>{{item.system.damage.formula}}</td>
+              <td>{{item.system.penetration}}</td>
+              <td>{{#if item.system.rateOfFire.single}}S{{/if}}
+                  {{#if item.system.rateOfFire.semi}}/{{item.system.rateOfFire.semi}}{{/if}}
+                  {{#if item.system.rateOfFire.auto}}/{{item.system.rateOfFire.auto}}{{/if}}</td>
+              <td class="small-text">{{item.system.qualities}}</td>
+              <td class="item-controls">
+                <a class="weapon-attack" title="Attack"><i class="fa-solid fa-crosshairs"></i></a>
+                <a class="weapon-damage" title="Damage"><i class="fa-solid fa-burst"></i></a>
+                <a class="item-edit"   title="Edit"><i class="fa-solid fa-pen"></i></a>
+                <a class="item-delete" title="Delete"><i class="fa-solid fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{else}}
+        <p class="empty-list">No weapons.</p>
+        {{/if}}
+      </div>
+
+      {{!-- Traits & Special Rules --}}
+      <div class="npc-traits-section">
+        <label class="section-title">Traits & Special Rules</label>
+        <textarea name="system.traits" rows="4"
+                  placeholder="e.g. Sturdy, Fear (2), Brutal Charge, Unnatural Strength (×2)">{{system.traits}}</textarea>
+      </div>
+
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="notes">
+      <div class="npc-notes-section">
+        <label class="section-title">Environment</label>
+        <input type="text" name="system.biography.environment"
+               value="{{system.biography.environment}}" />
+      </div>
+      <div class="editor-wrapper">
+        {{editor system.biography.notes target="system.biography.notes"
+                 button=true owner=owner editable=editable}}
+      </div>
+    </div>
+
+  </section>
+
+</form>

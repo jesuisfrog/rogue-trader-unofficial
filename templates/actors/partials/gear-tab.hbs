@@ -1,0 +1,174 @@
+{{!-- partials/gear-tab.hbs --}}
+<div class="rt-gear-tab">
+
+  {{!-- ── Weapons ─────────────────────────────────────────────────────────── --}}
+  <div class="gear-section">
+    <div class="gear-section-header">
+      <span>Weapons</span>
+      <a class="item-create" data-type="weapon" title="Add Weapon">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </div>
+    {{#if weapons}}
+    <table class="weapon-table">
+      <thead>
+        <tr>
+          <th class="col-equip"></th>
+          <th class="col-name">Name</th>
+          <th class="col-class">Class</th>
+          <th class="col-range">Range</th>
+          <th class="col-rof">RoF</th>
+          <th class="col-dmg">Damage</th>
+          <th class="col-pen">Pen</th>
+          <th class="col-clip">Clip</th>
+          <th class="col-reload">Reload</th>
+          <th class="col-special">Special</th>
+          <th class="col-roll"></th>
+          <th class="col-ctrl"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each weapons as |item|}}
+        <tr class="weapon-row item {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{item.id}}">
+          <td class="col-equip">
+            <a class="item-toggle-equip" title="{{#if item.system.equipped}}Unequip{{else}}Equip{{/if}}">
+              <i class="fa-solid {{#if item.system.equipped}}fa-circle-check{{else}}fa-circle{{/if}}"></i>
+            </a>
+          </td>
+          <td class="col-name weapon-name">{{item.name}}</td>
+          <td class="col-class">{{item.system.class}}</td>
+          <td class="col-range">{{item.system.range}}</td>
+          <td class="col-rof">
+            {{#if item.system.rateOfFire.single}}S{{/if}}
+            {{#if item.system.rateOfFire.semi}}/{{item.system.rateOfFire.semi}}{{/if}}
+            {{#if item.system.rateOfFire.auto}}/{{item.system.rateOfFire.auto}}{{/if}}
+          </td>
+          <td class="col-dmg">{{item.system.damage.formula}}</td>
+          <td class="col-pen">{{item.system.penetration}}</td>
+          <td class="col-clip">{{item.system.clip.value}}/{{item.system.clip.max}}</td>
+          <td class="col-reload">{{item.system.reload}}</td>
+          <td class="col-special small-text">{{item.system.qualities}}</td>
+          <td class="col-roll">
+            <a class="weapon-attack" title="Attack roll">
+              <i class="fa-solid fa-crosshairs"></i>
+            </a>
+            <a class="weapon-damage" title="Damage roll">
+              <i class="fa-solid fa-burst"></i>
+            </a>
+          </td>
+          <td class="col-ctrl item-controls">
+            <a class="item-edit" title="Edit"><i class="fa-solid fa-pen"></i></a>
+            <a class="item-delete" title="Delete"><i class="fa-solid fa-trash"></i></a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    <p class="empty-list">No weapons carried.</p>
+    {{/if}}
+  </div>
+
+  {{!-- ── Armour ──────────────────────────────────────────────────────────── --}}
+  <div class="gear-section">
+    <div class="gear-section-header">
+      <span>Armour</span>
+      <a class="item-create" data-type="armour" title="Add Armour">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </div>
+    {{#if armours}}
+    <table class="armour-table">
+      <thead>
+        <tr>
+          <th class="col-equip"></th>
+          <th class="col-name">Name</th>
+          <th class="col-type">Type</th>
+          <th class="col-ap-head">Head</th>
+          <th class="col-ap-body">Body</th>
+          <th class="col-ap-arms">Arms</th>
+          <th class="col-ap-legs">Legs</th>
+          <th class="col-craft">Craft.</th>
+          <th class="col-ctrl"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each armours as |item|}}
+        <tr class="item {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{item.id}}">
+          <td class="col-equip">
+            <a class="item-toggle-equip" title="{{#if item.system.equipped}}Unequip{{else}}Equip{{/if}}">
+              <i class="fa-solid {{#if item.system.equipped}}fa-circle-check{{else}}fa-circle{{/if}}"></i>
+            </a>
+          </td>
+          <td class="col-name">{{item.name}}</td>
+          <td class="col-type">{{item.system.type}}</td>
+          <td class="col-ap">{{item.system.ap.head}}</td>
+          <td class="col-ap">{{item.system.ap.body}}</td>
+          <td class="col-ap">{{item.system.ap.arms}}</td>
+          <td class="col-ap">{{item.system.ap.legs}}</td>
+          <td class="col-craft small-text">{{item.system.craftsmanship}}</td>
+          <td class="col-ctrl item-controls">
+            <a class="item-edit" title="Edit"><i class="fa-solid fa-pen"></i></a>
+            <a class="item-delete" title="Delete"><i class="fa-solid fa-trash"></i></a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    <p class="empty-list">No armour worn.</p>
+    {{/if}}
+  </div>
+
+  {{!-- ── General Gear ─────────────────────────────────────────────────────── --}}
+  <div class="gear-section">
+    <div class="gear-section-header">
+      <span>Gear & Equipment</span>
+      <a class="item-create" data-type="gear" title="Add Gear">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </div>
+    {{#if gear}}
+    <ul class="item-list gear-list">
+      {{#each gear as |item|}}
+      <li class="item gear-item" data-item-id="{{item.id}}">
+        <span class="gear-name">{{item.name}}</span>
+        <span class="gear-qty">×{{item.system.quantity}}</span>
+        <span class="gear-craft small-text">{{item.system.craftsmanship}}</span>
+        <span class="item-controls">
+          <a class="item-edit" title="Edit"><i class="fa-solid fa-pen"></i></a>
+          <a class="item-delete" title="Delete"><i class="fa-solid fa-trash"></i></a>
+        </span>
+      </li>
+      {{/each}}
+    </ul>
+    {{else}}
+    <p class="empty-list">No gear recorded.</p>
+    {{/if}}
+  </div>
+
+  {{!-- ── Cybernetics ──────────────────────────────────────────────────────── --}}
+  {{#if cybernetics}}
+  <div class="gear-section">
+    <div class="gear-section-header">
+      <span>Cybernetics & Implants</span>
+      <a class="item-create" data-type="cybernetic" title="Add Cybernetic">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </div>
+    <ul class="item-list">
+      {{#each cybernetics as |item|}}
+      <li class="item" data-item-id="{{item.id}}">
+        <span class="gear-name">{{item.name}}</span>
+        <span class="gear-craft small-text">{{item.system.craftsmanship}}</span>
+        <span class="item-controls">
+          <a class="item-edit" title="Edit"><i class="fa-solid fa-pen"></i></a>
+          <a class="item-delete" title="Delete"><i class="fa-solid fa-trash"></i></a>
+        </span>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+  {{/if}}
+
+</div>

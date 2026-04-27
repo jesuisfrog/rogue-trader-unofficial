@@ -1,0 +1,68 @@
+{{!-- partials/psychic-tab.hbs --}}
+<div class="rt-psychic-tab">
+
+  <div class="psy-header-block">
+    <div class="psy-rating-block">
+      <label>Psy Rating</label>
+      {{!-- Display only — the canonical editable input is in the sheet header
+           (always visible) to avoid duplicate-name form serialisation issues. --}}
+      <span class="psy-rating-input psy-rating-display-tab">{{system.psy.rating}}</span>
+    </div>
+    <div class="psy-class-block">
+      <label>Psy Class</label>
+      <select name="system.psy.class">
+        <option value="none"     {{#if (eq system.psy.class "none")}}selected{{/if}}>None</option>
+        <option value="bound"    {{#if (eq system.psy.class "bound")}}selected{{/if}}>Bound Psyker</option>
+        <option value="unbound"  {{#if (eq system.psy.class "unbound")}}selected{{/if}}>Unbound Psyker</option>
+        <option value="navigator" {{#if (eq system.psy.class "navigator")}}selected{{/if}}>Navigator</option>
+        <option value="astropath" {{#if (eq system.psy.class "astropath")}}selected{{/if}}>Astropath Transcendent</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="push-rules-summary">
+    <p class="hint">
+      <strong>Fettered:</strong> PR –3 (min 1). <strong>Unfettered:</strong> Base PR.
+      <strong>Push:</strong> PR +1d5; roll Psychic Phenomenon on 9+, Perils on 11+.
+    </p>
+  </div>
+
+  {{!-- Powers list --}}
+  <div class="item-header">
+    <span class="power-name-col">Power</span>
+    <span class="power-disc-col">Discipline</span>
+    <span class="power-pr-col">Min. PR</span>
+    <span class="power-action-col">Action</span>
+    <span class="power-range-col">Range</span>
+    <span class="power-controls-col">
+      <a class="item-create" data-type="psychicPower" title="Add Psychic Power">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </span>
+  </div>
+
+  {{#if psychic}}
+  <ul class="item-list psychic-list">
+    {{#each psychic as |item|}}
+    <li class="item psychic-item" data-item-id="{{item.id}}">
+      <span class="power-name" title="{{item.system.description}}">{{item.name}}</span>
+      <span class="power-disc">{{item.system.discipline}}</span>
+      <span class="power-pr">{{item.system.psyRating}}</span>
+      <span class="power-action">{{item.system.action}}</span>
+      <span class="power-range">{{item.system.range}}</span>
+      {{#if item.system.sustained}}
+      <span class="power-sustained-badge" title="Sustained">S</span>
+      {{/if}}
+      <span class="item-controls">
+        <a class="psychic-power-roll" title="Use Power"><i class="fa-solid fa-brain"></i></a>
+        <a class="item-edit" title="Edit"><i class="fa-solid fa-pen"></i></a>
+        <a class="item-delete" title="Delete"><i class="fa-solid fa-trash"></i></a>
+      </span>
+    </li>
+    {{/each}}
+  </ul>
+  {{else}}
+  <p class="empty-list">No psychic powers known.</p>
+  {{/if}}
+
+</div>

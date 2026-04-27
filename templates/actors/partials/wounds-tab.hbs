@@ -1,0 +1,164 @@
+{{!-- partials/wounds-tab.hbs --}}
+<div class="rt-wounds-tab">
+
+  {{!-- ── Wounds ───────────────────────────────────────────────────────────── --}}
+  <div class="condition-section wounds-section">
+    <h3 class="section-title">Wounds</h3>
+    <div class="wounds-track">
+      <div class="wounds-current-block">
+        <label>Current</label>
+        <div class="resource-stepper">
+          <a class="resource-control" data-action="decrease" data-field="wounds.value">
+            <i class="fa-solid fa-minus"></i>
+          </a>
+          <input type="number" name="system.wounds.value"
+                 value="{{system.wounds.value}}" min="0"
+                 max="{{system.wounds.max}}" class="wounds-value" />
+          <a class="resource-control" data-action="increase" data-field="wounds.value">
+            <i class="fa-solid fa-plus"></i>
+          </a>
+        </div>
+      </div>
+      <span class="wounds-divider">/</span>
+      <div class="wounds-max-block">
+        <label>Maximum</label>
+        <input type="number" name="system.wounds.max"
+               value="{{system.wounds.max}}" min="0" class="wounds-max" />
+      </div>
+    </div>
+
+    {{!-- Wound pips --}}
+    <div class="wound-pips-row">
+      {{#each (range system.wounds.max) as |i|}}
+      <span class="wound-pip {{#if (lt i ../system.wounds.value)}}filled{{/if}}"></span>
+      {{/each}}
+    </div>
+
+    {{!-- Critical Wounds summary --}}
+    <div class="critical-block">
+      <label>Critical Wounds</label>
+      <div class="resource-stepper">
+        <a class="resource-control" data-action="decrease" data-field="wounds.value">
+          <i class="fa-solid fa-minus"></i>
+        </a>
+        <span class="critical-value">
+          {{#if (lt system.wounds.value 0)}}{{abs system.wounds.value}}{{else}}0{{/if}}
+        </span>
+        <a class="resource-control" data-action="increase" data-field="wounds.value">
+          <i class="fa-solid fa-plus"></i>
+        </a>
+      </div>
+      <p class="hint">Wounds below 0 = Critical. Refer to Critical Hit tables.</p>
+    </div>
+  </div>
+
+  {{!-- ── Fatigue ──────────────────────────────────────────────────────────── --}}
+  <div class="condition-section">
+    <h3 class="section-title">Fatigue</h3>
+    <div class="resource-stepper inline">
+      <a class="resource-control" data-action="decrease" data-field="fatigue.value">
+        <i class="fa-solid fa-minus"></i>
+      </a>
+      <input type="number" name="system.fatigue.value"
+             value="{{system.fatigue.value}}" min="0" />
+      <a class="resource-control" data-action="increase" data-field="fatigue.value">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </div>
+    <p class="hint">Fatigue ≥ TB = Fatigued. Each extra = –10 to all Tests.</p>
+  </div>
+
+  {{!-- ── Fate Points ──────────────────────────────────────────────────────── --}}
+  <div class="condition-section fate-section">
+    <h3 class="section-title">Fate Points</h3>
+    <div class="fate-pips-row">
+      {{#each fatePips as |pip|}}
+      <span class="fate-pip {{#if pip.filled}}filled{{/if}}" data-index="{{pip.index}}"
+            title="{{#if pip.filled}}Spend Fate Point{{else}}Restore Fate Point{{/if}}">✦</span>
+      {{/each}}
+    </div>
+    <div class="fate-numbers">
+      <span class="fate-current">{{system.fate.value}}</span>
+      <span> / </span>
+      <input type="number" name="system.fate.max" value="{{system.fate.max}}"
+             min="0" max="9" class="fate-max-input" title="Fate Threshold" />
+    </div>
+  </div>
+
+  {{!-- ── Insanity ─────────────────────────────────────────────────────────── --}}
+  <div class="condition-section insanity-section">
+    <h3 class="section-title">Insanity Points
+      <span class="bracket-label">— {{insanityBracket}}</span>
+    </h3>
+    <div class="resource-stepper inline">
+      <a class="resource-control" data-action="decrease" data-field="insanity.value">
+        <i class="fa-solid fa-minus"></i>
+      </a>
+      <input type="number" name="system.insanity.value"
+             value="{{system.insanity.value}}" min="0" max="100" />
+      <a class="resource-control" data-action="increase" data-field="insanity.value">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </div>
+    <div class="insanity-bar-track">
+      <div class="insanity-bar-fill"
+           style="width: {{system.insanity.value}}%"></div>
+      <span class="bracket-marker" style="left:10%"  title="Unsettled">10</span>
+      <span class="bracket-marker" style="left:20%"  title="Troubled">20</span>
+      <span class="bracket-marker" style="left:40%"  title="Disturbed">40</span>
+      <span class="bracket-marker" style="left:60%"  title="Neurotic">60</span>
+      <span class="bracket-marker" style="left:80%"  title="Deranged">80</span>
+    </div>
+    <p class="hint">Gaining 10+ IP triggers a Trauma Test. Refer to Chapter V.</p>
+  </div>
+
+  {{!-- ── Corruption ───────────────────────────────────────────────────────── --}}
+  <div class="condition-section corruption-section">
+    <h3 class="section-title">Corruption Points
+      <span class="bracket-label">— {{corruptionBracket}}</span>
+    </h3>
+    <div class="resource-stepper inline">
+      <a class="resource-control" data-action="decrease" data-field="corruption.value">
+        <i class="fa-solid fa-minus"></i>
+      </a>
+      <input type="number" name="system.corruption.value"
+             value="{{system.corruption.value}}" min="0" max="100" />
+      <a class="resource-control" data-action="increase" data-field="corruption.value">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </div>
+    <div class="corruption-bar-track">
+      <div class="corruption-bar-fill"
+           style="width: {{system.corruption.value}}%"></div>
+      <span class="bracket-marker" style="left:30%" title="Tainted">30</span>
+      <span class="bracket-marker" style="left:60%" title="Soiled">60</span>
+      <span class="bracket-marker" style="left:90%" title="Debased">90</span>
+    </div>
+    <p class="hint">At 30/60/90 CP: Malignancy Test. At 100 CP: Tainted.</p>
+  </div>
+
+  {{!-- ── Armour Points (total per location) ──────────────────────────────── --}}
+  <div class="condition-section armour-section">
+    <h3 class="section-title">Armour Points (Equipped)</h3>
+    <div class="body-diagram">
+      <div class="ap-location head">
+        <span class="ap-label">Head</span>
+        <span class="ap-value">{{system.armourPoints.head}}</span>
+      </div>
+      <div class="ap-location body">
+        <span class="ap-label">Body</span>
+        <span class="ap-value">{{system.armourPoints.body}}</span>
+      </div>
+      <div class="ap-location arms">
+        <span class="ap-label">Arms</span>
+        <span class="ap-value">{{system.armourPoints.arms}}</span>
+      </div>
+      <div class="ap-location legs">
+        <span class="ap-label">Legs</span>
+        <span class="ap-value">{{system.armourPoints.legs}}</span>
+      </div>
+    </div>
+    <p class="hint">AP shown is total from all equipped armour pieces.</p>
+  </div>
+
+</div>

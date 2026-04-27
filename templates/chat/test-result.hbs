@@ -1,0 +1,70 @@
+{{!-- templates/chat/test-result.hbs --}}
+<div class="rt-chat-card test-result {{#if result.success}}success{{else}}failure{{/if}}">
+
+  <div class="card-header">
+    <img class="card-actor-img" src="{{actor.img}}" alt="{{actor.name}}" />
+    <div class="card-title-block">
+      <span class="card-actor-name">{{actor.name}}</span>
+      <span class="card-test-name">{{label}}</span>
+    </div>
+    <div class="card-outcome-badge {{#if result.success}}badge-success{{else}}badge-failure{{/if}}">
+      {{#if result.success}}{{i18n.success}}{{else}}{{i18n.failure}}{{/if}}
+    </div>
+  </div>
+
+  <div class="card-body">
+
+    <div class="roll-summary">
+      <div class="roll-cell">
+        <span class="roll-cell-label">{{i18n.roll}}</span>
+        <span class="roll-cell-value roll-number
+          {{#if result.autoCrit}}auto-crit{{/if}}
+          {{#if result.autoFail}}auto-fail{{/if}}">
+          {{result.roll}}
+        </span>
+      </div>
+
+      <div class="roll-cell">
+        <span class="roll-cell-label">{{i18n.target}}</span>
+        <span class="roll-cell-value">
+          {{result.target}}
+          {{#if result.modifier}}
+            <span class="modifier-display
+              {{#if (gt result.modifier 0)}}mod-positive{{else}}mod-negative{{/if}}">
+              {{#if (gt result.modifier 0)}}+{{/if}}{{result.modifier}}
+            </span>
+          {{/if}}
+          = {{result.effective}}
+        </span>
+      </div>
+
+      <div class="roll-cell degrees-cell">
+        {{#if result.success}}
+        <span class="roll-cell-label">{{i18n.degreesSuccess}}</span>
+        <span class="roll-cell-value degrees-success">{{result.degrees}}</span>
+        {{else}}
+        <span class="roll-cell-label">{{i18n.degreesFailure}}</span>
+        <span class="roll-cell-value degrees-failure">{{negate result.degrees}}</span>
+        {{/if}}
+      </div>
+    </div>
+
+    {{#if result.autoCrit}}
+    <div class="special-result crit-result">
+      <i class="fa-solid fa-star"></i> {{i18n.autoCrit}}
+    </div>
+    {{/if}}
+
+    {{#if result.autoFail}}
+    <div class="special-result fumble-result">
+      <i class="fa-solid fa-skull"></i> {{i18n.autoFail}}
+    </div>
+    {{/if}}
+
+    {{#if flavor}}
+    <div class="card-flavor">{{flavor}}</div>
+    {{/if}}
+
+  </div>
+
+</div>

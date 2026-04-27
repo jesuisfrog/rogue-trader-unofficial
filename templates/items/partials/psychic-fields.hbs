@@ -1,0 +1,37 @@
+{{!-- partials/psychic-fields.hbs --}}
+<div class="form-grid psychic-fields">
+
+  <div class="form-group">
+    <label>Discipline</label>
+    <select name="system.discipline">
+      {{selectOptionsRT disciplines system.discipline}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Minimum Psy Rating</label>
+    <input type="number" name="system.psyRating" value="{{system.psyRating}}" min="1" max="10" />
+  </div>
+
+  <div class="form-group">
+    <label>Action Type</label>
+    <select name="system.action">
+      <option value="half" {{#if (eq system.action "half" )}}selected{{/if}}>Half Action</option>
+      <option value="full" {{#if (eq system.action "full" )}}selected{{/if}}>Full Action</option>
+      <option value="reaction" {{#if (eq system.action "reaction" )}}selected{{/if}}>Reaction</option>
+      <option value="free" {{#if (eq system.action "free" )}}selected{{/if}}>Free Action</option>
+      <option value="extended" {{#if (eq system.action "extended" )}}selected{{/if}}>Extended Action</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Range</label>
+    <input type="text" name="system.range" value="{{system.range}}" placeholder="e.g. 20m, PR×5m, You" />
+  </div>
+
+  <div class="form-group">
+    <label>Sustained</label>
+    <input type="checkbox" name="system.sustained" {{#if system.sustained}}checked{{/if}} />
+  </div>
+
+</div>

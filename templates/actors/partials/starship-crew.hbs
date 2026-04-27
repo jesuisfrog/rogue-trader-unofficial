@@ -1,0 +1,102 @@
+{{!-- partials/starship-crew.hbs --}}
+<div class="starship-crew-tab">
+
+  {{!-- Crew rating --}}
+  <div class="crew-rating-section">
+    <h3 class="section-title">Crew Rating</h3>
+    <div class="crew-rating-grid">
+      <div class="crew-rating-block">
+        <label>Rating</label>
+        <select name="system.crew.rating" class="crew-rating-select-full">
+          <option value="incompetent" {{#if (eq system.crew.rating "incompetent")}}selected{{/if}}>Incompetent (20%)</option>
+          <option value="competent"   {{#if (eq system.crew.rating "competent")}}selected{{/if}}>Competent (30%)</option>
+          <option value="crack"       {{#if (eq system.crew.rating "crack")}}selected{{/if}}>Crack (40%)</option>
+          <option value="veteran"     {{#if (eq system.crew.rating "veteran")}}selected{{/if}}>Veteran (50%)</option>
+          <option value="elite"       {{#if (eq system.crew.rating "elite")}}selected{{/if}}>Elite (60%)</option>
+        </select>
+      </div>
+      <div class="crew-rating-explainer">
+        <p class="hint">
+          The crew rating is used as the base percentage for all ship Skill Tests
+          (Ballistic Skill, Pilot, Tech-Use, Command, Scrutiny).
+          It also determines how many Extended Actions NPC crewmembers can perform
+          per Strategic Round (equal to the tens digit: Competent = 3, Veteran = 5).
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Population & Morale detail --}}
+  <div class="crew-status-section">
+    <h3 class="section-title">Status</h3>
+    <div class="crew-status-grid">
+
+      <div class="crew-status-block">
+        <h4>Crew Population</h4>
+        <div class="resource-stepper inline">
+          <a class="resource-control" data-action="decrease" data-field="crew.population.value">
+            <i class="fa-solid fa-minus"></i>
+          </a>
+          <input type="number" name="system.crew.population.value"
+                 value="{{system.crew.population.value}}" min="0" />
+          <span>/</span>
+          <input type="number" name="system.crew.population.max"
+                 value="{{system.crew.population.max}}" min="1" class="crew-max" />
+          <a class="resource-control" data-action="increase" data-field="crew.population.value">
+            <i class="fa-solid fa-plus"></i>
+          </a>
+        </div>
+        <div class="resource-bar-track large">
+          <div class="resource-bar-fill pop-bar" style="width:{{popPct}}%"></div>
+        </div>
+        <p class="hint">Lost when the ship takes Hull Integrity damage (1 per HI lost).
+           Also lost in boarding actions and critical hits.</p>
+      </div>
+
+      <div class="crew-status-block">
+        <h4>Morale</h4>
+        <div class="resource-stepper inline">
+          <a class="resource-control" data-action="decrease" data-field="crew.morale.value">
+            <i class="fa-solid fa-minus"></i>
+          </a>
+          <input type="number" name="system.crew.morale.value"
+                 value="{{system.crew.morale.value}}" min="0" max="100" />
+          <span>/</span>
+          <input type="number" name="system.crew.morale.max"
+                 value="{{system.crew.morale.max}}" min="1" max="100" class="crew-max" />
+          <a class="resource-control" data-action="increase" data-field="crew.morale.value">
+            <i class="fa-solid fa-plus"></i>
+          </a>
+        </div>
+        <div class="resource-bar-track large">
+          <div class="resource-bar-fill morale-bar" style="width:{{moralePct}}%"></div>
+        </div>
+        <p class="hint">Lost with Hull Integrity damage. If Morale falls to 0 during a
+          boarding action and the crew fails their Morale test, the crew surrenders.
+          Restored by Disinformation Extended Action during combat.</p>
+      </div>
+
+    </div>
+  </div>
+
+  {{!-- Quick reference: void combat actions --}}
+  <div class="crew-reference-section">
+    <h3 class="section-title">Void Combat Quick Reference</h3>
+    <table class="voc-reference-table">
+      <thead>
+        <tr><th>Action</th><th>Test</th><th>Effect</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Fire Weapons</td><td>BS (crew rating%)</td><td>1 hit + 1 per DoS (max Strength)</td></tr>
+        <tr><td>Manoeuvre</td><td>Pilot + Manoeuvrability bonus</td><td>Move, turn, evade</td></tr>
+        <tr><td>Augury / Scan</td><td>Scrutiny + Detection bonus</td><td>Reveal ships &amp; components</td></tr>
+        <tr><td>Emergency Repairs</td><td>Tech-Use (–10)</td><td>Restore 1 damaged component</td></tr>
+        <tr><td>Flank Speed</td><td>Tech-Use (±0)</td><td>+1 VU movement per DoS</td></tr>
+        <tr><td>Boarding Action</td><td>Opposed Command</td><td>1d5 Pop &amp; Morale or 1 HI per DoS</td></tr>
+        <tr><td>Hold Fast!</td><td>Willpower (±0)</td><td>Reduce Morale loss by 1 + DoS</td></tr>
+        <tr><td>Triage</td><td>Medicae (–10)</td><td>Reduce Pop loss by 1 + DoS</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

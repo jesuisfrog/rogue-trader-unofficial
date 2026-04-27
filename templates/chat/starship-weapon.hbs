@@ -1,0 +1,122 @@
+{{!-- templates/chat/starship-weapon.hbs --}}
+<div class="rt-chat-card starship-weapon-result {{#if testResult.success}}success{{else}}failure{{/if}}">
+
+  <div class="card-header">
+    <img class="card-actor-img" src="{{actor.img}}" alt="{{actor.name}}" />
+    <div class="card-title-block">
+      <span class="card-actor-name">{{actor.name}}</span>
+      <span class="card-test-name">
+        {{weapon.name}}
+        <span class="weapon-type-badge {{#if isLance}}lance-badge{{else}}macro-badge{{/if}}">
+          {{#if isLance}}Lance{{else}}Macrobattery{{/if}}
+        </span>
+      </span>
+    </div>
+    <div class="card-outcome-badge {{#if testResult.success}}badge-success{{else}}badge-failure{{/if}}">
+      {{#if testResult.success}}
+        {{hits}} Hit{{#if (gt hits 1)}}s{{/if}}
+      {{else}}
+        Miss
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="card-body">
+
+    {{!-- Roll summary --}}
+    <div class="roll-summary">
+      <div class="roll-cell">
+        <span class="roll-cell-label">Roll</span>
+        <span class="roll-cell-value roll-number
+          {{#if testResult.autoCrit}}auto-crit{{/if}}
+          {{#if testResult.autoFail}}auto-fail{{/if}}">
+          {{testResult.roll}}
+        </span>
+      </div>
+      <div class="roll-cell">
+        <span class="roll-cell-label">Target</span>
+        <span class="roll-cell-value">{{testResult.effective}}%</span>
+      </div>
+      {{#if testResult.success}}
+      <div class="roll-cell">
+        <span class="roll-cell-label">DoS</span>
+        <span class="roll-cell-value degrees-success">{{testResult.degrees}}</span>
+      </div>
+      <div class="roll-cell">
+        <span class="roll-cell-label">Hits</span>
+        <span class="roll-cell-value ship-hits">{{hits}}</span>
+      </div>
+      {{else}}
+      <div class="roll-cell">
+        <span class="roll-cell-label">DoF</span>
+        <span class="roll-cell-value degrees-failure">{{absVal testResult.degrees}}</span>
+      </div>
+      {{/if}}
+    </div>
+
+    {{#if testResult.success}}
+
+    {{!-- Damage totals --}}
+    <div class="ship-damage-block">
+      {{#if isLance}}
+      <p class="ship-damage-label">Lance Damage (each hit resolved separately, ignores Armour):</p>
+      {{#each dmgTotals as |dmg|}}
+      <div class="ship-damage-entry">
+        <span class="ship-damage-value">{{dmg}}</span>
+        <span class="ship-damage-note">→ direct Hull Integrity loss</span>
+      </div>
+      {{/each}}
+      {{else}}
+      <p class="ship-damage-label">Macrobattery Combined Damage:</p>
+      <div class="ship-damage-entry">
+        <span class="ship-damage-value">{{dmgTotals.[0]}}</span>
+        <span class="ship-damage-note">− target Armour ({{weapon.damage}}×{{hits}} hits)</span>
+      </div>
+      {{/if}}
+    </div>
+
+    {{!-- Void shields note --}}
+    <div class="void-shields-note">
+      <i class="fa-solid fa-shield"></i>
+      <span>
+        Target Void Shields absorb <strong>{{weapon.strength}}</strong>
+        hit{{#if (gt weapon.strength 1)}}s{{/if}} max (one shield = cancel 1 hit).
+        Overloaded shields do not recover until next Strategic Round.
+      </span>
+    </div>
+
+    {{!-- Critical hit --}}
+    {{#if critRoll}}
+    <div class="special-result fury-result crit-ship">
+      <i class="fa-solid fa-skull-crossbones"></i>
+      <span>
+        <strong>Critical Hit!</strong>
+        DoS ({{testResult.degrees}}) ≥ Crit Rating ({{weapon.critRating}}) —
+        roll 1d5 on Critical Hit table: <strong>{{critRoll}}</strong>
+      </span>
+    </div>
+    {{/if}}
+
+    {{/if}}{{!-- testResult.success --}}
+
+    {{!-- Armour note --}}
+    <div class="armour-note hint">{{armourNote}}</div>
+
+    {{!-- Weapon stats reference --}}
+    <div class="weapon-stats-footer">
+      <span>Str {{weapon.strength}}</span>
+      <span class="ws-sep">·</span>
+      <span>{{weapon.damage}}</span>
+      <span class="ws-sep">·</span>
+      <span>Crit {{weapon.critRating}}</span>
+      <span class="ws-sep">·</span>
+      <span>Range {{weapon.range}} VU</span>
+      {{#if weapon.qualities}}
+      <span class="ws-sep">·</span>
+      <span class="ws-qual">{{weapon.qualities}}</span>
+      {{/if}}
+    </div>
+
+  </div>
+
+</div>

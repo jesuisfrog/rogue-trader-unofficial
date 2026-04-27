@@ -1,0 +1,146 @@
+{{!-- templates/dialogs/xp-dialog.hbs --}}
+<div class="rt-xp-dialog">
+
+  {{!-- Header bar --}}
+  <div class="xp-header">
+    <span class="xp-header-label">Available XP</span>
+    <span class="xp-header-value">{{unspent}}</span>
+    <span class="xp-header-label">Total</span>
+    <span class="xp-header-value">{{actor.system.experience.total}}</span>
+    <span class="xp-header-label">Spent</span>
+    <span class="xp-header-value">{{actor.system.experience.spent}}</span>
+  </div>
+
+  {{!-- Tab switcher --}}
+  <div class="xp-tabs">
+    <button type="button" class="xp-tab-btn {{#if (eq type 'characteristic')}}active{{/if}}"
+            data-tab="characteristic">Characteristics</button>
+    <button type="button" class="xp-tab-btn {{#if (eq type 'skill')}}active{{/if}}"
+            data-tab="skill">Skills</button>
+    <button type="button" class="xp-tab-btn {{#if (eq type 'manual')}}active{{/if}}"
+            data-tab="manual">Manual</button>
+  </div>
+
+  {{!-- ── Characteristics tab ─────────────────────────────────────────────── --}}
+  {{#if (eq type "characteristic")}}
+  <div class="xp-tab-body">
+    <p class="xp-hint">
+      Each advance raises a Characteristic by +5.
+      Costs: 1st→100, 2nd→250, 3rd→500, 4th→750 XP.
+      (×1.5 if out-of-career.)
+    </p>
+    <table class="xp-char-table">
+      <thead>
+        <tr>
+          <th>Char.</th>
+          <th>Current</th>
+          <th>Advances</th>
+          <th>Next Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each charOptions as |opt|}}
+        <tr class="{{#unless opt.canAfford}}cant-afford{{/unless}}
+                   {{#if opt.maxed}}maxed{{/if}}">
+          <td class="char-key-cell" title="{{opt.fullName}}">{{opt.label}}</td>
+          <td class="char-value-cell">{{opt.current}}</td>
+          <td class="char-advances-cell">{{opt.advances}}/4</td>
+          <td class="char-cost-cell">
+            {{#if opt.maxed}}—{{else}}{{opt.nextCost}} XP{{/if}}
+          </td>
+          <td class="char-action-cell">
+            {{#if opt.maxed}}
+            <span class="xp-maxed-badge">Maxed</span>
+            {{else}}
+            <button type="button" class="char-advance-btn"
+                    data-char="{{opt.key}}"
+                    {{#unless opt.canAfford}}disabled{{/unless}}>
+              +5
+            </button>
+            {{/if}}
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{/if}}
+
+  {{!-- ── Skills tab ──────────────────────────────────────────────────────── --}}
+  {{#if (eq type "skill")}}
+  <div class="xp-tab-body">
+    <p class="xp-hint">
+      Trained→+10→+20. Basic skills: 100 XP per step.
+      Advanced skills: 200 XP for first purchase, 100 XP per subsequent step.
+    </p>
+    {{#if skillOptions}}
+    <table class="xp-skill-table">
+      <thead>
+        <tr>
+          <th>Skill</th>
+          <th>Level</th>
+          <th>Next</th>
+          <th>Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each skillOptions as |opt|}}
+        <tr class="{{#unless opt.canAfford}}cant-afford{{/unless}}
+                   {{#if opt.maxed}}maxed{{/if}}">
+          <td>{{opt.name}}</td>
+          <td class="skill-level-cell">{{opt.levelLabel}}</td>
+          <td>{{#if opt.maxed}}—{{else}}{{opt.nextLabel}}{{/if}}</td>
+          <td>{{#if opt.maxed}}—{{else}}{{opt.cost}} XP{{/if}}</td>
+          <td>
+            {{#if opt.maxed}}
+            <span class="xp-maxed-badge">Maxed</span>
+            {{else}}
+            <button type="button" class="skill-advance-btn"
+                    data-id="{{opt.id}}"
+                    {{#unless opt.canAfford}}disabled{{/unless}}>
+              Train
+            </button>
+            {{/if}}
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    <p class="xp-empty">No skills on this character sheet yet. Add skills from the Gear tab.</p>
+    {{/if}}
+  </div>
+  {{/if}}
+
+  {{!-- ── Manual tab ──────────────────────────────────────────────────────── --}}
+  {{#if (eq type "manual")}}
+  <div class="xp-tab-body">
+    <p class="xp-hint">
+      Manually record XP spending for talents, psychic powers, or other advances
+      not listed above. Enter a negative number to refund XP.
+    </p>
+    <div class="manual-xp-form">
+      <div class="form-group">
+        <label>XP Amount</label>
+        <input type="number" name="manual-xp" placeholder="e.g. 200 or –100" />
+      </div>
+      <div class="form-group">
+        <label>Note / Reason</label>
+        <input type="text" name="manual-note" placeholder="e.g. Talent: Hip Shooting" />
+      </div>
+      <button type="button" data-action="manual-spend">
+        <i class="fa-solid fa-check"></i> Confirm
+      </button>
+    </div>
+  </div>
+  {{/if}}
+
+  <div class="xp-footer">
+    <button type="button" data-action="close">
+      <i class="fa-solid fa-times"></i> Close
+    </button>
+  </div>
+
+</div>

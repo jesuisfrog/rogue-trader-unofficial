@@ -1,0 +1,111 @@
+{{!-- partials/starship-components.hbs --}}
+<div class="starship-components-tab">
+
+  {{!-- ── Essential Components ─────────────────────────────────────────────── --}}
+  <h3 class="section-title">Essential Components</h3>
+  <p class="hint ship-hint">
+    A ship must have exactly one of each essential component. Power values are generated
+    (Plasma Drive) or consumed (all others). Space is always consumed.
+  </p>
+
+  <table class="component-table">
+    <thead>
+      <tr>
+        <th class="ct-slot">Slot</th>
+        <th class="ct-name">Component</th>
+        <th class="ct-power">Power</th>
+        <th class="ct-space">Space</th>
+        <th class="ct-notes">Notes / Special Rules</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each system.components as |comp key|}}
+      <tr class="component-row" data-slot="{{key}}">
+        <td class="ct-slot-label">{{capitalize key}}</td>
+        <td>
+          <input type="text" name="system.components.{{key}}.name"
+                 value="{{comp.name}}" placeholder="Component name" class="ct-name-input" />
+        </td>
+        <td>
+          <input type="number" name="system.components.{{key}}.power"
+                 value="{{comp.power}}" class="ct-num"
+                 title="{{#if (eq key 'plasmaDrive')}}Power Generated{{else}}Power Consumed{{/if}}" />
+        </td>
+        <td>
+          <input type="number" name="system.components.{{key}}.space"
+                 value="{{comp.space}}" class="ct-num" />
+        </td>
+        <td>
+          <input type="text" name="system.components.{{key}}.notes"
+                 value="{{comp.notes}}" placeholder="Special rules or effects" class="ct-notes-input" />
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  {{!-- ── Supplemental Components ─────────────────────────────────────────── --}}
+  <div class="section-title supplemental-header">
+    <span>Supplemental Components</span>
+    <a data-action="add-component" title="Add Component">
+      <i class="fa-solid fa-plus"></i>
+    </a>
+  </div>
+  <p class="hint ship-hint">
+    Any number of supplemental components may be installed within Power and Space limits.
+  </p>
+
+  {{#if supplementalComponents.length}}
+  <table class="component-table supplemental-table">
+    <thead>
+      <tr>
+        <th class="ct-name">Component</th>
+        <th class="ct-power">Power</th>
+        <th class="ct-space">Space</th>
+        <th class="ct-sp">SP</th>
+        <th class="ct-notes">Notes / Special Rules</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each supplementalComponents as |comp i|}}
+      <tr class="component-row">
+        <td>
+          <input type="text" class="component-input ct-name-input"
+                 data-index="{{i}}" data-field="name"
+                 value="{{comp.name}}" placeholder="Component name" />
+        </td>
+        <td>
+          <input type="number" class="component-input ct-num"
+                 data-index="{{i}}" data-field="power"
+                 value="{{comp.power}}" />
+        </td>
+        <td>
+          <input type="number" class="component-input ct-num"
+                 data-index="{{i}}" data-field="space"
+                 value="{{comp.space}}" />
+        </td>
+        <td>
+          <input type="number" class="component-input ct-num"
+                 data-index="{{i}}" data-field="sp"
+                 value="{{comp.sp}}" />
+        </td>
+        <td>
+          <input type="text" class="component-input ct-notes-input"
+                 data-index="{{i}}" data-field="notes"
+                 value="{{comp.notes}}" placeholder="Special rules or effects" />
+        </td>
+        <td>
+          <a data-action="remove-component" data-index="{{i}}" title="Remove">
+            <i class="fa-solid fa-trash"></i>
+          </a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+  <p class="empty-list">No supplemental components installed.</p>
+  {{/if}}
+
+</div>

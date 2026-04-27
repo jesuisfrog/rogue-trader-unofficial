@@ -1,0 +1,91 @@
+{{!-- templates/chat/opposed-test.hbs --}}
+<div class="rt-chat-card opposed-result">
+
+  <div class="card-header opposed-header">
+    <div class="card-title-block" style="flex:1">
+      <span class="card-test-name opposed-title">{{label}}</span>
+      <span class="card-actor-name">{{attacker.name}} <em>vs</em> {{defender.name}}</span>
+    </div>
+    <div class="card-outcome-badge {{#if (eq outcome.winner 'attacker')}}badge-success{{else}}badge-failure{{/if}}">
+      {{outcome.winnerName}} wins
+    </div>
+  </div>
+
+  <div class="card-body">
+
+    <div class="opposed-grid">
+
+      {{!-- Attacker column --}}
+      <div class="opposed-col attacker-col {{#if (eq outcome.winner 'attacker')}}col-winner{{else}}col-loser{{/if}}">
+        <div class="opposed-col-header">
+          <img src="{{attacker.img}}" class="opposed-portrait" />
+          <span>{{attacker.name}}</span>
+          {{#if (eq outcome.winner 'attacker')}}
+          <span class="winner-crown">👑</span>
+          {{/if}}
+        </div>
+        <div class="opposed-stat-row">
+          <span class="opposed-stat-label">{{lookup charLabels aChar}}</span>
+          <span class="opposed-stat-value">vs target {{aResult.effective}}</span>
+        </div>
+        <div class="opposed-roll-display {{#if aResult.success}}roll-success{{else}}roll-failure{{/if}}
+                                         {{#if aResult.autoCrit}}auto-crit{{/if}}
+                                         {{#if aResult.autoFail}}auto-fail{{/if}}">
+          {{aResult.roll}}
+        </div>
+        <div class="opposed-dos">
+          {{#if aResult.success}}
+            <span class="degrees-success">{{aResult.degrees}} DoS</span>
+          {{else}}
+            <span class="degrees-failure">{{absVal aResult.degrees}} DoF</span>
+          {{/if}}
+        </div>
+        {{#if aMod}}
+        <div class="opposed-mod">Modifier: {{#if (gt aMod 0)}}+{{/if}}{{aMod}}</div>
+        {{/if}}
+      </div>
+
+      <div class="opposed-vs-divider">VS</div>
+
+      {{!-- Defender column --}}
+      <div class="opposed-col defender-col {{#if (eq outcome.winner 'defender')}}col-winner{{else}}col-loser{{/if}}">
+        <div class="opposed-col-header">
+          <img src="{{defender.img}}" class="opposed-portrait" />
+          <span>{{defender.name}}</span>
+          {{#if (eq outcome.winner 'defender')}}
+          <span class="winner-crown">👑</span>
+          {{/if}}
+        </div>
+        <div class="opposed-stat-row">
+          <span class="opposed-stat-label">{{lookup charLabels dChar}}</span>
+          <span class="opposed-stat-value">vs target {{dResult.effective}}</span>
+        </div>
+        <div class="opposed-roll-display {{#if dResult.success}}roll-success{{else}}roll-failure{{/if}}
+                                         {{#if dResult.autoCrit}}auto-crit{{/if}}
+                                         {{#if dResult.autoFail}}auto-fail{{/if}}">
+          {{dResult.roll}}
+        </div>
+        <div class="opposed-dos">
+          {{#if dResult.success}}
+            <span class="degrees-success">{{dResult.degrees}} DoS</span>
+          {{else}}
+            <span class="degrees-failure">{{absVal dResult.degrees}} DoF</span>
+          {{/if}}
+        </div>
+        {{#if dMod}}
+        <div class="opposed-mod">Modifier: {{#if (gt dMod 0)}}+{{/if}}{{dMod}}</div>
+        {{/if}}
+      </div>
+
+    </div>
+
+    <div class="outcome-reason">
+      {{#if (gt outcome.margin 0)}}
+      <strong>Margin: {{outcome.margin}}</strong> —
+      {{/if}}
+      {{outcome.reason}}
+    </div>
+
+  </div>
+
+</div>

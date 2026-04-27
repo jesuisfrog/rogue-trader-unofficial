@@ -1,0 +1,107 @@
+{{!-- partials/biography-tab.hbs --}}
+<div class="rt-biography-tab">
+
+  {{!-- Origin Path --}}
+  <div class="origin-path-section">
+    <h3 class="section-title">Origin Path</h3>
+    <div class="origin-grid">
+
+      <div class="origin-field">
+        <label>{{loc "RT.CharacterBio.homeWorld"}}</label>
+        <input type="text" name="system.biography.homeWorld"
+               value="{{system.biography.homeWorld}}" placeholder="e.g. Void Born" />
+      </div>
+
+      <div class="origin-field">
+        <label>{{loc "RT.CharacterBio.birthright"}}</label>
+        <input type="text" name="system.biography.birthright"
+               value="{{system.biography.birthright}}" placeholder="e.g. Stubjack" />
+      </div>
+
+      <div class="origin-field">
+        <label>{{loc "RT.CharacterBio.lureOfVoid"}}</label>
+        <input type="text" name="system.biography.lureOfVoid"
+               value="{{system.biography.lureOfVoid}}" placeholder="e.g. Call of the Unknown" />
+      </div>
+
+      <div class="origin-field">
+        <label>{{loc "RT.CharacterBio.trialsAndTravails"}}</label>
+        <input type="text" name="system.biography.trialsAndTravails"
+               value="{{system.biography.trialsAndTravails}}" placeholder="e.g. Dark Voyage" />
+      </div>
+
+      <div class="origin-field">
+        <label>{{loc "RT.CharacterBio.motivation"}}</label>
+        <input type="text" name="system.biography.motivation"
+               value="{{system.biography.motivation}}" placeholder="e.g. Pride" />
+      </div>
+
+      <div class="origin-field">
+        <label>{{loc "RT.CharacterBio.career"}}</label>
+        <input type="text" name="system.biography.career"
+               value="{{system.biography.career}}" placeholder="e.g. Rogue Trader" />
+      </div>
+
+    </div>
+  </div>
+
+  {{!-- Personal Details --}}
+  <div class="personal-details-section">
+    <h3 class="section-title">Personal Details</h3>
+    <div class="personal-grid">
+
+      <div class="personal-field">
+        <label>{{loc "RT.CharacterBio.gender"}}</label>
+        <input type="text" name="system.biography.gender" value="{{system.biography.gender}}" />
+      </div>
+
+      <div class="personal-field">
+        <label>{{loc "RT.CharacterBio.age"}}</label>
+        <input type="text" name="system.biography.age" value="{{system.biography.age}}" />
+      </div>
+
+      <div class="personal-field">
+        <label>{{loc "RT.CharacterBio.build"}}</label>
+        <input type="text" name="system.biography.build" value="{{system.biography.build}}" />
+      </div>
+
+      <div class="personal-field">
+        <label>{{loc "RT.CharacterBio.complexion"}}</label>
+        <input type="text" name="system.biography.complexion" value="{{system.biography.complexion}}" />
+      </div>
+
+      <div class="personal-field full-width">
+        <label>{{loc "RT.CharacterBio.quirks"}}</label>
+        <input type="text" name="system.biography.quirks"
+               value="{{system.biography.quirks}}" placeholder="Quirks & Mannerisms" />
+      </div>
+
+      <div class="personal-field full-width">
+        <label>{{loc "RT.CharacterBio.superstitions"}}</label>
+        <input type="text" name="system.biography.superstitions"
+               value="{{system.biography.superstitions}}" />
+      </div>
+
+      <div class="personal-field">
+        <label>{{loc "RT.CharacterBio.piety"}}</label>
+        <input type="text" name="system.biography.piety" value="{{system.biography.piety}}" />
+      </div>
+
+      <div class="personal-field full-width">
+        <label>{{loc "RT.CharacterBio.mementos"}}</label>
+        <textarea name="system.biography.mementos" rows="2">{{system.biography.mementos}}</textarea>
+      </div>
+
+    </div>
+  </div>
+
+  {{!-- Notes / Background --}}
+  <div class="notes-section">
+    <h3 class="section-title">Background & Notes</h3>
+    <div class="editor-wrapper">
+      {{editor system.biography.notes target="system.biography.notes"
+               button=true owner=owner editable=editable}}
+    </div>
+  </div>
+
+</div>

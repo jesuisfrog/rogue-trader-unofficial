@@ -1,0 +1,28 @@
+{{!-- partials/skill-fields.hbs --}}
+<div class="form-grid skill-fields">
+
+  <div class="form-group">
+    <label>Governing Characteristic</label>
+    <select name="system.characteristic">
+      {{selectOptionsRT characteristics system.characteristic}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Skill Type</label>
+    <select name="system.type">
+      <option value="basic" {{#if (eq system.type "basic" )}}selected{{/if}}>Basic</option>
+      <option value="advanced" {{#if (eq system.type "advanced" )}}selected{{/if}}>Advanced</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Training Level</label>
+    <select name="system.level">
+      <option value="0" {{#if (eq system.level 0)}}selected{{/if}}>Trained (no bonus)</option>
+      <option value="1" {{#if (eq system.level 1)}}selected{{/if}}>+10</option>
+      <option value="2" {{#if (eq system.level 2)}}selected{{/if}}>+20</option>
+    </select>
+  </div>
+
+</div>

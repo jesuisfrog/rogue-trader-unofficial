@@ -1,0 +1,36 @@
+{{!-- partials/characteristics.hbs --}}
+{{!-- Receives: chars (computed characteristic objects), editable --}}
+<section class="rt-characteristics">
+  <div class="chars-grid">
+    {{#each chars as |char key|}}
+    <div class="char-block" data-char="{{key}}">
+      <div class="char-label">{{char.abbr}}</div>
+      <div class="char-values">
+        {{#if ../editable}}
+        <input class="char-base" type="number" name="system.characteristics.{{key}}.base"
+               value="{{char.base}}" min="0" max="100" />
+        {{else}}
+        <span class="char-base-display">{{char.base}}</span>
+        {{/if}}
+        <span class="char-separator">+</span>
+        {{#if ../editable}}
+        <input class="char-advances" type="number" name="system.characteristics.{{key}}.advances"
+               value="{{char.advances}}" min="0" max="4" title="Number of +5 advances purchased" />
+        {{else}}
+        <span class="char-advances-display">{{char.advances}}</span>
+        {{/if}}
+        {{#if char.modifier}}
+        <span class="char-modifier {{#if (gt char.modifier 0)}}positive{{else}}negative{{/if}}">
+          {{#if (gt char.modifier 0)}}+{{/if}}{{char.modifier}}
+        </span>
+        {{/if}}
+      </div>
+      <button type="button" class="char-value-display char-roll" data-char="{{key}}"
+              title="Click to roll {{char.label}} test">
+        <span class="char-total">{{char.value}}</span>
+        <span class="char-bonus-badge">{{char.bonus}}</span>
+      </button>
+    </div>
+    {{/each}}
+  </div>
+</section>

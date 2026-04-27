@@ -1,0 +1,29 @@
+{{!-- partials/talents-tab.hbs --}}
+<div class="rt-talents-tab">
+  <div class="item-header">
+    <span class="talent-name-col">Talent</span>
+    <span class="talent-prereq-col">Prerequisites</span>
+    <span class="talent-controls-col">
+      <a class="item-create" data-type="talent" title="Add Talent">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </span>
+  </div>
+
+  {{#if talents}}
+  <ul class="item-list talent-list">
+    {{#each talents as |item|}}
+    <li class="item talent-item" data-item-id="{{item.id}}">
+      <span class="talent-name" title="{{item.system.description}}">{{item.name}}</span>
+      <span class="talent-prereq">{{item.system.prerequisites}}</span>
+      <span class="item-controls">
+        <a class="item-edit" title="Edit"><i class="fa-solid fa-pen"></i></a>
+        <a class="item-delete" title="Delete"><i class="fa-solid fa-trash"></i></a>
+      </span>
+    </li>
+    {{/each}}
+  </ul>
+  {{else}}
+  <p class="empty-list">No talents recorded.</p>
+  {{/if}}
+</div>

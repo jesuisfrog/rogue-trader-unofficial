@@ -1,0 +1,54 @@
+{{!-- templates/chat/damage-result.hbs --}}
+<div class="rt-chat-card damage-result">
+
+  <div class="card-header">
+    <img class="card-actor-img" src="{{actor.img}}" alt="{{actor.name}}" />
+    <div class="card-title-block">
+      <span class="card-actor-name">{{actor.name}}</span>
+      <span class="card-test-name">{{weaponName}} — Damage</span>
+    </div>
+    <div class="card-outcome-badge badge-damage">
+      <i class="fa-solid fa-burst"></i> DMG
+    </div>
+  </div>
+
+  <div class="card-body">
+
+    <div class="roll-summary">
+      <div class="roll-cell">
+        <span class="roll-cell-label">Total</span>
+        <span class="roll-cell-value damage-total
+          {{#if damageResult.righteousFury}}fury-glow{{/if}}">
+          {{damageResult.total}}
+        </span>
+      </div>
+
+      <div class="roll-cell">
+        <span class="roll-cell-label">Type</span>
+        <span class="roll-cell-value damage-type-badge type-{{damageResult.damageType}}">
+          {{damageTypeLabel}}
+        </span>
+      </div>
+
+      <div class="roll-cell">
+        <span class="roll-cell-label">Pen</span>
+        <span class="roll-cell-value">{{damageResult.pen}}</span>
+      </div>
+    </div>
+
+    {{#if damageResult.righteousFury}}
+    <div class="special-result fury-result">
+      <i class="fa-solid fa-fire-flame-curved"></i>
+      <strong>Righteous Fury!</strong> A die rolled its maximum.
+      Reroll that die — add the result to damage and consult Critical Hit tables.
+    </div>
+    {{/if}}
+
+    <div class="damage-formula-line">
+      <span class="formula-label">Formula:</span>
+      <span class="formula-text">{{damageResult.formula}}</span>
+    </div>
+
+  </div>
+
+</div>

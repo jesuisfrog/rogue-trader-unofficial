@@ -1,0 +1,54 @@
+{{!-- partials/armour-fields.hbs --}}
+<div class="form-grid armour-fields">
+
+  <div class="form-group">
+    <label>Armour Type</label>
+    <select name="system.type">
+      {{selectOptionsRT armourTypes system.type}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Max Agility</label>
+    <input type="number" name="system.maxAg" value="{{system.maxAg}}" min="0" placeholder="0 = no limit" />
+  </div>
+
+  <div class="form-group ap-group">
+    <label>Armour Points by Location</label>
+    <div class="ap-location-grid">
+      <label>Head</label>
+      <input type="number" name="system.ap.head" value="{{system.ap.head}}" min="0" />
+      <label>Body</label>
+      <input type="number" name="system.ap.body" value="{{system.ap.body}}" min="0" />
+      <label>Arms</label>
+      <input type="number" name="system.ap.arms" value="{{system.ap.arms}}" min="0" />
+      <label>Legs</label>
+      <input type="number" name="system.ap.legs" value="{{system.ap.legs}}" min="0" />
+    </div>
+  </div>
+
+  <div class="form-group full-width">
+    <label>Qualities</label>
+    <input type="text" name="system.qualities" value="{{system.qualities}}" placeholder="e.g. Primitive, Power Field" />
+  </div>
+
+  <div class="form-group">
+    <label>Craftsmanship</label>
+    <select name="system.craftsmanship">
+      {{selectOptionsRT craftsmanships system.craftsmanship}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Availability</label>
+    <select name="system.availability">
+      {{selectOptionsRT availabilities system.availability}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Weight (kg)</label>
+    <input type="number" name="system.weight" value="{{system.weight}}" min="0" step="0.5" />
+  </div>
+
+</div>

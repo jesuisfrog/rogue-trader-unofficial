@@ -1,0 +1,100 @@
+{{!-- partials/weapon-fields.hbs --}}
+<div class="form-grid weapon-fields">
+
+  <div class="form-group">
+    <label>Class</label>
+    <select name="system.class">
+      {{selectOptionsRT weaponClasses system.class}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Range</label>
+    <input type="text" name="system.range" value="{{system.range}}" placeholder="e.g. 30m or Melee" />
+  </div>
+
+  <div class="form-group">
+    <label>Damage Formula</label>
+    <input type="text" name="system.damage.formula" value="{{system.damage.formula}}" placeholder="e.g. 1d10+4" />
+  </div>
+
+  <div class="form-group">
+    <label>Damage Type</label>
+    <select name="system.damage.type">
+      {{selectOptionsRT damageTypes system.damage.type}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Penetration</label>
+    <input type="number" name="system.penetration" value="{{system.penetration}}" min="0" />
+  </div>
+
+  <div class="form-group rof-group">
+    <label>Rate of Fire</label>
+    <div class="rof-fields">
+      <label class="rof-label">
+        <input type="checkbox" name="system.rateOfFire.single" {{#if system.rateOfFire.single}}checked{{/if}} />
+        S
+      </label>
+      <label class="rof-label">
+        Semi
+        <input type="number" name="system.rateOfFire.semi" value="{{system.rateOfFire.semi}}" min="0" />
+      </label>
+      <label class="rof-label">
+        Auto
+        <input type="number" name="system.rateOfFire.auto" value="{{system.rateOfFire.auto}}" min="0" />
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Clip (Current/Max)</label>
+    <div class="clip-fields">
+      <input type="number" name="system.clip.value" value="{{system.clip.value}}" min="0" />
+      <span>/</span>
+      <input type="number" name="system.clip.max" value="{{system.clip.max}}" min="0" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Reload</label>
+    <select name="system.reload">
+      <option value="half" {{#if (eq system.reload "half" )}}selected{{/if}}>Half Action</option>
+      <option value="full" {{#if (eq system.reload "full" )}}selected{{/if}}>Full Action</option>
+      <option value="2full" {{#if (eq system.reload "2full" )}}selected{{/if}}>2 Full Actions</option>
+    </select>
+  </div>
+
+  <div class="form-group full-width">
+    <label>Special Qualities</label>
+    <input type="text" name="system.qualities" value="{{system.qualities}}"
+      placeholder="e.g. Accurate, Reliable, Tearing" />
+  </div>
+
+  <div class="form-group full-width">
+    <label>Damage Special</label>
+    <input type="text" name="system.damage.special" value="{{system.damage.special}}"
+      placeholder="e.g. +SB for melee, Toxic (2)" />
+  </div>
+
+  <div class="form-group">
+    <label>Craftsmanship</label>
+    <select name="system.craftsmanship">
+      {{selectOptionsRT craftsmanships system.craftsmanship}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Availability</label>
+    <select name="system.availability">
+      {{selectOptionsRT availabilities system.availability}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Weight (kg)</label>
+    <input type="number" name="system.weight" value="{{system.weight}}" min="0" step="0.1" />
+  </div>
+
+</div>

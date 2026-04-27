@@ -1,0 +1,96 @@
+{{!-- templates/chat/psychic-power.hbs --}}
+<div class="rt-chat-card psychic-result {{#if success}}success{{else}}failure{{/if}}">
+
+  <div class="card-header psychic-header">
+    <img class="card-actor-img" src="{{actor.img}}" alt="{{actor.name}}" />
+    <div class="card-title-block">
+      <span class="card-actor-name">{{actor.name}}</span>
+      <span class="card-test-name">
+        {{powerName}}
+        <span class="strength-badge strength-{{strength}}">
+          {{#if (eq strength "fettered")}}Fettered{{/if}}
+          {{#if (eq strength "unfettered")}}Unfettered{{/if}}
+          {{#if (eq strength "push")}}Pushed{{/if}}
+          PR {{effectivePR}}
+        </span>
+      </span>
+    </div>
+    <div class="card-outcome-badge {{#if success}}badge-success{{else}}badge-failure{{/if}}">
+      {{#if success}}Activated{{else}}Failed{{/if}}
+    </div>
+  </div>
+
+  <div class="card-body">
+
+    <div class="roll-summary">
+      <div class="roll-cell">
+        <span class="roll-cell-label">Roll</span>
+        <span class="roll-cell-value roll-number
+          {{#if autoCrit}}auto-crit{{/if}}
+          {{#if autoFail}}auto-fail{{/if}}">{{result}}</span>
+      </div>
+      <div class="roll-cell">
+        <span class="roll-cell-label">Focus Score</span>
+        <span class="roll-cell-value">{{focusScore}}</span>
+      </div>
+      <div class="roll-cell">
+        <span class="roll-cell-label">WP</span>
+        <span class="roll-cell-value small-stat">{{wpValue}}</span>
+      </div>
+      <div class="roll-cell">
+        <span class="roll-cell-label">PR×5</span>
+        <span class="roll-cell-value small-stat">{{multiply effectivePR 5}}</span>
+      </div>
+      {{#if success}}
+      <div class="roll-cell">
+        <span class="roll-cell-label">DoS</span>
+        <span class="roll-cell-value degrees-success">{{degrees}}</span>
+      </div>
+      {{else}}
+      <div class="roll-cell">
+        <span class="roll-cell-label">DoF</span>
+        <span class="roll-cell-value degrees-failure">{{absVal degrees}}</span>
+      </div>
+      {{/if}}
+    </div>
+
+    {{#if autoCrit}}
+    <div class="special-result crit-result">
+      <i class="fa-solid fa-star"></i> Automatic success — roll of 01–05.
+    </div>
+    {{/if}}
+    {{#if autoFail}}
+    <div class="special-result fumble-result">
+      <i class="fa-solid fa-skull"></i> Automatic failure — result of 100.
+    </div>
+    {{/if}}
+
+    {{!-- Psychic Phenomena --}}
+    {{#if phenomenaResult}}
+    <div class="phenomena-block {{#if perilsResult}}perils-triggered{{/if}}">
+      <div class="phenomena-header">
+        <i class="fa-solid fa-eye"></i>
+        <strong>Psychic Phenomena</strong>
+        <span class="phenomena-roll">(roll: {{phenomenaRoll}})</span>
+      </div>
+      <div class="phenomena-name">{{phenomenaResult.name}}</div>
+      <div class="phenomena-effect">{{phenomenaResult.effect}}</div>
+
+      {{#if perilsResult}}
+      <div class="perils-block">
+        <div class="perils-header">
+          <i class="fa-solid fa-skull-crossbones"></i>
+          <strong>Perils of the Warp!</strong>
+          <span class="phenomena-roll">(roll: {{perilsRoll}})</span>
+        </div>
+        <div class="phenomena-name perils-name">{{perilsResult.name}}</div>
+        <div class="phenomena-effect">{{perilsResult.effect}}</div>
+      </div>
+      {{/if}}
+
+    </div>
+    {{/if}}
+
+  </div>
+
+</div>

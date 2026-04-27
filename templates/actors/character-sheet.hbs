@@ -1,0 +1,220 @@
+{{!-- templates/actors/character-sheet.hbs --}}
+<form class="rt-sheet character-sheet" autocomplete="off">
+
+  {{!-- ══════════════════════════════════════════════════════════════
+       HEADER — Portrait, Name, Career, XP, Derived Stats
+  ═══════════════════════════════════════════════════════════════════ --}}
+  <header class="sheet-header">
+
+    <div class="portrait-block">
+      <img class="actor-portrait" src="{{actor.img}}" alt="{{actor.name}}"
+           data-edit="img" title="Change portrait" />
+    </div>
+
+    <div class="header-main">
+
+      <div class="header-top-row">
+        <input class="actor-name" type="text" name="name"
+               value="{{actor.name}}" placeholder="Explorer Name" />
+        <div class="xp-block">
+          <div class="xp-field">
+            <label>Total XP</label>
+            <input type="number" name="system.experience.total"
+                   value="{{system.experience.total}}" min="0" />
+          </div>
+          <div class="xp-field">
+            <label>Spent</label>
+            <input type="number" name="system.experience.spent"
+                   value="{{system.experience.spent}}" min="0" />
+          </div>
+          <div class="xp-field xp-unspent">
+            <label>Available</label>
+            <span>{{unspentXP}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-career-row">
+        <div class="career-field">
+          <label>Career</label>
+          {{!-- Display only — edit in Biography tab to avoid duplicate name serialisation --}}
+          <span class="header-display-text">{{#if system.biography.career}}{{system.biography.career}}{{else}}<em class="placeholder">Career Path</em>{{/if}}</span>
+        </div>
+        <div class="career-field rank-field">
+          <label>Rank</label>
+          <span class="rank-value">{{rank}}</span>
+        </div>
+        <div class="career-field">
+          <label>Home World</label>
+          <span class="header-display-text">{{#if system.biography.homeWorld}}{{system.biography.homeWorld}}{{else}}<em class="placeholder">Origin</em>{{/if}}</span>
+        </div>
+        <div class="career-field">
+          <label>Profit Factor</label>
+          <div class="pf-row">
+            <input type="number" name="system.profitFactor.total"
+                   value="{{system.profitFactor.total}}" min="0" max="100" class="pf-input" />
+            <button type="button" class="header-action-btn pf-roll-btn"
+                    title="Roll Profit Factor Acquisition">
+              <i class="fa-solid fa-coins"></i>
+            </button>
+          </div>
+        </div>
+        <div class="career-field">
+          <label>&nbsp;</label>
+          <button type="button" class="header-action-btn xp-spend-btn"
+                  title="Spend Experience Points">
+            <i class="fa-solid fa-star"></i> Spend XP
+          </button>
+        </div>
+      </div>
+
+      {{!-- Derived row: Wounds, Fate, Fatigue, Movement --}}
+      <div class="header-derived-row">
+
+        {{!-- Header shows display-only values. Edit via the Wounds & Conditions tab.
+             name attributes are intentionally omitted here to prevent Foundry's
+             form serialiser joining duplicate field names with commas. --}}
+        <div class="derived-block wounds-block">
+          <span class="derived-label">Wounds</span>
+          <div class="wounds-inline">
+            <span class="header-display-val">{{system.wounds.value}}</span>
+            <span>/</span>
+            <span class="header-display-val">{{system.wounds.max}}</span>
+          </div>
+        </div>
+
+        <div class="derived-block fate-block">
+          <span class="derived-label">Fate</span>
+          <div class="fate-pips-mini">
+            {{#each fatePips}}
+            <span class="fate-pip {{#if this.filled}}filled{{/if}}"
+                  data-index="{{this.index}}">✦</span>
+            {{/each}}
+          </div>
+          <span class="fate-numbers-mini">{{system.fate.value}}/{{system.fate.max}}</span>
+        </div>
+
+        <div class="derived-block">
+          <span class="derived-label">IP</span>
+          <span class="header-display-val ip-display {{insanityBracket}}">
+            {{system.insanity.value}}
+          </span>
+        </div>
+
+        <div class="derived-block">
+          <span class="derived-label">CP</span>
+          <span class="header-display-val cp-display {{corruptionBracket}}">
+            {{system.corruption.value}}
+          </span>
+        </div>
+
+        <div class="derived-block movement-block">
+          <span class="derived-label">Movement</span>
+          <div class="movement-values">
+            <span title="Half Action">{{movement.half}}</span>
+            <span class="mv-sep">/</span>
+            <span title="Full Action">{{movement.full}}</span>
+            <span class="mv-sep">/</span>
+            <span title="Charge">{{movement.charge}}</span>
+            <span class="mv-sep">/</span>
+            <span title="Run">{{movement.run}}</span>
+          </div>
+          <span class="movement-labels">½ / Full / Chg / Run</span>
+        </div>
+
+        {{!-- Always visible so non-psykers can set PR > 0 to unlock the Psychic tab.
+             This is the only place PR is editable — the psychic tab only shows
+             once PR > 0 so it cannot be the gatekeeper. --}}
+        <div class="derived-block psy-rating-header-block">
+          <label class="derived-label" for="hdr-psy-rating">Psy Rating</label>
+          <input type="number" id="hdr-psy-rating"
+                 name="system.psy.rating"
+                 value="{{system.psy.rating}}"
+                 min="0" max="10"
+                 class="psy-rating-input header-psy-input"
+                 title="Set to 0 for non-psykers. Psychic tab unlocks when > 0." />
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  {{!-- ══════════════════════════════════════════════════════════════
+       CHARACTERISTICS
+  ═══════════════════════════════════════════════════════════════════ --}}
+  {{> "systems/rogue-trader-unofficial/templates/actors/partials/characteristics.hbs"
+      chars=chars editable=editable}}
+
+  {{!-- ══════════════════════════════════════════════════════════════
+       TABS
+  ═══════════════════════════════════════════════════════════════════ --}}
+  <nav class="sheet-tabs" data-group="primary">
+    <a class="item" data-tab="main">Main</a>
+    <a class="item" data-tab="skills">Skills</a>
+    <a class="item" data-tab="talents">Talents</a>
+    <a class="item" data-tab="gear">Gear</a>
+    <a class="item" data-tab="wounds">Wounds & Conditions</a>
+    {{#if (gt system.psy.rating 0)}}
+    <a class="item" data-tab="psychic">Psychic</a>
+    {{/if}}
+    <a class="item" data-tab="biography">Biography</a>
+  </nav>
+
+  <section class="sheet-body">
+
+    {{!-- Main tab: skill quick-reference + notes --}}
+    <div class="tab" data-group="primary" data-tab="main">
+      <div class="main-tab-columns">
+        <div class="main-col-left">
+          {{> "systems/rogue-trader-unofficial/templates/actors/partials/skills-tab.hbs"
+              skills=skills editable=editable}}
+        </div>
+        <div class="main-col-right">
+          {{> "systems/rogue-trader-unofficial/templates/actors/partials/talents-tab.hbs"
+              talents=talents editable=editable}}
+        </div>
+      </div>
+    </div>
+
+    {{!-- Skills tab --}}
+    <div class="tab" data-group="primary" data-tab="skills">
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/skills-tab.hbs"
+          skills=skills editable=editable}}
+    </div>
+
+    {{!-- Talents tab --}}
+    <div class="tab" data-group="primary" data-tab="talents">
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/talents-tab.hbs"
+          talents=talents editable=editable}}
+    </div>
+
+    {{!-- Gear tab --}}
+    <div class="tab" data-group="primary" data-tab="gear">
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/gear-tab.hbs"
+          weapons=weapons armours=armours gear=gear cybernetics=cybernetics editable=editable}}
+    </div>
+
+    {{!-- Wounds / Conditions tab --}}
+    <div class="tab" data-group="primary" data-tab="wounds">
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/wounds-tab.hbs"
+          system=system fatePips=fatePips insanityBracket=insanityBracket
+          corruptionBracket=corruptionBracket editable=editable}}
+    </div>
+
+    {{!-- Psychic Powers tab --}}
+    {{#if (gt system.psy.rating 0)}}
+    <div class="tab" data-group="primary" data-tab="psychic">
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/psychic-tab.hbs"
+          system=system psychic=psychic editable=editable}}
+    </div>
+    {{/if}}
+
+    {{!-- Biography tab --}}
+    <div class="tab" data-group="primary" data-tab="biography">
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/biography-tab.hbs"
+          system=system owner=owner editable=editable}}
+    </div>
+
+  </section>
+
+</form>

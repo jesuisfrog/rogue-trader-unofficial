@@ -1,0 +1,91 @@
+{{!-- templates/chat/profit-factor.hbs --}}
+<div class="rt-chat-card pf-result {{#if success}}success{{else}}failure{{/if}}">
+
+  <div class="card-header">
+    <img class="card-actor-img" src="{{actor.img}}" alt="{{actor.name}}" />
+    <div class="card-title-block">
+      <span class="card-actor-name">{{actor.name}}</span>
+      <span class="card-test-name">
+        Acquisition — {{itemName}}
+      </span>
+    </div>
+    <div class="card-outcome-badge {{#if success}}badge-success{{else}}badge-failure{{/if}}">
+      {{#if success}}Acquired{{else}}Refused{{/if}}
+    </div>
+  </div>
+
+  <div class="card-body">
+
+    {{!-- Roll summary --}}
+    <div class="roll-summary">
+      <div class="roll-cell">
+        <span class="roll-cell-label">Roll</span>
+        <span class="roll-cell-value roll-number
+          {{#if autoCrit}}auto-crit{{/if}}
+          {{#if autoFail}}auto-fail{{/if}}">{{result}}</span>
+      </div>
+      <div class="roll-cell">
+        <span class="roll-cell-label">Target</span>
+        <span class="roll-cell-value">{{target}}%</span>
+      </div>
+      <div class="roll-cell">
+        <span class="roll-cell-label">PF</span>
+        <span class="roll-cell-value">{{pf}}</span>
+      </div>
+      <div class="roll-cell">
+        <span class="roll-cell-label">{{#if (gt degrees 0)}}DoS{{else}}DoF{{/if}}</span>
+        <span class="roll-cell-value {{#if (gt degrees 0)}}degrees-success{{else}}degrees-failure{{/if}}">
+          {{absVal degrees}}
+        </span>
+      </div>
+    </div>
+
+    {{!-- Modifier breakdown --}}
+    <div class="pf-modifier-breakdown">
+      <span class="pf-mod-item">
+        Base: {{pf}}×5 = <strong>{{multiply pf 5}}%</strong>
+      </span>
+      {{#if avMod}}
+      <span class="pf-mod-item {{#if (gt avMod 0)}}mod-positive{{else}}mod-negative{{/if}}">
+        Availability: {{#if (gt avMod 0)}}+{{/if}}{{avMod}}
+      </span>
+      {{/if}}
+      {{#if commerceMod}}
+      <span class="pf-mod-item {{#if (gt commerceMod 0)}}mod-positive{{else}}mod-negative{{/if}}">
+        Commerce: {{#if (gt commerceMod 0)}}+{{/if}}{{commerceMod}}
+      </span>
+      {{/if}}
+      {{#if miscMod}}
+      <span class="pf-mod-item {{#if (gt miscMod 0)}}mod-positive{{else}}mod-negative{{/if}}">
+        Other: {{#if (gt miscMod 0)}}+{{/if}}{{miscMod}}
+      </span>
+      {{/if}}
+    </div>
+
+    {{!-- PF Strain warning --}}
+    {{#if strainAmount}}
+    <div class="special-result pf-strain-result">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <span>
+        <strong>PF Strain:</strong> Acquiring this item costs
+        <strong>{{strainAmount}} Profit Factor</strong>.
+        New PF: {{subtract pf strainAmount}}.
+      </span>
+    </div>
+    {{/if}}
+
+    {{#if autoCrit}}
+    <div class="special-result crit-result">
+      <i class="fa-solid fa-star"></i> Exceptional success — roll of 01–05.
+    </div>
+    {{/if}}
+
+    {{#if autoFail}}
+    <div class="special-result fumble-result">
+      <i class="fa-solid fa-skull"></i> Automatic failure — roll of 96–00.
+    </div>
+    {{/if}}
+
+  </div>
+
+</div>

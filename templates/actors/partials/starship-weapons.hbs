@@ -1,0 +1,98 @@
+{{!-- partials/starship-weapons.hbs --}}
+<div class="starship-weapons-tab">
+
+  <p class="hint ship-hint">
+    <strong>Macrobattery:</strong> Roll BS vs crew rating. Hits = 1 + DoS (max Strength).
+    Combine damage; subtract Armour. Excess = Hull Integrity loss. <br>
+    <strong>Lance:</strong> 1 hit + 1 per 3 DoS. Damage ignores Armour — direct HI loss.
+    Crit when DoS ≥ Crit Rating; roll 1d5 on Critical Hit table.
+  </p>
+
+  {{#each weaponArcs as |arc|}}
+  <div class="weapon-arc-section">
+    <div class="section-title">
+      <span>{{arc.label}} Weapons</span>
+      <a data-action="add-weapon" data-arc="{{arc.key}}" title="Add {{arc.label}} Weapon">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </div>
+
+    {{#if arc.weapons.length}}
+    <table class="weapon-table ship-weapon-table">
+      <thead>
+        <tr>
+          <th class="wt-name">Name</th>
+          <th class="wt-type">Type</th>
+          <th class="wt-str">Str</th>
+          <th class="wt-dmg">Damage</th>
+          <th class="wt-crit">Crit</th>
+          <th class="wt-range">Range (VU)</th>
+          <th class="wt-pow">Pwr</th>
+          <th class="wt-sp">Space</th>
+          <th class="wt-sp">SP</th>
+          <th class="wt-qual">Qualities</th>
+          <th class="wt-actions"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each arc.weapons as |w i|}}
+        <tr class="weapon-row" data-arc="{{../arc.key}}" data-index="{{i}}">
+          <td>
+            <input type="text" class="weapon-input wt-name-input"
+                   data-arc="{{../arc.key}}" data-index="{{i}}" data-field="name"
+                   value="{{w.name}}" />
+          </td>
+          <td>
+            <select class="weapon-input"
+                    data-arc="{{../arc.key}}" data-index="{{i}}" data-field="type">
+              <option value="macrobattery" {{#if (eq w.type "macrobattery")}}selected{{/if}}>Macro</option>
+              <option value="lance"        {{#if (eq w.type "lance")}}selected{{/if}}>Lance</option>
+            </select>
+          </td>
+          <td><input type="number" class="weapon-input wt-num"
+                     data-arc="{{../arc.key}}" data-index="{{i}}" data-field="strength"
+                     value="{{w.strength}}" min="1" /></td>
+          <td><input type="text" class="weapon-input wt-dmg-input"
+                     data-arc="{{../arc.key}}" data-index="{{i}}" data-field="damage"
+                     value="{{w.damage}}" placeholder="1d10+2" /></td>
+          <td><input type="number" class="weapon-input wt-num"
+                     data-arc="{{../arc.key}}" data-index="{{i}}" data-field="critRating"
+                     value="{{w.critRating}}" min="1" /></td>
+          <td><input type="number" class="weapon-input wt-num"
+                     data-arc="{{../arc.key}}" data-index="{{i}}" data-field="range"
+                     value="{{w.range}}" min="1" /></td>
+          <td><input type="number" class="weapon-input wt-num"
+                     data-arc="{{../arc.key}}" data-index="{{i}}" data-field="power"
+                     value="{{w.power}}" min="0" /></td>
+          <td><input type="number" class="weapon-input wt-num"
+                     data-arc="{{../arc.key}}" data-index="{{i}}" data-field="space"
+                     value="{{w.space}}" min="0" /></td>
+          <td><input type="number" class="weapon-input wt-num"
+                     data-arc="{{../arc.key}}" data-index="{{i}}" data-field="sp"
+                     value="{{w.sp}}" min="0" /></td>
+          <td><input type="text" class="weapon-input wt-qual-input"
+                     data-arc="{{../arc.key}}" data-index="{{i}}" data-field="qualities"
+                     value="{{w.qualities}}" /></td>
+          <td class="weapon-actions">
+            <button type="button" class="weapon-fire-btn vcb-btn"
+                    data-arc="{{../arc.key}}" data-index="{{i}}"
+                    title="Fire {{w.name}}">
+              <i class="fa-solid fa-crosshairs"></i>
+            </button>
+            <a data-action="remove-weapon"
+               data-arc="{{../arc.key}}" data-index="{{i}}"
+               title="Remove" class="weapon-remove-btn">
+              <i class="fa-solid fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    <p class="empty-list">No {{arc.label}} weapons. Use the + button to add one.</p>
+    {{/if}}
+  </div>
+  {{/each}}
+
+</div>
