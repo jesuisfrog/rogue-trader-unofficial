@@ -1,0 +1,12 @@
+{
+  "name": "Scrutiny",
+  "type": "skill",
+  "system": {
+    "characteristic": "per",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can read people and situations, detecting lies and noticing subtle cues in behaviour.</p>"
+  },
+  "_id": "t1zbMlBI82MZNSEr",
+  "_key": "!items!t1zbMlBI82MZNSEr"
+}

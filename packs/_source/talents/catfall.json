@@ -1,0 +1,11 @@
+{
+  "name": "Catfall",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Ag 30",
+    "source": "Core p.96",
+    "description": "<p>The character reduces falling distance for the purposes of damage by a number of metres equal to their Agility Bonus.</p>"
+  },
+  "_id": "Vj6PFO6TVlfcg74A",
+  "_key": "!items!Vj6PFO6TVlfcg74A"
+}

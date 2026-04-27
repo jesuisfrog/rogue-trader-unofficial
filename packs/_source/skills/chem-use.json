@@ -1,0 +1,12 @@
+{
+  "name": "Chem-Use",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character has knowledge of chemicals and drugs, both their manufacture and their effects on the human body.</p>"
+  },
+  "_id": "uAbWKoWByQpdM87D",
+  "_key": "!items!uAbWKoWByQpdM87D"
+}

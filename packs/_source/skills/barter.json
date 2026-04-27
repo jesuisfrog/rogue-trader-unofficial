@@ -1,0 +1,12 @@
+{
+  "name": "Barter",
+  "type": "skill",
+  "system": {
+    "characteristic": "fel",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character knows how to haggle and trade, getting the best deal in any commercial exchange.</p>"
+  },
+  "_id": "I6Dqhw8GrS8rcXSW",
+  "_key": "!items!I6Dqhw8GrS8rcXSW"
+}

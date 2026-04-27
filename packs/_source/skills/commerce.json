@@ -1,0 +1,12 @@
+{
+  "name": "Commerce",
+  "type": "skill",
+  "system": {
+    "characteristic": "fel",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character understands the complexities of trade and commerce at a high level, including Profit Factor acquisition rolls and trade negotiation.</p>"
+  },
+  "_id": "00b4aUuuL0Vjhpq0",
+  "_key": "!items!00b4aUuuL0Vjhpq0"
+}

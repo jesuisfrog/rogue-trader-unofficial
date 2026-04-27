@@ -1,0 +1,11 @@
+{
+  "name": "Hard Target",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Ag 40",
+    "source": "Core p.97",
+    "description": "<p>When the character charges or runs, opponents suffer a –20 penalty to hit them with ranged attacks.</p>"
+  },
+  "_id": "Hb9XivUvsY38VMbS",
+  "_key": "!items!Hb9XivUvsY38VMbS"
+}

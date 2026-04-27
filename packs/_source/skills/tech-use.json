@@ -1,0 +1,12 @@
+{
+  "name": "Tech-Use",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can operate and repair technological devices. Essential for working with mechandrite systems, weapons maintenance, and voidship systems.</p>"
+  },
+  "_id": "iAjPEIoIX55lPF9z",
+  "_key": "!items!iAjPEIoIX55lPF9z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Heavy Weapon Training (any)",
+  "type": "talent",
+  "system": {
+    "prerequisites": "BS 35",
+    "source": "Core p.97",
+    "description": "<p>The character is trained with Heavy weapons of a particular group (Bolt, Flame, Las, Launcher, Melta, Plasma, Primitive, SP).</p>"
+  },
+  "_id": "t30qEGwvQEPwwZFA",
+  "_key": "!items!t30qEGwvQEPwwZFA"
+}

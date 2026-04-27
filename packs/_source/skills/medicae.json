@@ -1,0 +1,12 @@
+{
+  "name": "Medicae",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character understands medicine and first aid. Used to treat injuries, administer drugs, and diagnose illness.</p>"
+  },
+  "_id": "fttJFcCuEyELSLaU",
+  "_key": "!items!fttJFcCuEyELSLaU"
+}

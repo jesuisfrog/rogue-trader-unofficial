@@ -1,0 +1,11 @@
+{
+  "name": "Street Fighting",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Ag 35",
+    "source": "Core p.99",
+    "description": "<p>When the character scores a Critical Hit with a melee weapon, they add +2 to the Critical Hit result.</p>"
+  },
+  "_id": "wW4yvtwWeIT0um1h",
+  "_key": "!items!wW4yvtwWeIT0um1h"
+}

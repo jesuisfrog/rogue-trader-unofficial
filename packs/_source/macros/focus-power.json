@@ -1,0 +1,13 @@
+{
+  "name": "RT: Focus Power (Psychic)",
+  "type": "script",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "command": "// RT: Focus Power\n// Select your psyker's token, then run.\ngame.rogueTrader.rollFocusPower();",
+  "flags": {
+    "rogue-trader-unofficial": {
+      "macro": "rollFocusPower"
+    }
+  },
+  "_id": "COigIGWPCuo3M4kH",
+  "_key": "!macros!COigIGWPCuo3M4kH"
+}

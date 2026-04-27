@@ -1,0 +1,12 @@
+{
+  "name": "Charm",
+  "type": "skill",
+  "system": {
+    "characteristic": "fel",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character uses their personality and good looks to influence others, making them more friendly and cooperative.</p>"
+  },
+  "_id": "FKQ6ehJ8ka4s9IGF",
+  "_key": "!items!FKQ6ehJ8ka4s9IGF"
+}

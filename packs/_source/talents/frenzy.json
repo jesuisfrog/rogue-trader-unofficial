@@ -1,0 +1,11 @@
+{
+  "name": "Frenzy",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.97",
+    "description": "<p>The character can work themselves into a berserk state, gaining bonuses to Strength and Toughness but losing the ability to perform complex actions or flee.</p>"
+  },
+  "_id": "tdVpfCuiBw7L6osF",
+  "_key": "!items!tdVpfCuiBw7L6osF"
+}

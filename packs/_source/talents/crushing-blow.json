@@ -1,0 +1,11 @@
+{
+  "name": "Crushing Blow",
+  "type": "talent",
+  "system": {
+    "prerequisites": "WS 40",
+    "source": "Core p.96",
+    "description": "<p>The character adds half their WS Bonus (round up) to damage from melee attacks.</p>"
+  },
+  "_id": "XMF4W20mTXkm4okF",
+  "_key": "!items!XMF4W20mTXkm4okF"
+}

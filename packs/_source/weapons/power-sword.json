@@ -1,0 +1,33 @@
+{
+  "name": "Power Sword",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "melee",
+    "range": "Melee",
+    "rateOfFire": {
+      "single": false,
+      "semi": 0,
+      "auto": 0
+    },
+    "damage": {
+      "formula": "1d10+5",
+      "type": "e",
+      "special": "+SB"
+    },
+    "penetration": 5,
+    "clip": {
+      "value": 0,
+      "max": 0
+    },
+    "reload": "",
+    "qualities": "Balanced, Power Field",
+    "craftsmanship": "common",
+    "availability": "rare",
+    "weight": 3,
+    "description": "<p>A power sword is surrounded by a disruptive energy field that sheers through armour and force fields alike. These weapons are hallmarks of officers and nobles throughout the Imperium.</p>",
+    "equipped": false
+  },
+  "_id": "4ZY2ltIUZKa2jRuo",
+  "_key": "!items!4ZY2ltIUZKa2jRuo"
+}

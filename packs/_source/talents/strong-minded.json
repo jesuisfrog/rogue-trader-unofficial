@@ -1,0 +1,11 @@
+{
+  "name": "Strong Minded",
+  "type": "talent",
+  "system": {
+    "prerequisites": "WP 30, Resistance (Psychic Powers)",
+    "source": "Core p.99",
+    "description": "<p>The character may re-roll any failed WP test to resist psychic powers.</p>"
+  },
+  "_id": "XoAPCKWY6a5NNUNH",
+  "_key": "!items!XoAPCKWY6a5NNUNH"
+}

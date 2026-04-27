@@ -1,0 +1,11 @@
+{
+  "name": "Crack Shot",
+  "type": "talent",
+  "system": {
+    "prerequisites": "BS 40",
+    "source": "Core p.96",
+    "description": "<p>When the character scores a critical hit with a ranged weapon, they add +2 to the Critical Hit result.</p>"
+  },
+  "_id": "ajnCaJTbR24hEFXu",
+  "_key": "!items!ajnCaJTbR24hEFXu"
+}

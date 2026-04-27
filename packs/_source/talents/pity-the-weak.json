@@ -1,0 +1,11 @@
+{
+  "name": "Pity the Weak",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Fel 40",
+    "source": "Core p.99",
+    "description": "<p>The character gains a +10 bonus to Charm tests against those with lower Social Standing.</p>"
+  },
+  "_id": "2S60emDWFVXiGBSK",
+  "_key": "!items!2S60emDWFVXiGBSK"
+}

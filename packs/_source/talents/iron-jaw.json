@@ -1,0 +1,11 @@
+{
+  "name": "Iron Jaw",
+  "type": "talent",
+  "system": {
+    "prerequisites": "T 40",
+    "source": "Core p.97",
+    "description": "<p>The character may make a Toughness test to ignore the effects of being Stunned.</p>"
+  },
+  "_id": "SVfhKDcDuEjMqy7u",
+  "_key": "!items!SVfhKDcDuEjMqy7u"
+}

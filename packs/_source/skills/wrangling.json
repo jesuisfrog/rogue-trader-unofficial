@@ -1,0 +1,12 @@
+{
+  "name": "Wrangling",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can handle, train, and ride animals.</p>"
+  },
+  "_id": "F0p3xuhQED39Oz8h",
+  "_key": "!items!F0p3xuhQED39Oz8h"
+}

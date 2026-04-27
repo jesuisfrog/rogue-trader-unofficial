@@ -1,0 +1,12 @@
+{
+  "name": "Acrobatics",
+  "type": "skill",
+  "system": {
+    "characteristic": "ag",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can perform extraordinary feats of agility, including walking tightropes, tumbling, and dodging attacks in acrobatic style.</p>"
+  },
+  "_id": "mVm3GWQ28Sr59WpX",
+  "_key": "!items!mVm3GWQ28Sr59WpX"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "RT: Acquisition Roll (Profit Factor)",
+  "type": "script",
+  "img": "icons/commodities/currency/coin-embossed-crown-gold.webp",
+  "command": "// RT: Acquisition Roll\n// Select your Explorer's token, then run.\ngame.rogueTrader.rollAcquisition();",
+  "flags": {
+    "rogue-trader-unofficial": {
+      "macro": "rollAcquisition"
+    }
+  },
+  "_id": "e79Z4ONqs8HWLkdp",
+  "_key": "!macros!e79Z4ONqs8HWLkdp"
+}

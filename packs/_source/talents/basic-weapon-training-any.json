@@ -1,0 +1,11 @@
+{
+  "name": "Basic Weapon Training (any)",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.95",
+    "description": "<p>The character is trained in a group of weapons (Bolt, Flame, Las, Launcher, Melta, Plasma, Primitive, Shock, SP, Tau). Removing the –20 untrained penalty.</p>"
+  },
+  "_id": "ixfgL5IRR5dKwOcr",
+  "_key": "!items!ixfgL5IRR5dKwOcr"
+}

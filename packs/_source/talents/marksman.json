@@ -1,0 +1,11 @@
+{
+  "name": "Marksman",
+  "type": "talent",
+  "system": {
+    "prerequisites": "BS 35",
+    "source": "Core p.98",
+    "description": "<p>The character does not suffer penalties for shooting at targets at Long or Extreme range.</p>"
+  },
+  "_id": "LE6HnnbsKWah0LPf",
+  "_key": "!items!LE6HnnbsKWah0LPf"
+}

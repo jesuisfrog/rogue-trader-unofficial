@@ -1,0 +1,12 @@
+{
+  "name": "Trade (any)",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character is skilled in a particular trade or craft. Types: Apothecary, Armourer, Astronomer, Chymist, Cryptographer, Explorator, Merchant, Remembrancer, Shipwright, Soothsayer, Technomat, Voidfarer.</p>"
+  },
+  "_id": "I1s5LS91B54ZoKGE",
+  "_key": "!items!I1s5LS91B54ZoKGE"
+}

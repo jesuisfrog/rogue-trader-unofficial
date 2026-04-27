@@ -1,0 +1,11 @@
+{
+  "name": "Peer (any)",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Fel 30",
+    "source": "Core p.99",
+    "description": "<p>The character has good contacts and a positive reputation among a particular group (e.g. Criminals, Nobles, Adeptus Mechanicus). +10 to Fellowship tests when dealing with that group.</p>"
+  },
+  "_id": "YXu4cyg6S8fqjDdK",
+  "_key": "!items!YXu4cyg6S8fqjDdK"
+}

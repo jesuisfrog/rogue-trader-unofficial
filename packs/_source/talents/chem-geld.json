@@ -1,0 +1,11 @@
+{
+  "name": "Chem Geld",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.96",
+    "description": "<p>The character has been chemically neutered, becoming immune to the effects of seduction and pheromone-based attacks.</p>"
+  },
+  "_id": "v6X7hkvVJznifiQ9",
+  "_key": "!items!v6X7hkvVJznifiQ9"
+}

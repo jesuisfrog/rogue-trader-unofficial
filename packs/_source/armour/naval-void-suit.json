@@ -1,0 +1,23 @@
+{
+  "name": "Naval Void Suit",
+  "type": "armour",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "type": "light",
+    "ap": {
+      "head": 3,
+      "body": 3,
+      "arms": 3,
+      "legs": 3
+    },
+    "maxAg": 0,
+    "qualities": "Void Sealed",
+    "craftsmanship": "common",
+    "availability": "average",
+    "weight": 8,
+    "description": "<p>Standard issue to naval crew, void suits combine light armour with sealed life-support capable of sustaining the wearer in vacuum for up to 6 hours. Essential equipment on any void-going vessel.</p>",
+    "equipped": false
+  },
+  "_id": "br8Si5MLOSHrycvL",
+  "_key": "!items!br8Si5MLOSHrycvL"
+}

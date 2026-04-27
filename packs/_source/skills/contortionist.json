@@ -1,0 +1,12 @@
+{
+  "name": "Contortionist",
+  "type": "skill",
+  "system": {
+    "characteristic": "ag",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can escape from bonds and squeeze through tight spaces.</p>"
+  },
+  "_id": "4qd04zv0rPmvqWSx",
+  "_key": "!items!4qd04zv0rPmvqWSx"
+}

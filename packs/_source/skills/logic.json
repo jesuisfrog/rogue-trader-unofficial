@@ -1,0 +1,12 @@
+{
+  "name": "Logic",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can solve puzzles, recognise patterns, and reason through problems using deductive thinking.</p>"
+  },
+  "_id": "R4p8MgsrsxF2Nfc4",
+  "_key": "!items!R4p8MgsrsxF2Nfc4"
+}

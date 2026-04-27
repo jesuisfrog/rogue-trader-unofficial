@@ -1,0 +1,12 @@
+{
+  "name": "Interrogation",
+  "type": "skill",
+  "system": {
+    "characteristic": "wp",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can extract information from unwilling subjects.</p>"
+  },
+  "_id": "VHsx2GMC4AtZgS4z",
+  "_key": "!items!VHsx2GMC4AtZgS4z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Bulging Biceps",
+  "type": "talent",
+  "system": {
+    "prerequisites": "S 45",
+    "source": "Core p.96",
+    "description": "<p>The character can fire Heavy weapons without bracing, though they still take the –20 penalty for not bracing.</p>"
+  },
+  "_id": "0ZJYpgbz73OYwXlR",
+  "_key": "!items!0ZJYpgbz73OYwXlR"
+}

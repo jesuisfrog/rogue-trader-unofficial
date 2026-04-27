@@ -1,0 +1,12 @@
+{
+  "name": "Performer (any)",
+  "type": "skill",
+  "system": {
+    "characteristic": "fel",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character is skilled in a particular performing art. Types: Dancer, Musician, Singer, Storyteller.</p>"
+  },
+  "_id": "Ui5ng5RNYP6OYDwV",
+  "_key": "!items!Ui5ng5RNYP6OYDwV"
+}

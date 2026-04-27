@@ -1,0 +1,11 @@
+{
+  "name": "Jaded",
+  "type": "talent",
+  "system": {
+    "prerequisites": "WP 30",
+    "source": "Core p.98",
+    "description": "<p>The character is inured to the horrors of the 41st Millennium. Mundane horrors, such as corpses, mutants, and violence do not require Fear tests.</p>"
+  },
+  "_id": "wJnLmVMhNSTEqSQg",
+  "_key": "!items!wJnLmVMhNSTEqSQg"
+}

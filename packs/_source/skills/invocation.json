@@ -1,0 +1,12 @@
+{
+  "name": "Invocation",
+  "type": "skill",
+  "system": {
+    "characteristic": "wp",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can focus their mind for psychic power use, gaining bonuses to Focus Power tests.</p>"
+  },
+  "_id": "uWcDrYuppICHnvgI",
+  "_key": "!items!uWcDrYuppICHnvgI"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Resistance (any)",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.99",
+    "description": "<p>The character gains +10 to tests to resist a particular effect (Cold, Fear, Heat, Poisons, Psychic Powers).</p>"
+  },
+  "_id": "i2LRF0ActsjVCBUN",
+  "_key": "!items!i2LRF0ActsjVCBUN"
+}

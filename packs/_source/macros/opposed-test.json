@@ -1,0 +1,13 @@
+{
+  "name": "RT: Opposed Test",
+  "type": "script",
+  "img": "icons/skills/social/diplomacy-handshake.webp",
+  "command": "// RT: Opposed Test\n// Select your token, target the opposing token, then run.\ngame.rogueTrader.rollOpposed();",
+  "flags": {
+    "rogue-trader-unofficial": {
+      "macro": "rollOpposed"
+    }
+  },
+  "_id": "SBHZ7Au008MTXPPb",
+  "_key": "!macros!SBHZ7Au008MTXPPb"
+}

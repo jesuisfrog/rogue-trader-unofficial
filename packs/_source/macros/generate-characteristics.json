@@ -1,0 +1,13 @@
+{
+  "name": "RT: Generate Characteristics",
+  "type": "script",
+  "img": "icons/tools/scribal/ink-quill-red.webp",
+  "command": "// RT: Generate Characteristics (Character Creation)\n// Rolls 2d10+25 nine times and posts results to chat.\ngame.rogueTrader.generateCharacteristics();",
+  "flags": {
+    "rogue-trader-unofficial": {
+      "macro": "generateCharacteristics"
+    }
+  },
+  "_id": "qp8UO6NcrneIcIs7",
+  "_key": "!macros!qp8UO6NcrneIcIs7"
+}

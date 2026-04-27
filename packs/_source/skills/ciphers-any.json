@@ -1,0 +1,12 @@
+{
+  "name": "Ciphers (any)",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can encode and decode secret messages using a particular cipher system. Common ciphers include Acolyte, Inquisition, and Underworld.</p>"
+  },
+  "_id": "HdjB8xfmMYxE8vYj",
+  "_key": "!items!HdjB8xfmMYxE8vYj"
+}

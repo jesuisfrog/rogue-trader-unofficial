@@ -1,0 +1,11 @@
+{
+  "name": "Two-Weapon Wielder (Melee)",
+  "type": "talent",
+  "system": {
+    "prerequisites": "WS 35, Ambidextrous",
+    "source": "Core p.100",
+    "description": "<p>The character can make attacks with two melee weapons simultaneously. Each attack suffers a –20 penalty.</p>"
+  },
+  "_id": "Z86qZwPcnGYSZC5n",
+  "_key": "!items!Z86qZwPcnGYSZC5n"
+}

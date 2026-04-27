@@ -1,0 +1,12 @@
+{
+  "name": "Dodge",
+  "type": "skill",
+  "system": {
+    "characteristic": "ag",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can react to incoming attacks, diving out of the way at the last moment. Used as a Reaction to negate hits.</p>"
+  },
+  "_id": "wkjMUT5LCc8TXFfV",
+  "_key": "!items!wkjMUT5LCc8TXFfV"
+}

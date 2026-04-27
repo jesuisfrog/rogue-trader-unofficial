@@ -1,0 +1,13 @@
+{
+  "name": "RT: Spend XP",
+  "type": "script",
+  "img": "icons/skills/trades/academics-study-reading-book.webp",
+  "command": "// RT: Spend XP\n// Select your Explorer's token, then run.\ngame.rogueTrader.spendXP();",
+  "flags": {
+    "rogue-trader-unofficial": {
+      "macro": "spendXP"
+    }
+  },
+  "_id": "taKGuEloiaUTecq0",
+  "_key": "!macros!taKGuEloiaUTecq0"
+}

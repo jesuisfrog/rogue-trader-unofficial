@@ -1,0 +1,33 @@
+{
+  "name": "Meltagun",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "basic",
+    "range": "20m",
+    "rateOfFire": {
+      "single": true,
+      "semi": 0,
+      "auto": 0
+    },
+    "damage": {
+      "formula": "2d10+4",
+      "type": "e",
+      "special": "Double Pen within half range"
+    },
+    "penetration": 12,
+    "clip": {
+      "value": 5,
+      "max": 5
+    },
+    "reload": "2full",
+    "qualities": "Melta",
+    "craftsmanship": "common",
+    "availability": "rare",
+    "weight": 8,
+    "description": "<p>The meltagun (or 'melta') uses a focused beam of sub-atomic particles to reduce armour and flesh to vapour in an instant. Often called a 'tank buster', the meltagun is devastating at short range.</p>",
+    "equipped": false
+  },
+  "_id": "rm2Jk0tq5jrLSnPf",
+  "_key": "!items!rm2Jk0tq5jrLSnPf"
+}

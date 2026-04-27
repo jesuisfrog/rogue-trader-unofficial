@@ -1,0 +1,12 @@
+{
+  "name": "Evaluate",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can accurately assess the value of goods, including antiques, weapons, and other items.</p>"
+  },
+  "_id": "ftAa2pNJb2LT7U6E",
+  "_key": "!items!ftAa2pNJb2LT7U6E"
+}

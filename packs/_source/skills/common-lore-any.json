@@ -1,0 +1,12 @@
+{
+  "name": "Common Lore (any)",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character has common knowledge about a particular subject. Subjects include: Administratum, Adeptus Arbites, Imperial Creed, Imperial Guard, Imperium, Machine Cult, Rogue Traders, War, etc.</p>"
+  },
+  "_id": "rGmeAqyqtSgFQiAJ",
+  "_key": "!items!rGmeAqyqtSgFQiAJ"
+}

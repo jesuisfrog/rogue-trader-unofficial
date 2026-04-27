@@ -1,0 +1,12 @@
+{
+  "name": "Disguise",
+  "type": "skill",
+  "system": {
+    "characteristic": "fel",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can alter their appearance to resemble another person.</p>"
+  },
+  "_id": "u4V2HC8NvwP7C7Ox",
+  "_key": "!items!u4V2HC8NvwP7C7Ox"
+}

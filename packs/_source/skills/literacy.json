@@ -1,0 +1,12 @@
+{
+  "name": "Literacy",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can read and write in Low Gothic (the common language of the Imperium). A basic but crucial skill — many in the 41st Millennium are illiterate.</p>"
+  },
+  "_id": "lnQDiTFp0lPRZVWc",
+  "_key": "!items!lnQDiTFp0lPRZVWc"
+}

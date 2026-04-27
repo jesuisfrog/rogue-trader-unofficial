@@ -1,0 +1,11 @@
+{
+  "name": "Nerves of Steel",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.99",
+    "description": "<p>The character may re-roll failed Pinning tests.</p>"
+  },
+  "_id": "id5DCoQ4VRqPkGwx",
+  "_key": "!items!id5DCoQ4VRqPkGwx"
+}

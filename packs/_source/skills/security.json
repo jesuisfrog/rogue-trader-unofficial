@@ -1,0 +1,12 @@
+{
+  "name": "Security",
+  "type": "skill",
+  "system": {
+    "characteristic": "ag",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can bypass electronic locks, alarms, and security systems.</p>"
+  },
+  "_id": "IbFi4J2C6eTVJlN2",
+  "_key": "!items!IbFi4J2C6eTVJlN2"
+}

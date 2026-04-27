@@ -1,0 +1,23 @@
+{
+  "name": "Guard Flak Armour",
+  "type": "armour",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "type": "light",
+    "ap": {
+      "head": 2,
+      "body": 3,
+      "arms": 2,
+      "legs": 2
+    },
+    "maxAg": 0,
+    "qualities": "",
+    "craftsmanship": "common",
+    "availability": "plentiful",
+    "weight": 11,
+    "description": "<p>The standard armour of the Imperial Guard, flak armour consists of layered ablative and impact-absorbing materials. It provides reasonable protection against low-calibre weaponry and fragmentation.</p>",
+    "equipped": false
+  },
+  "_id": "gnLt4rCUI3UCUO93",
+  "_key": "!items!gnLt4rCUI3UCUO93"
+}

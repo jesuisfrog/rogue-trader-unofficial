@@ -1,0 +1,12 @@
+{
+  "name": "Command",
+  "type": "skill",
+  "system": {
+    "characteristic": "fel",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can direct others in combat and other situations, giving orders that others will follow.</p>"
+  },
+  "_id": "pjTyXku6XTrEZbSZ",
+  "_key": "!items!pjTyXku6XTrEZbSZ"
+}

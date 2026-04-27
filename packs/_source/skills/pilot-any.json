@@ -1,0 +1,12 @@
+{
+  "name": "Pilot (any)",
+  "type": "skill",
+  "system": {
+    "characteristic": "ag",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can operate a particular type of aircraft or spacecraft. Types: Flyers, Military Craft, Spacecraft.</p>"
+  },
+  "_id": "jMgS2jw0squ9uXkH",
+  "_key": "!items!jMgS2jw0squ9uXkH"
+}

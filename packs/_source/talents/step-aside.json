@@ -1,0 +1,11 @@
+{
+  "name": "Step Aside",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Ag 40, Dodge",
+    "source": "Core p.99",
+    "description": "<p>The character may make a second Dodge attempt per round.</p>"
+  },
+  "_id": "IfWXzh7tZqnEPBN4",
+  "_key": "!items!IfWXzh7tZqnEPBN4"
+}

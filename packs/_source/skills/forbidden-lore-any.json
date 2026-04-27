@@ -1,0 +1,12 @@
+{
+  "name": "Forbidden Lore (any)",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character has knowledge of dangerous and proscribed subjects. Types include: Chaos, Daemonology, Heresy, Inquisition, Mutants, Psykers, Warp, Xenos.</p>"
+  },
+  "_id": "be841z8LPLZEzlEb",
+  "_key": "!items!be841z8LPLZEzlEb"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Rapid Reload",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.99",
+    "description": "<p>The character reduces all Reload times by one step (Full → Half → Free).</p>"
+  },
+  "_id": "XK13VGOCAnjaNwRr",
+  "_key": "!items!XK13VGOCAnjaNwRr"
+}

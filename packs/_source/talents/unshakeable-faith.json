@@ -1,0 +1,11 @@
+{
+  "name": "Unshakeable Faith",
+  "type": "talent",
+  "system": {
+    "prerequisites": "WP 40",
+    "source": "Core p.100",
+    "description": "<p>The character may re-roll any failed Fear tests.</p>"
+  },
+  "_id": "KBCkqswnMgB9Hf2M",
+  "_key": "!items!KBCkqswnMgB9Hf2M"
+}

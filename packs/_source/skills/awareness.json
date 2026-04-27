@@ -1,0 +1,12 @@
+{
+  "name": "Awareness",
+  "type": "skill",
+  "system": {
+    "characteristic": "per",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character is able to use all of their senses to perceive the world around them. Used for noticing hidden enemies, detecting ambushes, and other perceptive tasks.</p>"
+  },
+  "_id": "XcDeImYL1LuhBC22",
+  "_key": "!items!XcDeImYL1LuhBC22"
+}

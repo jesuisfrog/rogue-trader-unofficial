@@ -1,0 +1,33 @@
+{
+  "name": "Lasgun",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "basic",
+    "range": "100m",
+    "rateOfFire": {
+      "single": true,
+      "semi": 0,
+      "auto": 0
+    },
+    "damage": {
+      "formula": "1d10+3",
+      "type": "e",
+      "special": ""
+    },
+    "penetration": 0,
+    "clip": {
+      "value": 60,
+      "max": 60
+    },
+    "reload": "full",
+    "qualities": "Reliable",
+    "craftsmanship": "common",
+    "availability": "plentiful",
+    "weight": 4,
+    "description": "<p>The standard weapon of the Imperial Guard, billions of lasguns have been produced across the Imperium. Simple, rugged, and reliable, the lasgun fires a concentrated beam of laser energy.</p>",
+    "equipped": false
+  },
+  "_id": "UHp3AxcpJsM3DhVy",
+  "_key": "!items!UHp3AxcpJsM3DhVy"
+}

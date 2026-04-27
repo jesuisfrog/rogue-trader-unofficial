@@ -1,0 +1,11 @@
+{
+  "name": "Swift Attack",
+  "type": "talent",
+  "system": {
+    "prerequisites": "WS 35",
+    "source": "Core p.99",
+    "description": "<p>The character can make two melee attacks as a Half Action.</p>"
+  },
+  "_id": "fsbXr5aD7lXA2fnd",
+  "_key": "!items!fsbXr5aD7lXA2fnd"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Lip Reading",
+  "type": "skill",
+  "system": {
+    "characteristic": "per",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can understand what someone is saying by reading their lips at a distance.</p>"
+  },
+  "_id": "5Q4aZVJfJlQKzRje",
+  "_key": "!items!5Q4aZVJfJlQKzRje"
+}

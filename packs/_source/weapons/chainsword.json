@@ -1,0 +1,33 @@
+{
+  "name": "Chainsword",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "melee",
+    "range": "Melee",
+    "rateOfFire": {
+      "single": false,
+      "semi": 0,
+      "auto": 0
+    },
+    "damage": {
+      "formula": "1d10+3",
+      "type": "r",
+      "special": "+SB"
+    },
+    "penetration": 2,
+    "clip": {
+      "value": 0,
+      "max": 0
+    },
+    "reload": "",
+    "qualities": "Tearing",
+    "craftsmanship": "common",
+    "availability": "average",
+    "weight": 4,
+    "description": "<p>The chainsword is a common weapon throughout the Imperium, featuring a motorised chain of mono-molecular teeth that tear through flesh and armour alike. It is the favoured close combat weapon of Imperial Guard sergeants and many adventurers.</p>",
+    "equipped": false
+  },
+  "_id": "nOKUGw6Qjo2oiUpc",
+  "_key": "!items!nOKUGw6Qjo2oiUpc"
+}

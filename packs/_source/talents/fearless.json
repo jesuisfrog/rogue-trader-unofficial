@@ -1,0 +1,11 @@
+{
+  "name": "Fearless",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.97",
+    "description": "<p>The character is immune to Fear and does not need to make Fear tests.</p>"
+  },
+  "_id": "UfplPXA4B6KQomnp",
+  "_key": "!items!UfplPXA4B6KQomnp"
+}

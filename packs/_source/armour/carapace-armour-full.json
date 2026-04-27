@@ -1,0 +1,23 @@
+{
+  "name": "Carapace Armour (Full)",
+  "type": "armour",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "type": "heavy",
+    "ap": {
+      "head": 5,
+      "body": 6,
+      "arms": 5,
+      "legs": 5
+    },
+    "maxAg": 40,
+    "qualities": "",
+    "craftsmanship": "common",
+    "availability": "rare",
+    "weight": 25,
+    "description": "<p>Full carapace armour covers the entire body with reinforced plates of hardened ceramite and plasteel. Worn by elite Imperial forces and wealthy adventurers, it offers superior protection at the cost of some agility.</p>",
+    "equipped": false
+  },
+  "_id": "77DURCMIe1WH8dRe",
+  "_key": "!items!77DURCMIe1WH8dRe"
+}

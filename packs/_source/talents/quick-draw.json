@@ -1,0 +1,11 @@
+{
+  "name": "Quick Draw",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Ag 30",
+    "source": "Core p.99",
+    "description": "<p>The character can draw and ready a weapon as a Free Action.</p>"
+  },
+  "_id": "RIzcqJ6bpSTTi2RE",
+  "_key": "!items!RIzcqJ6bpSTTi2RE"
+}

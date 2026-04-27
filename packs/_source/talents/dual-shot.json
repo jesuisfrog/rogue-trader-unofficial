@@ -1,0 +1,11 @@
+{
+  "name": "Dual Shot",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Ag 40, BS 40, Ambidextrous, Two-Weapon Wielder (Ballistic)",
+    "source": "Core p.97",
+    "description": "<p>The character can fire two single-shot weapons simultaneously at the same target as a single Half Action.</p>"
+  },
+  "_id": "HvkOETseLZYfPZo2",
+  "_key": "!items!HvkOETseLZYfPZo2"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Flamer",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "basic",
+    "range": "20m",
+    "rateOfFire": {
+      "single": true,
+      "semi": 0,
+      "auto": 0
+    },
+    "damage": {
+      "formula": "1d10+4",
+      "type": "e",
+      "special": "Flame quality"
+    },
+    "penetration": 2,
+    "clip": {
+      "value": 6,
+      "max": 6
+    },
+    "reload": "2full",
+    "qualities": "Flame, Spray",
+    "craftsmanship": "common",
+    "availability": "scarce",
+    "weight": 6,
+    "description": "<p>Flamers project a cone of burning promethium fuel, setting fire to everything in their path. They are commonly used by flame-bearing units of the Imperial Guard to clear trenches and bunkers.</p>",
+    "equipped": false
+  },
+  "_id": "lCHrrHKnpT9IfH3o",
+  "_key": "!items!lCHrrHKnpT9IfH3o"
+}

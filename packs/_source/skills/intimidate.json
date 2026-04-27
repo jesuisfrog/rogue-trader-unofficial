@@ -1,0 +1,12 @@
+{
+  "name": "Intimidate",
+  "type": "skill",
+  "system": {
+    "characteristic": "str",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can use physical presence and implied violence to coerce others into compliance.</p>"
+  },
+  "_id": "UYuTE1umZnNfEAh8",
+  "_key": "!items!UYuTE1umZnNfEAh8"
+}

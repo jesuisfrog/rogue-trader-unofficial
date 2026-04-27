@@ -1,0 +1,12 @@
+{
+  "name": "Silent Move",
+  "type": "skill",
+  "system": {
+    "characteristic": "ag",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can move without making noise, avoiding detection by sound.</p>"
+  },
+  "_id": "GoEzNGY6pjf2apVb",
+  "_key": "!items!GoEzNGY6pjf2apVb"
+}

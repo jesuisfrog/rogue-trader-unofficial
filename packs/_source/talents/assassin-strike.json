@@ -1,0 +1,11 @@
+{
+  "name": "Assassin Strike",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Ag 40, Acrobatics",
+    "source": "Core p.95",
+    "description": "<p>After making a melee attack, the character may make an Acrobatics test to move at Half Move rate without provoking Attacks of Opportunity.</p>"
+  },
+  "_id": "0WVWuwwzvDOxth6o",
+  "_key": "!items!0WVWuwwzvDOxth6o"
+}

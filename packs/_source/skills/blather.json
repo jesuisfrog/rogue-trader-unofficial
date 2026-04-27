@@ -1,0 +1,12 @@
+{
+  "name": "Blather",
+  "type": "skill",
+  "system": {
+    "characteristic": "fel",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can talk so fast and say so much that others cannot keep up, confusing them with words.</p>"
+  },
+  "_id": "8289IVPNApQmB4EV",
+  "_key": "!items!8289IVPNApQmB4EV"
+}

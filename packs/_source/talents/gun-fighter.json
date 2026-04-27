@@ -1,0 +1,11 @@
+{
+  "name": "Gun Fighter",
+  "type": "talent",
+  "system": {
+    "prerequisites": "BS 40, Pistol Training (any)",
+    "source": "Core p.97",
+    "description": "<p>The character does not suffer the –20 penalty for using a Pistol weapon in melee combat.</p>"
+  },
+  "_id": "2Cplzri4zc2XvgSK",
+  "_key": "!items!2Cplzri4zc2XvgSK"
+}

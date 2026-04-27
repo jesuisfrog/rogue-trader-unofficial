@@ -1,0 +1,11 @@
+{
+  "name": "Sharpshooter",
+  "type": "talent",
+  "system": {
+    "prerequisites": "BS 40, Deadeye Shot",
+    "source": "Core p.99",
+    "description": "<p>The character may take Aim as a Free Action once per Round when making a ranged attack.</p>"
+  },
+  "_id": "9Zbf97Vk72BlcVXl",
+  "_key": "!items!9Zbf97Vk72BlcVXl"
+}

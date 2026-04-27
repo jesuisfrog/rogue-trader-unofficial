@@ -1,0 +1,11 @@
+{
+  "name": "Void Accustomed",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None (Void Born origin or career)",
+    "source": "Core p.100",
+    "description": "<p>The character is immune to space travel sickness and does not suffer the usual penalties for zero-gravity environments.</p>"
+  },
+  "_id": "C7FoAMI1FzaeNgpt",
+  "_key": "!items!C7FoAMI1FzaeNgpt"
+}

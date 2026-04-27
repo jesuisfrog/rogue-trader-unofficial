@@ -1,0 +1,11 @@
+{
+  "name": "Deadeye Shot",
+  "type": "talent",
+  "system": {
+    "prerequisites": "BS 30",
+    "source": "Core p.96",
+    "description": "<p>The character reduces the penalty for Called Shots to –10 instead of –20.</p>"
+  },
+  "_id": "kQt46XwaSua530jT",
+  "_key": "!items!kQt46XwaSua530jT"
+}

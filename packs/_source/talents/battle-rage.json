@@ -1,0 +1,11 @@
+{
+  "name": "Battle Rage",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Frenzy",
+    "source": "Core p.95",
+    "description": "<p>The character may Parry while in Frenzy.</p>"
+  },
+  "_id": "E2ROc7K0sJptfMwQ",
+  "_key": "!items!E2ROc7K0sJptfMwQ"
+}

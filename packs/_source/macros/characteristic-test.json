@@ -1,0 +1,13 @@
+{
+  "name": "RT: Characteristic Test",
+  "type": "script",
+  "img": "icons/svg/dice-target.svg",
+  "command": "// RT: Characteristic Test\n// Select your token, then run this macro.\ngame.rogueTrader.rollCharacteristic();",
+  "flags": {
+    "rogue-trader-unofficial": {
+      "macro": "rollCharacteristic"
+    }
+  },
+  "_id": "TEfnTqlLEqWGJUuU",
+  "_key": "!macros!TEfnTqlLEqWGJUuU"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Lightning Reflexes",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.98",
+    "description": "<p>The character doubles their Agility Bonus when rolling for Initiative.</p>"
+  },
+  "_id": "jWGSru9tJMiYDF7V",
+  "_key": "!items!jWGSru9tJMiYDF7V"
+}

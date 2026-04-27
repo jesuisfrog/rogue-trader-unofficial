@@ -1,0 +1,33 @@
+{
+  "name": "Las Pistol",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "pistol",
+    "range": "30m",
+    "rateOfFire": {
+      "single": true,
+      "semi": 0,
+      "auto": 0
+    },
+    "damage": {
+      "formula": "1d10+2",
+      "type": "e",
+      "special": ""
+    },
+    "penetration": 0,
+    "clip": {
+      "value": 30,
+      "max": 30
+    },
+    "reload": "half",
+    "qualities": "Reliable",
+    "craftsmanship": "common",
+    "availability": "plentiful",
+    "weight": 1.5,
+    "description": "<p>The standard sidearm of the Imperial Guard officer corps, the las pistol is a reliable and easily maintained energy weapon. Its power cell can be recharged from almost any power source, making it ideal for long campaigns.</p>",
+    "equipped": false
+  },
+  "_id": "IMKipLGIFdUo7uAc",
+  "_key": "!items!IMKipLGIFdUo7uAc"
+}

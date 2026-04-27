@@ -1,0 +1,12 @@
+{
+  "name": "Swim",
+  "type": "skill",
+  "system": {
+    "characteristic": "str",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can swim effectively in water or other liquids.</p>"
+  },
+  "_id": "hg9tFDQraS17OYoN",
+  "_key": "!items!hg9tFDQraS17OYoN"
+}

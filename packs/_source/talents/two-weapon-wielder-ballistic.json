@@ -1,0 +1,11 @@
+{
+  "name": "Two-Weapon Wielder (Ballistic)",
+  "type": "talent",
+  "system": {
+    "prerequisites": "BS 35, Ambidextrous",
+    "source": "Core p.100",
+    "description": "<p>The character can make attacks with two ranged weapons simultaneously. Each attack suffers a –20 penalty.</p>"
+  },
+  "_id": "wV3DS8guf3Jge9aa",
+  "_key": "!items!wV3DS8guf3Jge9aa"
+}

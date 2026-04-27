@@ -1,0 +1,11 @@
+{
+  "name": "Hardy",
+  "type": "talent",
+  "system": {
+    "prerequisites": "T 40",
+    "source": "Core p.97",
+    "description": "<p>The character always counts as Lightly Damaged for the purposes of healing, even when Heavily or Critically Damaged.</p>"
+  },
+  "_id": "nK1kBdTuhpJiGI6A",
+  "_key": "!items!nK1kBdTuhpJiGI6A"
+}

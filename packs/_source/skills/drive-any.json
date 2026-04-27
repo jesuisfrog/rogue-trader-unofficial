@@ -1,0 +1,12 @@
+{
+  "name": "Drive (any)",
+  "type": "skill",
+  "system": {
+    "characteristic": "ag",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can operate a particular type of ground vehicle. Types include: Ground Vehicle, Skimmer, Walker.</p>"
+  },
+  "_id": "b6sXXIwx6df4ejs6",
+  "_key": "!items!b6sXXIwx6df4ejs6"
+}

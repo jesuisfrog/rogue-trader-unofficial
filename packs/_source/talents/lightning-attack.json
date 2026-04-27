@@ -1,0 +1,11 @@
+{
+  "name": "Lightning Attack",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Swift Attack",
+    "source": "Core p.98",
+    "description": "<p>The character can make three melee attacks as a Half Action.</p>"
+  },
+  "_id": "93UvWYu4Lbe5xH7R",
+  "_key": "!items!93UvWYu4Lbe5xH7R"
+}

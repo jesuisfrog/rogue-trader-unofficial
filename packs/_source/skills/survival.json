@@ -1,0 +1,12 @@
+{
+  "name": "Survival",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can survive in hostile environments, finding food and water, building shelters, and avoiding natural dangers.</p>"
+  },
+  "_id": "a7vz7NwJpNo1ypP3",
+  "_key": "!items!a7vz7NwJpNo1ypP3"
+}

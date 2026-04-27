@@ -1,0 +1,492 @@
+[
+  {
+    "name": "Acrobatics",
+    "type": "skill",
+    "system": {
+      "characteristic": "ag",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can perform extraordinary feats of agility, including walking tightropes, tumbling, and dodging attacks in acrobatic style.</p>"
+    }
+  },
+  {
+    "name": "Awareness",
+    "type": "skill",
+    "system": {
+      "characteristic": "per",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character is able to use all of their senses to perceive the world around them. Used for noticing hidden enemies, detecting ambushes, and other perceptive tasks.</p>"
+    }
+  },
+  {
+    "name": "Barter",
+    "type": "skill",
+    "system": {
+      "characteristic": "fel",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character knows how to haggle and trade, getting the best deal in any commercial exchange.</p>"
+    }
+  },
+  {
+    "name": "Blather",
+    "type": "skill",
+    "system": {
+      "characteristic": "fel",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can talk so fast and say so much that others cannot keep up, confusing them with words.</p>"
+    }
+  },
+  {
+    "name": "Carouse",
+    "type": "skill",
+    "system": {
+      "characteristic": "t",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can drink and revel with the best of them, resisting the ill effects of alcohol and social lubricants.</p>"
+    }
+  },
+  {
+    "name": "Charm",
+    "type": "skill",
+    "system": {
+      "characteristic": "fel",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character uses their personality and good looks to influence others, making them more friendly and cooperative.</p>"
+    }
+  },
+  {
+    "name": "Chem-Use",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character has knowledge of chemicals and drugs, both their manufacture and their effects on the human body.</p>"
+    }
+  },
+  {
+    "name": "Ciphers (any)",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can encode and decode secret messages using a particular cipher system. Common ciphers include Acolyte, Inquisition, and Underworld.</p>"
+    }
+  },
+  {
+    "name": "Climb",
+    "type": "skill",
+    "system": {
+      "characteristic": "str",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can scale walls, cliffs, and other vertical surfaces.</p>"
+    }
+  },
+  {
+    "name": "Command",
+    "type": "skill",
+    "system": {
+      "characteristic": "fel",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can direct others in combat and other situations, giving orders that others will follow.</p>"
+    }
+  },
+  {
+    "name": "Commerce",
+    "type": "skill",
+    "system": {
+      "characteristic": "fel",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character understands the complexities of trade and commerce at a high level, including Profit Factor acquisition rolls and trade negotiation.</p>"
+    }
+  },
+  {
+    "name": "Common Lore (any)",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character has common knowledge about a particular subject. Subjects include: Administratum, Adeptus Arbites, Imperial Creed, Imperial Guard, Imperium, Machine Cult, Rogue Traders, War, etc.</p>"
+    }
+  },
+  {
+    "name": "Concealment",
+    "type": "skill",
+    "system": {
+      "characteristic": "ag",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can hide themselves and others, as well as concealing objects.</p>"
+    }
+  },
+  {
+    "name": "Contortionist",
+    "type": "skill",
+    "system": {
+      "characteristic": "ag",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can escape from bonds and squeeze through tight spaces.</p>"
+    }
+  },
+  {
+    "name": "Deceive",
+    "type": "skill",
+    "system": {
+      "characteristic": "fel",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can lie convincingly and maintain false identities.</p>"
+    }
+  },
+  {
+    "name": "Demolition",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character understands explosives and can place and detonate them for maximum effect.</p>"
+    }
+  },
+  {
+    "name": "Disguise",
+    "type": "skill",
+    "system": {
+      "characteristic": "fel",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can alter their appearance to resemble another person.</p>"
+    }
+  },
+  {
+    "name": "Dodge",
+    "type": "skill",
+    "system": {
+      "characteristic": "ag",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can react to incoming attacks, diving out of the way at the last moment. Used as a Reaction to negate hits.</p>"
+    }
+  },
+  {
+    "name": "Drive (any)",
+    "type": "skill",
+    "system": {
+      "characteristic": "ag",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can operate a particular type of ground vehicle. Types include: Ground Vehicle, Skimmer, Walker.</p>"
+    }
+  },
+  {
+    "name": "Evaluate",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can accurately assess the value of goods, including antiques, weapons, and other items.</p>"
+    }
+  },
+  {
+    "name": "Forbidden Lore (any)",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character has knowledge of dangerous and proscribed subjects. Types include: Chaos, Daemonology, Heresy, Inquisition, Mutants, Psykers, Warp, Xenos.</p>"
+    }
+  },
+  {
+    "name": "Gamble",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character understands games of chance and can play them well.</p>"
+    }
+  },
+  {
+    "name": "Inquiry",
+    "type": "skill",
+    "system": {
+      "characteristic": "fel",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can gather information by asking questions, making contacts, and finding information through social means.</p>"
+    }
+  },
+  {
+    "name": "Interrogation",
+    "type": "skill",
+    "system": {
+      "characteristic": "wp",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can extract information from unwilling subjects.</p>"
+    }
+  },
+  {
+    "name": "Intimidate",
+    "type": "skill",
+    "system": {
+      "characteristic": "str",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can use physical presence and implied violence to coerce others into compliance.</p>"
+    }
+  },
+  {
+    "name": "Invocation",
+    "type": "skill",
+    "system": {
+      "characteristic": "wp",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can focus their mind for psychic power use, gaining bonuses to Focus Power tests.</p>"
+    }
+  },
+  {
+    "name": "Lip Reading",
+    "type": "skill",
+    "system": {
+      "characteristic": "per",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can understand what someone is saying by reading their lips at a distance.</p>"
+    }
+  },
+  {
+    "name": "Literacy",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can read and write in Low Gothic (the common language of the Imperium). A basic but crucial skill — many in the 41st Millennium are illiterate.</p>"
+    }
+  },
+  {
+    "name": "Logic",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can solve puzzles, recognise patterns, and reason through problems using deductive thinking.</p>"
+    }
+  },
+  {
+    "name": "Medicae",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character understands medicine and first aid. Used to treat injuries, administer drugs, and diagnose illness.</p>"
+    }
+  },
+  {
+    "name": "Navigation (any)",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can navigate using celestial bodies, charts, or instruments. Types: Surface, Stellar, Warp.</p>"
+    }
+  },
+  {
+    "name": "Performer (any)",
+    "type": "skill",
+    "system": {
+      "characteristic": "fel",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character is skilled in a particular performing art. Types: Dancer, Musician, Singer, Storyteller.</p>"
+    }
+  },
+  {
+    "name": "Pilot (any)",
+    "type": "skill",
+    "system": {
+      "characteristic": "ag",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can operate a particular type of aircraft or spacecraft. Types: Flyers, Military Craft, Spacecraft.</p>"
+    }
+  },
+  {
+    "name": "Psyniscience",
+    "type": "skill",
+    "system": {
+      "characteristic": "per",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can sense the presence of psychic phenomena, Warp entities, and psykers. Only available to psykers.</p>"
+    }
+  },
+  {
+    "name": "Scholastic Lore (any)",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character has in-depth academic knowledge of a subject. Types include: Astromancy, Beasts, Bureaucracy, Chymistry, Cryptology, Heraldry, Imperial Warrants, Judgement, Navigation, Numerology, Occult, Philosophy, Tactica Imperialis.</p>"
+    }
+  },
+  {
+    "name": "Scrutiny",
+    "type": "skill",
+    "system": {
+      "characteristic": "per",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can read people and situations, detecting lies and noticing subtle cues in behaviour.</p>"
+    }
+  },
+  {
+    "name": "Search",
+    "type": "skill",
+    "system": {
+      "characteristic": "per",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can methodically search an area for hidden items, secret doors, or concealed enemies.</p>"
+    }
+  },
+  {
+    "name": "Secret Tongue (any)",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character knows a specialised secret language. Types: Acolyte, Administratum, Astropath, Military, Navigator, Rogue Trader, Tech, Underworld.</p>"
+    }
+  },
+  {
+    "name": "Security",
+    "type": "skill",
+    "system": {
+      "characteristic": "ag",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can bypass electronic locks, alarms, and security systems.</p>"
+    }
+  },
+  {
+    "name": "Shadowing",
+    "type": "skill",
+    "system": {
+      "characteristic": "ag",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can follow a target without being noticed.</p>"
+    }
+  },
+  {
+    "name": "Silent Move",
+    "type": "skill",
+    "system": {
+      "characteristic": "ag",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can move without making noise, avoiding detection by sound.</p>"
+    }
+  },
+  {
+    "name": "Sleight of Hand",
+    "type": "skill",
+    "system": {
+      "characteristic": "ag",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character can palm objects, pick pockets, and perform other manual deceptions.</p>"
+    }
+  },
+  {
+    "name": "Speak Language (any)",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can speak a particular language. Common languages include: High Gothic, Low Gothic, Eldar, Ork, Tau, Techna-Lingua, Trader's Cant.</p>"
+    }
+  },
+  {
+    "name": "Survival",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can survive in hostile environments, finding food and water, building shelters, and avoiding natural dangers.</p>"
+    }
+  },
+  {
+    "name": "Swim",
+    "type": "skill",
+    "system": {
+      "characteristic": "str",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can swim effectively in water or other liquids.</p>"
+    }
+  },
+  {
+    "name": "Tech-Use",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can operate and repair technological devices. Essential for working with mechandrite systems, weapons maintenance, and voidship systems.</p>"
+    }
+  },
+  {
+    "name": "Tracking",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can follow the trail of a person or creature across various terrains.</p>"
+    }
+  },
+  {
+    "name": "Trade (any)",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "advanced",
+      "level": 0,
+      "description": "<p>The character is skilled in a particular trade or craft. Types: Apothecary, Armourer, Astronomer, Chymist, Cryptographer, Explorator, Merchant, Remembrancer, Shipwright, Soothsayer, Technomat, Voidfarer.</p>"
+    }
+  },
+  {
+    "name": "Wrangling",
+    "type": "skill",
+    "system": {
+      "characteristic": "int",
+      "type": "basic",
+      "level": 0,
+      "description": "<p>The character can handle, train, and ride animals.</p>"
+    }
+  }
+]

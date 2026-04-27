@@ -1,0 +1,12 @@
+{
+  "name": "Demolition",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character understands explosives and can place and detonate them for maximum effect.</p>"
+  },
+  "_id": "p0kO19Hzsa0QogEe",
+  "_key": "!items!p0kO19Hzsa0QogEe"
+}

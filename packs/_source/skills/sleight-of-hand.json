@@ -1,0 +1,12 @@
+{
+  "name": "Sleight of Hand",
+  "type": "skill",
+  "system": {
+    "characteristic": "ag",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can palm objects, pick pockets, and perform other manual deceptions.</p>"
+  },
+  "_id": "mU1tFR9t1ToNBwry",
+  "_key": "!items!mU1tFR9t1ToNBwry"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Bolt Pistol",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "pistol",
+    "range": "30m",
+    "rateOfFire": {
+      "single": true,
+      "semi": 0,
+      "auto": 0
+    },
+    "damage": {
+      "formula": "1d10+5",
+      "type": "x",
+      "special": ""
+    },
+    "penetration": 4,
+    "clip": {
+      "value": 8,
+      "max": 8
+    },
+    "reload": "full",
+    "qualities": "Tearing",
+    "craftsmanship": "common",
+    "availability": "scarce",
+    "weight": 3.5,
+    "description": "<p>A compact version of the iconic boltgun, the bolt pistol fires self-propelled explosive rounds at cyclic rates of fire. Though less powerful than its larger counterpart, the bolt pistol remains a fearsome sidearm favoured by Space Marines, Inquisitors, and those of rank within the Imperium.</p>",
+    "equipped": false
+  },
+  "_id": "kfr2NYhOhIgZPdD6",
+  "_key": "!items!kfr2NYhOhIgZPdD6"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Dual Strike",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Ag 40, WS 40, Ambidextrous, Two-Weapon Wielder (Melee)",
+    "source": "Core p.97",
+    "description": "<p>The character can make two melee attacks simultaneously as a single Half Action.</p>"
+  },
+  "_id": "0mxua78T94ZUtHcG",
+  "_key": "!items!0mxua78T94ZUtHcG"
+}

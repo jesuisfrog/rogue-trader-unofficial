@@ -1,0 +1,12 @@
+{
+  "name": "Deceive",
+  "type": "skill",
+  "system": {
+    "characteristic": "fel",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can lie convincingly and maintain false identities.</p>"
+  },
+  "_id": "8fek7pHBhRQLwMEB",
+  "_key": "!items!8fek7pHBhRQLwMEB"
+}

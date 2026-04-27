@@ -1,0 +1,12 @@
+{
+  "name": "Navigation (any)",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can navigate using celestial bodies, charts, or instruments. Types: Surface, Stellar, Warp.</p>"
+  },
+  "_id": "YYk1t4UwK6xW4haP",
+  "_key": "!items!YYk1t4UwK6xW4haP"
+}

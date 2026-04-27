@@ -1,0 +1,11 @@
+{
+  "name": "Counter Attack",
+  "type": "talent",
+  "system": {
+    "prerequisites": "WS 40",
+    "source": "Core p.96",
+    "description": "<p>When the character successfully Parries an attack, they may immediately make a free attack against that opponent.</p>"
+  },
+  "_id": "yjpdA1bhBi0GqUBf",
+  "_key": "!items!yjpdA1bhBi0GqUBf"
+}

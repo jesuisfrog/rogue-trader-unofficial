@@ -1,0 +1,33 @@
+{
+  "name": "Autopistol",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "pistol",
+    "range": "30m",
+    "rateOfFire": {
+      "single": true,
+      "semi": 0,
+      "auto": 6
+    },
+    "damage": {
+      "formula": "1d10+2",
+      "type": "i",
+      "special": ""
+    },
+    "penetration": 0,
+    "clip": {
+      "value": 18,
+      "max": 18
+    },
+    "reload": "full",
+    "qualities": "",
+    "craftsmanship": "common",
+    "availability": "plentiful",
+    "weight": 1.5,
+    "description": "<p>Semi-automatic and fully automatic pistols are common throughout the Imperium. While not as powerful as las or bolt weapons, they are cheap to manufacture and freely available.</p>",
+    "equipped": false
+  },
+  "_id": "KoOtsWjGWGMzBzhq",
+  "_key": "!items!KoOtsWjGWGMzBzhq"
+}

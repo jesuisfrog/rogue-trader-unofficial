@@ -1,0 +1,11 @@
+{
+  "name": "Exotic Weapon Training (any)",
+  "type": "talent",
+  "system": {
+    "prerequisites": "BS 35 or WS 35",
+    "source": "Core p.97",
+    "description": "<p>The character is trained with a specific exotic weapon, removing the untrained penalty.</p>"
+  },
+  "_id": "iaspUplz4C2XlDwF",
+  "_key": "!items!iaspUplz4C2XlDwF"
+}

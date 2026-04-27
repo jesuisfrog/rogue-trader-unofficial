@@ -1,0 +1,11 @@
+{
+  "name": "Master Orator",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Fel 30",
+    "source": "Core p.98",
+    "description": "<p>When making Command or Charm tests to affect large groups, the character may affect up to ten times the number of individuals.</p>"
+  },
+  "_id": "9WVqvh9mzQxIu39l",
+  "_key": "!items!9WVqvh9mzQxIu39l"
+}

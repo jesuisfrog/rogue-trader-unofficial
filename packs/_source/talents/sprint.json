@@ -1,0 +1,11 @@
+{
+  "name": "Sprint",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.99",
+    "description": "<p>The character can move at double their Run speed when they take the Run Action. Each subsequent use requires a Toughness test or gains 1 Fatigue.</p>"
+  },
+  "_id": "0gS267Q7MBoZVMlw",
+  "_key": "!items!0gS267Q7MBoZVMlw"
+}

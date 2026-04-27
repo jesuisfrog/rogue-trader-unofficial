@@ -1,0 +1,12 @@
+{
+  "name": "Search",
+  "type": "skill",
+  "system": {
+    "characteristic": "per",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can methodically search an area for hidden items, secret doors, or concealed enemies.</p>"
+  },
+  "_id": "3M8zFn5TqG2UWlUV",
+  "_key": "!items!3M8zFn5TqG2UWlUV"
+}

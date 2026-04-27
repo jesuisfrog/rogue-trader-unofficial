@@ -1,0 +1,11 @@
+{
+  "name": "Melee Weapon Training (any)",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.98",
+    "description": "<p>The character is trained in melee weapons of a particular type (Primitive, Chain, Power, Shock, Power Field).</p>"
+  },
+  "_id": "v6pUNHet4uz82yxy",
+  "_key": "!items!v6pUNHet4uz82yxy"
+}

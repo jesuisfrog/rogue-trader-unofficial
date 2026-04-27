@@ -1,0 +1,12 @@
+{
+  "name": "Speak Language (any)",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can speak a particular language. Common languages include: High Gothic, Low Gothic, Eldar, Ork, Tau, Techna-Lingua, Trader's Cant.</p>"
+  },
+  "_id": "FaSSyf8oYdjEpHYs",
+  "_key": "!items!FaSSyf8oYdjEpHYs"
+}

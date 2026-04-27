@@ -1,0 +1,33 @@
+{
+  "name": "Plasma Pistol",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "pistol",
+    "range": "30m",
+    "rateOfFire": {
+      "single": true,
+      "semi": 0,
+      "auto": 0
+    },
+    "damage": {
+      "formula": "1d10+6",
+      "type": "e",
+      "special": "Overheats on Jam"
+    },
+    "penetration": 6,
+    "clip": {
+      "value": 10,
+      "max": 10
+    },
+    "reload": "2full",
+    "qualities": "Overheats",
+    "craftsmanship": "common",
+    "availability": "rare",
+    "weight": 4,
+    "description": "<p>A relic of more advanced times, plasma pistols fire a bolt of super-heated plasma. Though devastatingly powerful, they are prone to overheating and require careful maintenance.</p>",
+    "equipped": false
+  },
+  "_id": "HjP4xp2pdnMvVxss",
+  "_key": "!items!HjP4xp2pdnMvVxss"
+}

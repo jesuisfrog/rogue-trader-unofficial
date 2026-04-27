@@ -1,0 +1,23 @@
+{
+  "name": "Carapace Armour (Light)",
+  "type": "armour",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "type": "heavy",
+    "ap": {
+      "head": 0,
+      "body": 5,
+      "arms": 0,
+      "legs": 0
+    },
+    "maxAg": 0,
+    "qualities": "",
+    "craftsmanship": "common",
+    "availability": "scarce",
+    "weight": 9,
+    "description": "<p>Formed plates of carapace armour are typically worn by Storm Troopers, Arbites officers, and wealthy mercenaries. These chest and back plates offer far superior protection to flak armour.</p>",
+    "equipped": false
+  },
+  "_id": "L93zmjmaPskvfTtm",
+  "_key": "!items!L93zmjmaPskvfTtm"
+}

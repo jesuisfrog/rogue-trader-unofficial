@@ -1,0 +1,12 @@
+{
+  "name": "Climb",
+  "type": "skill",
+  "system": {
+    "characteristic": "str",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can scale walls, cliffs, and other vertical surfaces.</p>"
+  },
+  "_id": "inDOJlc01i0MHgmX",
+  "_key": "!items!inDOJlc01i0MHgmX"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Concealment",
+  "type": "skill",
+  "system": {
+    "characteristic": "ag",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can hide themselves and others, as well as concealing objects.</p>"
+  },
+  "_id": "3V0q7ruaPT4DTzRi",
+  "_key": "!items!3V0q7ruaPT4DTzRi"
+}

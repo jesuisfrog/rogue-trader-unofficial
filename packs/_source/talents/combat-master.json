@@ -1,0 +1,11 @@
+{
+  "name": "Combat Master",
+  "type": "talent",
+  "system": {
+    "prerequisites": "WS 30",
+    "source": "Core p.96",
+    "description": "<p>Opponents do not gain bonuses for Ganging Up on the character.</p>"
+  },
+  "_id": "Nlr5Ha4vigILUjxt",
+  "_key": "!items!Nlr5Ha4vigILUjxt"
+}

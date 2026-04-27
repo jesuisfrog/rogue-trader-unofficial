@@ -1,0 +1,12 @@
+{
+  "name": "Inquiry",
+  "type": "skill",
+  "system": {
+    "characteristic": "fel",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can gather information by asking questions, making contacts, and finding information through social means.</p>"
+  },
+  "_id": "HLf63rDuE3ujY98l",
+  "_key": "!items!HLf63rDuE3ujY98l"
+}

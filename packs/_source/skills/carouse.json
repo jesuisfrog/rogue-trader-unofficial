@@ -1,0 +1,12 @@
+{
+  "name": "Carouse",
+  "type": "skill",
+  "system": {
+    "characteristic": "t",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can drink and revel with the best of them, resisting the ill effects of alcohol and social lubricants.</p>"
+  },
+  "_id": "gL4gnPxFBLZXDC1W",
+  "_key": "!items!gL4gnPxFBLZXDC1W"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Tracking",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character can follow the trail of a person or creature across various terrains.</p>"
+  },
+  "_id": "hngcpN9ZSxys0oCF",
+  "_key": "!items!hngcpN9ZSxys0oCF"
+}

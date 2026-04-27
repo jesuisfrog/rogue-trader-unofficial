@@ -1,0 +1,23 @@
+{
+  "name": "Primitive Armour (Leather)",
+  "type": "armour",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "type": "primitive",
+    "ap": {
+      "head": 1,
+      "body": 2,
+      "arms": 1,
+      "legs": 1
+    },
+    "maxAg": 0,
+    "qualities": "Primitive",
+    "craftsmanship": "common",
+    "availability": "plentiful",
+    "weight": 5,
+    "description": "<p>Simple leather armour, common on feral or primitive worlds. Provides minimal protection but is cheap and easy to maintain. Counts as Primitive against bolt, las, and other advanced weapons.</p>",
+    "equipped": false
+  },
+  "_id": "4PukGjs31Axi6Ed0",
+  "_key": "!items!4PukGjs31Axi6Ed0"
+}

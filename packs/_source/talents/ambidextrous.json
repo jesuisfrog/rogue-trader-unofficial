@@ -1,0 +1,11 @@
+{
+  "name": "Ambidextrous",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Ag 30",
+    "source": "Core p.95",
+    "description": "<p>The character can use either hand equally well. Removes the –20 penalty for using the off hand.</p>"
+  },
+  "_id": "zGDMowQpvmFluQm9",
+  "_key": "!items!zGDMowQpvmFluQm9"
+}

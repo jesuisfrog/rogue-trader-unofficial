@@ -1,0 +1,11 @@
+{
+  "name": "Pistol Training (any)",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.99",
+    "description": "<p>The character is trained with Pistol weapons of a particular type.</p>"
+  },
+  "_id": "t9fP4o5eHNtQ0d58",
+  "_key": "!items!t9fP4o5eHNtQ0d58"
+}

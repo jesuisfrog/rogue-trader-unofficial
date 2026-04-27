@@ -1,0 +1,11 @@
+{
+  "name": "Arms Master",
+  "type": "talent",
+  "system": {
+    "prerequisites": "BS 35 or WS 35, Basic Weapon Training (any two)",
+    "source": "Core p.95",
+    "description": "<p>The character is trained with all weapons in a specific group, removing the –20 untrained penalty.</p>"
+  },
+  "_id": "oRvbUFGlATPG5tMm",
+  "_key": "!items!oRvbUFGlATPG5tMm"
+}

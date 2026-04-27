@@ -1,0 +1,33 @@
+{
+  "name": "Autogun",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "basic",
+    "range": "90m",
+    "rateOfFire": {
+      "single": true,
+      "semi": 3,
+      "auto": 10
+    },
+    "damage": {
+      "formula": "1d10+3",
+      "type": "i",
+      "special": ""
+    },
+    "penetration": 0,
+    "clip": {
+      "value": 30,
+      "max": 30
+    },
+    "reload": "full",
+    "qualities": "",
+    "craftsmanship": "common",
+    "availability": "common",
+    "weight": 3.5,
+    "description": "<p>One of the most common weapons in the Imperium, autoguns use cartridge-fed ammunition and are found in the hands of civilian militias, criminals, and planetary defence forces throughout the galaxy.</p>",
+    "equipped": false
+  },
+  "_id": "Wc1CqugzuyJmlfHl",
+  "_key": "!items!Wc1CqugzuyJmlfHl"
+}

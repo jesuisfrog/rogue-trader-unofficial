@@ -1,0 +1,11 @@
+{
+  "name": "Talented (any)",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.99",
+    "description": "<p>The character gains a +10 bonus to a specific skill that they are trained in.</p>"
+  },
+  "_id": "kBbOl6RFCypb0sOj",
+  "_key": "!items!kBbOl6RFCypb0sOj"
+}

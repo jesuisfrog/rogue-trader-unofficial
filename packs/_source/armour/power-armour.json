@@ -1,0 +1,23 @@
+{
+  "name": "Power Armour",
+  "type": "armour",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "type": "powered",
+    "ap": {
+      "head": 8,
+      "body": 10,
+      "arms": 8,
+      "legs": 8
+    },
+    "maxAg": 0,
+    "qualities": "Powered, Sealed, Astartes",
+    "craftsmanship": "best",
+    "availability": "nearUnique",
+    "weight": 35,
+    "description": "<p>Worn only by Space Marines and those few Imperial heroes granted its use, power armour is a full-body protection suit incorporating ceramite plating, a powered exoskeleton, and life-support systems. It represents the pinnacle of the armourer's craft.</p>",
+    "equipped": false
+  },
+  "_id": "QfDduCj7K6RlyibU",
+  "_key": "!items!QfDduCj7K6RlyibU"
+}

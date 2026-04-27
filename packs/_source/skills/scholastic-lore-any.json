@@ -1,0 +1,12 @@
+{
+  "name": "Scholastic Lore (any)",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character has in-depth academic knowledge of a subject. Types include: Astromancy, Beasts, Bureaucracy, Chymistry, Cryptology, Heraldry, Imperial Warrants, Judgement, Navigation, Numerology, Occult, Philosophy, Tactica Imperialis.</p>"
+  },
+  "_id": "ZOnZco04nG1g2Jgv",
+  "_key": "!items!ZOnZco04nG1g2Jgv"
+}

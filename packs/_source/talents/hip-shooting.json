@@ -1,0 +1,11 @@
+{
+  "name": "Hip Shooting",
+  "type": "talent",
+  "system": {
+    "prerequisites": "BS 40, Ag 40",
+    "source": "Core p.97",
+    "description": "<p>The character may Run and fire a Basic or Pistol weapon as a single Full Action. They suffer a –20 penalty to the Ballistic Skill test.</p>"
+  },
+  "_id": "JczdTLRi1Q6IDiE4",
+  "_key": "!items!JczdTLRi1Q6IDiE4"
+}

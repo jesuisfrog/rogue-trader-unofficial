@@ -1,0 +1,12 @@
+{
+  "name": "Psyniscience",
+  "type": "skill",
+  "system": {
+    "characteristic": "per",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can sense the presence of psychic phenomena, Warp entities, and psykers. Only available to psykers.</p>"
+  },
+  "_id": "cSLqb7q05JujnQKL",
+  "_key": "!items!cSLqb7q05JujnQKL"
+}

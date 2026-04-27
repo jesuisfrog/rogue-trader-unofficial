@@ -1,0 +1,12 @@
+{
+  "name": "Shadowing",
+  "type": "skill",
+  "system": {
+    "characteristic": "ag",
+    "type": "advanced",
+    "level": 0,
+    "description": "<p>The character can follow a target without being noticed.</p>"
+  },
+  "_id": "wyuqHjdMK42xPAX0",
+  "_key": "!items!wyuqHjdMK42xPAX0"
+}

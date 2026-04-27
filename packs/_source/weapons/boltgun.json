@@ -1,0 +1,33 @@
+{
+  "name": "Boltgun",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "basic",
+    "range": "90m",
+    "rateOfFire": {
+      "single": true,
+      "semi": 2,
+      "auto": 0
+    },
+    "damage": {
+      "formula": "1d10+5",
+      "type": "x",
+      "special": ""
+    },
+    "penetration": 4,
+    "clip": {
+      "value": 24,
+      "max": 24
+    },
+    "reload": "full",
+    "qualities": "Tearing",
+    "craftsmanship": "common",
+    "availability": "rare",
+    "weight": 7,
+    "description": "<p>The iconic weapon of the Adeptus Astartes, bolters are also carried by Imperial Stormtroopers and members of the Inquisition. Each bolt is a self-propelled explosive mass-reactive round that detonates inside the target.</p>",
+    "equipped": false
+  },
+  "_id": "z95Bhxhucrw1bf5d",
+  "_key": "!items!z95Bhxhucrw1bf5d"
+}

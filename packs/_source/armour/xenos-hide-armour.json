@@ -1,0 +1,23 @@
+{
+  "name": "Xenos Hide Armour",
+  "type": "armour",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "type": "light",
+    "ap": {
+      "head": 2,
+      "body": 3,
+      "arms": 2,
+      "legs": 3
+    },
+    "maxAg": 0,
+    "qualities": "Xenos-crafted",
+    "craftsmanship": "common",
+    "availability": "rare",
+    "weight": 6,
+    "description": "<p>Armour fashioned from the skin, scales, or carapace of various alien creatures encountered in the void. Provides surprisingly effective protection and often unsettles enemies with its alien appearance.</p>",
+    "equipped": false
+  },
+  "_id": "gD8e2axRkD4EuFXq",
+  "_key": "!items!gD8e2axRkD4EuFXq"
+}

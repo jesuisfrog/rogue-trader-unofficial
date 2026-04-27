@@ -1,0 +1,33 @@
+{
+  "name": "Heavy Bolter",
+  "type": "weapon",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "class": "heavy",
+    "range": "150m",
+    "rateOfFire": {
+      "single": false,
+      "semi": 0,
+      "auto": 10
+    },
+    "damage": {
+      "formula": "1d10+8",
+      "type": "x",
+      "special": ""
+    },
+    "penetration": 5,
+    "clip": {
+      "value": 60,
+      "max": 60
+    },
+    "reload": "2full",
+    "qualities": "Tearing",
+    "craftsmanship": "common",
+    "availability": "scarce",
+    "weight": 40,
+    "description": "<p>An enlarged version of the standard bolter, the heavy bolter fires larger calibre explosive shells at a sustained rate, capable of shredding infantry and light vehicles alike.</p>",
+    "equipped": false
+  },
+  "_id": "Ln8eHP0gIp9lORbh",
+  "_key": "!items!Ln8eHP0gIp9lORbh"
+}

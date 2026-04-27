@@ -1,0 +1,23 @@
+{
+  "name": "Mesh Armour",
+  "type": "armour",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "type": "light",
+    "ap": {
+      "head": 0,
+      "body": 4,
+      "arms": 4,
+      "legs": 4
+    },
+    "maxAg": 0,
+    "qualities": "",
+    "craftsmanship": "common",
+    "availability": "rare",
+    "weight": 4,
+    "description": "<p>Woven from threads of diamantine and thermoplas, mesh armour is remarkably thin but provides strong protection. It is commonly worn beneath clothing by those who can afford it.</p>",
+    "equipped": false
+  },
+  "_id": "xq7L3RCBvlUXEo75",
+  "_key": "!items!xq7L3RCBvlUXEo75"
+}

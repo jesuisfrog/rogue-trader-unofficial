@@ -1,0 +1,11 @@
+{
+  "name": "Light Sleeper",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Per 30",
+    "source": "Core p.98",
+    "description": "<p>The character counts as awake for Awareness tests even when asleep, and wakes immediately if they pass.</p>"
+  },
+  "_id": "oJEUnLzMs05yMR2n",
+  "_key": "!items!oJEUnLzMs05yMR2n"
+}

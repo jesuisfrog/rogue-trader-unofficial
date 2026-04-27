@@ -1,0 +1,12 @@
+{
+  "name": "Gamble",
+  "type": "skill",
+  "system": {
+    "characteristic": "int",
+    "type": "basic",
+    "level": 0,
+    "description": "<p>The character understands games of chance and can play them well.</p>"
+  },
+  "_id": "ZZBnpk6sGSsz9Ck3",
+  "_key": "!items!ZZBnpk6sGSsz9Ck3"
+}

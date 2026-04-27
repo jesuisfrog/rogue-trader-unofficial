@@ -1,0 +1,11 @@
+{
+  "name": "Leap Up",
+  "type": "talent",
+  "system": {
+    "prerequisites": "Ag 30",
+    "source": "Core p.98",
+    "description": "<p>The character can stand from Prone as a Free Action.</p>"
+  },
+  "_id": "n9h6wsvdyjwQLZn3",
+  "_key": "!items!n9h6wsvdyjwQLZn3"
+}

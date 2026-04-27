@@ -1,0 +1,11 @@
+{
+  "name": "Sound Constitution",
+  "type": "talent",
+  "system": {
+    "prerequisites": "None",
+    "source": "Core p.99",
+    "description": "<p>The character gains an additional Wound. This talent may be taken multiple times.</p>"
+  },
+  "_id": "aBPYtamkfiGBcmmm",
+  "_key": "!items!aBPYtamkfiGBcmmm"
+}
