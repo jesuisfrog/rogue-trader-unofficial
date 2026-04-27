@@ -1,0 +1,2721 @@
+/* ============================================================================
+   Warhammer 40,000: Rogue Trader (Unofficial) — Foundry VTT System
+   Visual style: Gothic Imperial — aged parchment, deep blacks, burnished gold,
+   blood red accents. Inspired by the official Fantasy Flight Games layout.
+   ============================================================================ */
+
+/* ---------------------------------------------------------------------------
+   @font-face — system fonts loaded from assets/
+   Fall back to system serifs if custom fonts are not bundled.
+   --------------------------------------------------------------------------- */
+/* If you add fonts to assets/fonts/, uncomment and update these:
+@font-face {
+  font-family: "Caslon";
+  src: url("../assets/fonts/ACaslonPro-Regular.woff2") format("woff2");
+}
+*/
+
+/* ---------------------------------------------------------------------------
+   CSS Custom Properties
+   --------------------------------------------------------------------------- */
+:root {
+  /* Core palette */
+  --rt-parchment:       #e8d9b4;
+  --rt-parchment-dark:  #d4bf90;
+  --rt-parchment-light: #f0e6c8;
+  --rt-black:           #0d0b09;
+  --rt-dark:            #1a1512;
+  --rt-dark-mid:        #251f18;
+  --rt-brown:           #3d2b1a;
+  --rt-brown-light:     #5c3d22;
+
+  /* Accent colours */
+  --rt-gold:            #b8882a;
+  --rt-gold-light:      #d4a843;
+  --rt-gold-pale:       #e8c86a;
+  --rt-red:             #8b0000;
+  --rt-red-bright:      #b30000;
+  --rt-red-dark:        #5c0000;
+
+  /* Text */
+  --rt-text-dark:       #1a1208;
+  --rt-text-mid:        #3d2b1a;
+  --rt-text-faded:      #7a6545;
+  --rt-text-gold:       #b8882a;
+  --rt-text-light:      #e8d9b4;
+
+  /* Borders */
+  --rt-border-gold:     #b8882a;
+  --rt-border-dark:     #2a2018;
+  --rt-border-mid:      #5c3d22;
+
+  /* Conditions */
+  --rt-success:         #2a6630;
+  --rt-failure:         #8b0000;
+  --rt-fury:            #cc4400;
+
+  /* Layout */
+  --rt-radius:          3px;
+  --rt-radius-lg:       6px;
+  --rt-shadow:          0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* ---------------------------------------------------------------------------
+   Base sheet shell
+   --------------------------------------------------------------------------- */
+.rt-sheet {
+  font-family: "Book Antiqua", "Palatino Linotype", Georgia, serif;
+  font-size: 13px;
+  color: var(--rt-text-dark);
+  background: var(--rt-parchment);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rt-sheet *,
+.rt-sheet *::before,
+.rt-sheet *::after {
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------------------
+   Window chrome overrides
+   --------------------------------------------------------------------------- */
+.app.rogue-trader .window-content {
+  background: var(--rt-parchment);
+  padding: 0;
+}
+
+.app.rogue-trader .window-header {
+  background: var(--rt-dark);
+  color: var(--rt-gold-light);
+  border-bottom: 2px solid var(--rt-gold);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+/* ---------------------------------------------------------------------------
+   Sheet Header
+   --------------------------------------------------------------------------- */
+.rt-sheet .sheet-header {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, var(--rt-dark) 0%, var(--rt-dark-mid) 60%, var(--rt-brown) 100%);
+  border-bottom: 3px solid var(--rt-gold);
+  flex-shrink: 0;
+}
+
+.rt-sheet .portrait-block {
+  flex: 0 0 90px;
+}
+
+.rt-sheet .actor-portrait {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border: 2px solid var(--rt-gold);
+  border-radius: var(--rt-radius);
+  cursor: pointer;
+  box-shadow: var(--rt-shadow);
+}
+
+.rt-sheet .header-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rt-sheet .actor-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--rt-gold-light);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rt-gold);
+  width: 100%;
+  padding: 2px 0;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  font-family: inherit;
+}
+
+.rt-sheet .actor-name:focus {
+  outline: none;
+  border-bottom-color: var(--rt-gold-pale);
+}
+
+/* Career / meta row */
+.rt-sheet .header-career-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rt-sheet .career-field {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.rt-sheet .career-field label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rt-gold);
+}
+
+.rt-sheet .career-field input,
+.rt-sheet .career-field select,
+.rt-sheet .career-field .header-display-text {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-light);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 2px 5px;
+  width: auto;
+  display: inline-block;
+}
+
+.rt-sheet .career-field .header-display-text em.placeholder {
+  opacity: 0.4;
+  font-style: italic;
+}
+
+.rt-sheet .rank-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--rt-gold-light);
+  text-align: center;
+  min-width: 24px;
+}
+
+.rt-sheet .pf-input {
+  width: 55px !important;
+}
+
+/* XP block */
+.rt-sheet .xp-block {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  margin-left: auto;
+}
+
+.rt-sheet .xp-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.rt-sheet .xp-field label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rt-gold);
+}
+
+.rt-sheet .xp-field input,
+.rt-sheet .xp-field span {
+  width: 58px;
+  text-align: center;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-light);
+  font-size: 12px;
+  padding: 2px 4px;
+  font-family: inherit;
+}
+
+.rt-sheet .xp-unspent span {
+  color: var(--rt-gold-light);
+  font-weight: bold;
+}
+
+/* Derived stats row */
+.rt-sheet .header-derived-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.rt-sheet .derived-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.rt-sheet .derived-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rt-gold);
+}
+
+/* Wounds inline */
+.rt-sheet .wounds-inline {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--rt-text-light);
+}
+
+.rt-sheet .wounds-inline span { color: var(--rt-text-light); }
+
+/* Header display-only value spans — match the look of the old inputs */
+.rt-sheet .header-display-val {
+  width: 40px;
+  text-align: center;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-light);
+  font-size: 13px;
+  padding: 1px 3px;
+  font-family: inherit;
+  display: inline-block;
+  line-height: 1.6;
+}
+
+/* Keep these classes for the Wounds tab inputs which are still real inputs */
+.rt-sheet .wounds-val,
+.rt-sheet .wounds-max,
+.rt-sheet .ip-input,
+.rt-sheet .cp-input {
+  width: 40px;
+  text-align: center;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-light);
+  font-size: 13px;
+  padding: 1px 3px;
+  font-family: inherit;
+}
+
+/* Fate pips header mini */
+.rt-sheet .fate-pips-mini {
+  display: flex;
+  gap: 3px;
+}
+
+.rt-sheet .fate-pip {
+  color: var(--rt-brown-light);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.rt-sheet .fate-pip.filled {
+  color: var(--rt-gold-light);
+  text-shadow: 0 0 6px var(--rt-gold);
+}
+
+.rt-sheet .fate-numbers-mini {
+  font-size: 10px;
+  color: var(--rt-gold);
+}
+
+/* Movement */
+.rt-sheet .movement-values {
+  display: flex;
+  gap: 2px;
+  color: var(--rt-text-light);
+  font-size: 12px;
+}
+
+.rt-sheet .mv-sep { color: var(--rt-gold); opacity: 0.5; }
+
+.rt-sheet .movement-labels {
+  font-size: 9px;
+  color: var(--rt-text-faded);
+  color: var(--rt-gold);
+  opacity: 0.6;
+}
+
+.rt-sheet .psy-rating-display {
+  font-size: 18px;
+  font-weight: bold;
+  color: #9988cc;
+}
+
+/* ---------------------------------------------------------------------------
+   Characteristics Block
+   --------------------------------------------------------------------------- */
+.rt-sheet .rt-characteristics {
+  background: var(--rt-dark);
+  border-bottom: 2px solid var(--rt-gold);
+  padding: 6px 12px;
+  flex-shrink: 0;
+}
+
+.rt-sheet .chars-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 4px;
+}
+
+.rt-sheet .char-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.rt-sheet .char-label {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rt-gold);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.rt-sheet .char-values {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 10px;
+  color: rgba(232,217,180,0.6);
+}
+
+.rt-sheet .char-base,
+.rt-sheet .char-advances {
+  width: 28px;
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(184,136,42,0.3);
+  border-radius: 2px;
+  color: rgba(232,217,180,0.7);
+  font-size: 10px;
+  padding: 1px 2px;
+  font-family: inherit;
+}
+
+.rt-sheet .char-separator {
+  font-size: 9px;
+  opacity: 0.4;
+}
+
+.rt-sheet .char-modifier {
+  font-size: 10px;
+  font-weight: bold;
+}
+.rt-sheet .char-modifier.positive { color: #4a9a50; }
+.rt-sheet .char-modifier.negative { color: var(--rt-red-bright); }
+
+/* The clickable value button */
+.rt-sheet .char-value-display {
+  background: var(--rt-dark-mid);
+  border: 2px solid var(--rt-gold);
+  border-radius: var(--rt-radius);
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  padding: 3px 2px;
+  transition: background 0.15s, border-color 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.rt-sheet .char-value-display:hover {
+  background: var(--rt-brown);
+  border-color: var(--rt-gold-pale);
+}
+
+.rt-sheet .char-total {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--rt-text-light);
+  display: block;
+  line-height: 1;
+}
+
+.rt-sheet .char-bonus-badge {
+  font-size: 11px;
+  color: var(--rt-gold);
+  font-weight: bold;
+  display: block;
+  border-top: 1px solid rgba(184,136,42,0.3);
+  width: 100%;
+  text-align: center;
+  padding-top: 1px;
+  margin-top: 1px;
+}
+
+/* ---------------------------------------------------------------------------
+   Sheet Tabs
+   --------------------------------------------------------------------------- */
+.rt-sheet .sheet-tabs {
+  display: flex;
+  gap: 1px;
+  background: var(--rt-brown);
+  border-bottom: 2px solid var(--rt-gold);
+  padding: 0 8px;
+  flex-shrink: 0;
+}
+
+.rt-sheet .sheet-tabs .item {
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.rt-sheet .sheet-tabs .item:hover {
+  color: var(--rt-gold-light);
+}
+
+.rt-sheet .sheet-tabs .item.active {
+  color: var(--rt-gold-light);
+  border-bottom-color: var(--rt-gold-light);
+}
+
+/* ---------------------------------------------------------------------------
+   Sheet Body
+   --------------------------------------------------------------------------- */
+.rt-sheet .sheet-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 12px;
+}
+
+.rt-sheet .tab {
+  display: none;
+}
+.rt-sheet .tab.active {
+  display: block;
+}
+
+/* ---------------------------------------------------------------------------
+   Section headings
+   --------------------------------------------------------------------------- */
+.rt-sheet .section-title,
+.rt-sheet .gear-section-header {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--rt-text-gold);
+  border-bottom: 1px solid var(--rt-border-gold);
+  padding-bottom: 2px;
+  margin: 8px 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rt-sheet .gear-section {
+  margin-bottom: 14px;
+}
+
+.rt-sheet .bracket-label {
+  font-size: 10px;
+  font-weight: normal;
+  color: var(--rt-text-faded);
+  font-style: italic;
+  text-transform: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Item lists (shared)
+   --------------------------------------------------------------------------- */
+.rt-sheet .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rt-sheet .item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 5px;
+  border-bottom: 1px solid rgba(93,61,34,0.2);
+  transition: background 0.1s;
+}
+
+.rt-sheet .item:hover {
+  background: rgba(184,136,42,0.07);
+}
+
+.rt-sheet .item-controls {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.rt-sheet .item:hover .item-controls {
+  opacity: 1;
+}
+
+.rt-sheet .item-controls a,
+.rt-sheet .gear-section-header a {
+  color: var(--rt-text-faded);
+  cursor: pointer;
+  font-size: 11px;
+  transition: color 0.15s;
+}
+
+.rt-sheet .item-controls a:hover { color: var(--rt-gold-light); }
+.rt-sheet .item-controls a.item-delete:hover { color: var(--rt-red-bright); }
+.rt-sheet .gear-section-header a:hover { color: var(--rt-gold-light); }
+
+.rt-sheet .empty-list {
+  color: var(--rt-text-faded);
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px;
+}
+
+/* Item header row */
+.rt-sheet .item-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 5px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+  border-bottom: 1px solid var(--rt-border-gold);
+  margin-bottom: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   Skills tab
+   --------------------------------------------------------------------------- */
+.rt-sheet .skills-list .skill-name {
+  flex: 1;
+  font-size: 12px;
+}
+
+.rt-sheet .skill-char {
+  width: 28px;
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--rt-text-faded);
+}
+
+.rt-sheet .skill-level-badge {
+  font-size: 10px;
+  font-weight: bold;
+  width: 32px;
+  text-align: center;
+  border-radius: 3px;
+  padding: 1px 3px;
+  background: rgba(93,61,34,0.3);
+  color: var(--rt-gold);
+}
+
+.rt-sheet .skill-level-badge.level-0 { background: rgba(42,102,48,0.25); color: #5a9a60; }
+.rt-sheet .skill-level-badge.level-1 { background: rgba(184,136,42,0.2); }
+.rt-sheet .skill-level-badge.level-2 { background: rgba(184,136,42,0.35); color: var(--rt-gold-pale); }
+
+.rt-sheet .skill-roll {
+  color: var(--rt-text-faded);
+  cursor: pointer;
+  font-size: 12px;
+  transition: color 0.15s;
+}
+.rt-sheet .skill-roll:hover { color: var(--rt-gold-light); }
+
+/* ---------------------------------------------------------------------------
+   Talents tab
+   --------------------------------------------------------------------------- */
+.rt-sheet .talent-name { flex: 1; font-size: 12px; }
+.rt-sheet .talent-prereq { color: var(--rt-text-faded); font-size: 11px; font-style: italic; }
+
+/* ---------------------------------------------------------------------------
+   Weapon table
+   --------------------------------------------------------------------------- */
+.rt-sheet .weapon-table,
+.rt-sheet .armour-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.rt-sheet .weapon-table th,
+.rt-sheet .armour-table th {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+  border-bottom: 1px solid var(--rt-border-gold);
+  padding: 2px 4px;
+  text-align: left;
+}
+
+.rt-sheet .weapon-table td,
+.rt-sheet .armour-table td {
+  padding: 3px 4px;
+  border-bottom: 1px solid rgba(93,61,34,0.15);
+  vertical-align: middle;
+}
+
+.rt-sheet .weapon-table tr:hover td,
+.rt-sheet .armour-table tr:hover td {
+  background: rgba(184,136,42,0.06);
+}
+
+.rt-sheet .weapon-table .item-controls { opacity: 0; }
+.rt-sheet .weapon-table tr:hover .item-controls { opacity: 1; }
+.rt-sheet .weapon-table .item-controls { display: flex; gap: 4px; }
+
+.rt-sheet .weapon-row.equipped {
+  background: rgba(42,102,48,0.08);
+}
+
+.rt-sheet .small-text {
+  font-size: 10px;
+  color: var(--rt-text-faded);
+}
+
+.rt-sheet .weapon-attack,
+.rt-sheet .weapon-damage {
+  color: var(--rt-text-faded);
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 4px;
+}
+
+.rt-sheet .weapon-attack:hover { color: var(--rt-gold-light); }
+.rt-sheet .weapon-damage:hover { color: var(--rt-red-bright); }
+
+/* ---------------------------------------------------------------------------
+   Wounds / Conditions tab
+   --------------------------------------------------------------------------- */
+.rt-sheet .rt-wounds-tab .condition-section {
+  background: rgba(255,255,255,0.4);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius-lg);
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+.rt-sheet .wounds-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rt-sheet .wounds-current-block,
+.rt-sheet .wounds-max-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.rt-sheet .wounds-current-block label,
+.rt-sheet .wounds-max-block label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--rt-text-faded);
+}
+
+.rt-sheet .wounds-divider {
+  font-size: 24px;
+  color: var(--rt-text-faded);
+  margin-top: 14px;
+}
+
+.rt-sheet .wounds-value,
+.rt-sheet .wounds-max {
+  width: 52px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  background: var(--rt-parchment-dark);
+  border: 2px solid var(--rt-border-gold);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-dark);
+  font-family: inherit;
+  padding: 2px;
+}
+
+/* Wound pip track */
+.rt-sheet .wound-pips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 8px;
+}
+
+.rt-sheet .wound-pip {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--rt-parchment-dark);
+  border: 1px solid var(--rt-border-mid);
+}
+
+.rt-sheet .wound-pip.filled {
+  background: var(--rt-red);
+  border-color: var(--rt-red-bright);
+  box-shadow: 0 0 4px rgba(139,0,0,0.5);
+}
+
+/* Resource stepper */
+.rt-sheet .resource-stepper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rt-sheet .resource-stepper.inline {
+  justify-content: center;
+}
+
+.rt-sheet .resource-stepper input {
+  width: 50px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  background: var(--rt-parchment-dark);
+  border: 1px solid var(--rt-border-gold);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-dark);
+  font-family: inherit;
+  padding: 2px;
+}
+
+.rt-sheet .resource-stepper a {
+  color: var(--rt-text-faded);
+  cursor: pointer;
+  font-size: 13px;
+  transition: color 0.15s;
+}
+
+.rt-sheet .resource-stepper a:hover { color: var(--rt-gold-light); }
+
+/* Fate pips (full size) */
+.rt-sheet .fate-pips-row {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rt-sheet .fate-section .fate-pip {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.rt-sheet .fate-section .fate-numbers {
+  text-align: center;
+  font-size: 13px;
+  color: var(--rt-text-faded);
+  margin-top: 4px;
+}
+
+.rt-sheet .fate-max-input {
+  width: 36px;
+  text-align: center;
+  font-size: 13px;
+  background: var(--rt-parchment-dark);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-dark);
+  font-family: inherit;
+  padding: 1px;
+}
+
+/* Insanity / Corruption bar */
+.rt-sheet .insanity-bar-track,
+.rt-sheet .corruption-bar-track {
+  position: relative;
+  width: 100%;
+  height: 12px;
+  background: var(--rt-parchment-dark);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: 6px;
+  margin-top: 6px;
+  overflow: visible;
+}
+
+.rt-sheet .insanity-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, #4a3060, #7a2090);
+  border-radius: 6px;
+  transition: width 0.3s;
+}
+
+.rt-sheet .corruption-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, #3a2a10, #8b4513);
+  border-radius: 6px;
+  transition: width 0.3s;
+}
+
+.rt-sheet .bracket-marker {
+  position: absolute;
+  top: -14px;
+  font-size: 9px;
+  color: var(--rt-text-faded);
+  transform: translateX(-50%);
+}
+
+/* AP body diagram */
+.rt-sheet .body-diagram {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.rt-sheet .ap-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: var(--rt-parchment-dark);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  padding: 5px;
+}
+
+.rt-sheet .ap-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--rt-text-faded);
+}
+
+.rt-sheet .ap-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--rt-text-dark);
+}
+
+/* ---------------------------------------------------------------------------
+   Biography tab
+   --------------------------------------------------------------------------- */
+.rt-sheet .origin-grid,
+.rt-sheet .personal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+}
+
+.rt-sheet .origin-field,
+.rt-sheet .personal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rt-sheet .origin-field.full-width,
+.rt-sheet .personal-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.rt-sheet .origin-field label,
+.rt-sheet .personal-field label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+}
+
+/* ---------------------------------------------------------------------------
+   Inputs & selects (form elements, sheet body)
+   --------------------------------------------------------------------------- */
+.rt-sheet input[type="text"],
+.rt-sheet input[type="number"],
+.rt-sheet select,
+.rt-sheet textarea {
+  background: var(--rt-parchment-dark);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-dark);
+  font-family: "Book Antiqua", "Palatino Linotype", Georgia, serif;
+  font-size: 12px;
+  padding: 3px 5px;
+  transition: border-color 0.15s;
+}
+
+.rt-sheet input:focus,
+.rt-sheet select:focus,
+.rt-sheet textarea:focus {
+  outline: none;
+  border-color: var(--rt-gold);
+  box-shadow: 0 0 0 2px rgba(184,136,42,0.2);
+}
+
+.rt-sheet textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.rt-sheet .hint {
+  font-size: 10px;
+  color: var(--rt-text-faded);
+  font-style: italic;
+  margin: 2px 0 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Psychic tab
+   --------------------------------------------------------------------------- */
+.rt-sheet .psy-header-block {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.rt-sheet .psy-rating-block,
+.rt-sheet .psy-class-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.rt-sheet .psy-rating-block label,
+.rt-sheet .psy-class-block label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--rt-text-faded);
+}
+
+.rt-sheet .psy-rating-input {
+  width: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.rt-sheet .push-rules-summary {
+  margin-bottom: 8px;
+  padding: 6px 8px;
+  background: rgba(93,61,34,0.15);
+  border-left: 3px solid var(--rt-brown-light);
+  border-radius: 0 var(--rt-radius) var(--rt-radius) 0;
+}
+
+.rt-sheet .power-sustained-badge {
+  font-size: 10px;
+  font-weight: bold;
+  background: rgba(80,60,120,0.3);
+  color: #9988cc;
+  border-radius: 3px;
+  padding: 1px 4px;
+}
+
+/* ---------------------------------------------------------------------------
+   Item sheet
+   --------------------------------------------------------------------------- */
+.rt-sheet.item-sheet {
+  min-height: 300px;
+}
+
+.rt-sheet .item-sheet-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, var(--rt-dark) 0%, var(--rt-dark-mid) 100%);
+  border-bottom: 2px solid var(--rt-gold);
+}
+
+.rt-sheet .item-img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border: 2px solid var(--rt-gold);
+  border-radius: var(--rt-radius);
+  cursor: pointer;
+}
+
+.rt-sheet .item-header-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rt-sheet .item-name {
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--rt-gold-light);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rt-gold);
+  padding: 2px 0;
+  font-family: inherit;
+}
+
+.rt-sheet .item-type-badge {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--rt-gold);
+  opacity: 0.7;
+}
+
+.rt-sheet .item-sheet-body {
+  padding: 10px 12px;
+  overflow-y: auto;
+}
+
+/* Item form grid */
+.rt-sheet .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 14px;
+  margin-bottom: 10px;
+}
+
+.rt-sheet .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.rt-sheet .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.rt-sheet .form-group label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+}
+
+.rt-sheet .form-group input,
+.rt-sheet .form-group select {
+  width: 100%;
+}
+
+/* Rate of Fire fields */
+.rt-sheet .rof-fields {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.rt-sheet .rof-label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: var(--rt-text-dark);
+}
+
+.rt-sheet .rof-label input[type="number"] {
+  width: 38px;
+}
+
+/* Clip fields */
+.rt-sheet .clip-fields {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rt-sheet .clip-fields input {
+  width: 50px;
+  text-align: center;
+}
+
+/* AP location grid */
+.rt-sheet .ap-location-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr;
+  gap: 4px 8px;
+  align-items: center;
+}
+
+.rt-sheet .ap-location-grid label {
+  font-size: 11px;
+  text-transform: none;
+  color: var(--rt-text-dark);
+}
+
+.rt-sheet .ap-location-grid input {
+  width: 50px;
+}
+
+/* Item description */
+.rt-sheet .item-description {
+  border-top: 1px solid var(--rt-border-mid);
+  padding-top: 8px;
+  margin-top: 6px;
+}
+
+.rt-sheet .item-description label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.rt-sheet .editor-wrapper {
+  min-height: 120px;
+}
+
+/* ---------------------------------------------------------------------------
+   NPC sheet specifics
+   --------------------------------------------------------------------------- */
+.npc-header {
+  min-height: auto;
+}
+
+.rt-sheet .npc-meta {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.rt-sheet .npc-meta-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rt-sheet .npc-meta-field label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--rt-gold);
+}
+
+.rt-sheet .fear-input {
+  width: 38px;
+  text-align: center;
+}
+
+.rt-sheet .ap-mini {
+  display: flex;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--rt-text-light);
+}
+
+.rt-sheet .npc-traits-section {
+  margin-top: 10px;
+}
+
+.rt-sheet .npc-traits-section textarea {
+  width: 100%;
+  min-height: 80px;
+}
+
+/* ---------------------------------------------------------------------------
+   Main tab two-column layout
+   --------------------------------------------------------------------------- */
+.rt-sheet .main-tab-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ---------------------------------------------------------------------------
+   Chat Cards
+   --------------------------------------------------------------------------- */
+.rt-chat-card {
+  font-family: "Book Antiqua", "Palatino Linotype", Georgia, serif;
+  background: var(--rt-parchment);
+  border-radius: var(--rt-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--rt-shadow);
+  border: 1px solid var(--rt-border-gold);
+}
+
+.rt-chat-card.success { border-left: 4px solid var(--rt-success); }
+.rt-chat-card.failure { border-left: 4px solid var(--rt-failure); }
+.rt-chat-card.damage-result { border-left: 4px solid var(--rt-red); }
+
+.rt-chat-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  background: var(--rt-dark);
+  border-bottom: 2px solid var(--rt-gold);
+}
+
+.rt-chat-card .card-actor-img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border: 1px solid var(--rt-gold);
+  border-radius: 2px;
+}
+
+.rt-chat-card .card-title-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.rt-chat-card .card-actor-name {
+  font-size: 11px;
+  color: var(--rt-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rt-chat-card .card-test-name {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--rt-text-light);
+}
+
+.rt-chat-card .card-outcome-badge {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.rt-chat-card .badge-success {
+  background: var(--rt-success);
+  color: #cfffcf;
+}
+
+.rt-chat-card .badge-failure {
+  background: var(--rt-failure);
+  color: #ffcfcf;
+}
+
+.rt-chat-card .badge-damage {
+  background: var(--rt-red-dark);
+  color: #ffcfcf;
+}
+
+.rt-chat-card .card-body {
+  padding: 8px 12px;
+}
+
+.rt-chat-card .roll-summary {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 6px 0;
+  flex-wrap: wrap;
+}
+
+.rt-chat-card .roll-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 50px;
+}
+
+.rt-chat-card .roll-cell-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+}
+
+.rt-chat-card .roll-cell-value {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--rt-text-dark);
+  line-height: 1;
+}
+
+.rt-chat-card .roll-number.auto-crit {
+  color: var(--rt-success);
+  text-shadow: 0 0 8px rgba(42,102,48,0.5);
+}
+
+.rt-chat-card .roll-number.auto-fail {
+  color: var(--rt-red-bright);
+  text-shadow: 0 0 8px rgba(139,0,0,0.5);
+}
+
+.rt-chat-card .modifier-display {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.rt-chat-card .modifier-display.mod-positive { color: var(--rt-success); }
+.rt-chat-card .modifier-display.mod-negative { color: var(--rt-red-bright); }
+
+.rt-chat-card .degrees-success { color: var(--rt-success); }
+.rt-chat-card .degrees-failure { color: var(--rt-red-bright); }
+
+.rt-chat-card .special-result {
+  margin-top: 6px;
+  padding: 5px 8px;
+  border-radius: var(--rt-radius);
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rt-chat-card .crit-result {
+  background: rgba(42,102,48,0.15);
+  color: var(--rt-success);
+  border: 1px solid rgba(42,102,48,0.3);
+}
+
+.rt-chat-card .fumble-result {
+  background: rgba(139,0,0,0.12);
+  color: var(--rt-red-bright);
+  border: 1px solid rgba(139,0,0,0.3);
+}
+
+.rt-chat-card .fury-result {
+  background: rgba(204,68,0,0.12);
+  color: var(--rt-fury);
+  border: 1px solid rgba(204,68,0,0.3);
+}
+
+.rt-chat-card .damage-total {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--rt-red-bright);
+}
+
+.rt-chat-card .damage-total.fury-glow {
+  text-shadow: 0 0 12px rgba(204,68,0,0.8);
+  color: var(--rt-fury);
+}
+
+.rt-chat-card .damage-type-badge {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+.rt-chat-card .type-i { background: rgba(60,80,160,0.15); color: #5060cc; }
+.rt-chat-card .type-r { background: rgba(80,160,60,0.15); color: #40a040; }
+.rt-chat-card .type-x { background: rgba(160,80,0,0.15); color: var(--rt-fury); }
+.rt-chat-card .type-e { background: rgba(160,0,0,0.12); color: var(--rt-red-bright); }
+
+.rt-chat-card .damage-formula-line {
+  font-size: 11px;
+  color: var(--rt-text-faded);
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.rt-chat-card .formula-label {
+  margin-right: 4px;
+}
+
+.rt-chat-card .card-flavor {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--rt-text-mid);
+  font-style: italic;
+  border-top: 1px solid rgba(93,61,34,0.2);
+  padding-top: 5px;
+}
+
+/* ---------------------------------------------------------------------------
+   Roll modifier dialog
+   --------------------------------------------------------------------------- */
+.rt-roll-dialog {
+  padding: 10px;
+}
+
+.rt-roll-dialog .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rt-roll-dialog label {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.rt-roll-dialog input {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  padding: 4px;
+  font-weight: bold;
+}
+
+.rt-roll-dialog .hint {
+  font-size: 11px;
+  color: #666;
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------------------------
+   Scrollbar styling (Webkit)
+   --------------------------------------------------------------------------- */
+.rt-sheet .sheet-body::-webkit-scrollbar { width: 6px; }
+.rt-sheet .sheet-body::-webkit-scrollbar-track { background: var(--rt-parchment-dark); }
+.rt-sheet .sheet-body::-webkit-scrollbar-thumb {
+  background: var(--rt-gold);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+/* ---------------------------------------------------------------------------
+   Header action buttons (Spend XP, PF Roll)
+   --------------------------------------------------------------------------- */
+.rt-sheet .pf-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rt-sheet .header-action-btn {
+  background: rgba(184,136,42,0.15);
+  border: 1px solid var(--rt-gold);
+  border-radius: var(--rt-radius);
+  color: var(--rt-gold-light);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 3px 8px;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1.4;
+}
+
+.rt-sheet .header-action-btn:hover {
+  background: rgba(184,136,42,0.35);
+  color: var(--rt-gold-pale);
+}
+
+/* ---------------------------------------------------------------------------
+   XP Dialog
+   --------------------------------------------------------------------------- */
+.rt-xp-dialog {
+  font-family: "Book Antiqua", "Palatino Linotype", Georgia, serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rt-xp-dialog .xp-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--rt-dark);
+  border-bottom: 2px solid var(--rt-gold);
+  flex-wrap: wrap;
+}
+
+.rt-xp-dialog .xp-header-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rt-gold);
+}
+
+.rt-xp-dialog .xp-header-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--rt-text-light);
+  min-width: 40px;
+}
+
+.rt-xp-dialog .xp-tabs {
+  display: flex;
+  gap: 1px;
+  background: var(--rt-brown);
+  border-bottom: 1px solid var(--rt-gold);
+}
+
+.rt-xp-dialog .xp-tab-btn {
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--rt-text-faded);
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s;
+}
+
+.rt-xp-dialog .xp-tab-btn:hover { color: var(--rt-gold-light); }
+.rt-xp-dialog .xp-tab-btn.active {
+  color: var(--rt-gold-light);
+  border-bottom-color: var(--rt-gold-light);
+}
+
+.rt-xp-dialog .xp-tab-body {
+  padding: 10px 12px;
+  min-height: 200px;
+}
+
+.rt-xp-dialog .xp-hint {
+  font-size: 11px;
+  color: var(--rt-text-faded);
+  font-style: italic;
+  margin: 0 0 8px;
+  padding: 5px 8px;
+  border-left: 3px solid var(--rt-brown-light);
+  background: rgba(93,61,34,0.1);
+}
+
+.rt-xp-dialog .xp-char-table,
+.rt-xp-dialog .xp-skill-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.rt-xp-dialog .xp-char-table th,
+.rt-xp-dialog .xp-skill-table th {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+  border-bottom: 1px solid var(--rt-border-gold);
+  padding: 3px 6px;
+  text-align: left;
+}
+
+.rt-xp-dialog .xp-char-table td,
+.rt-xp-dialog .xp-skill-table td {
+  padding: 4px 6px;
+  border-bottom: 1px solid rgba(93,61,34,0.15);
+}
+
+.rt-xp-dialog tr.cant-afford { opacity: 0.5; }
+.rt-xp-dialog tr.maxed { opacity: 0.35; }
+
+.rt-xp-dialog .char-key-cell  { font-weight: bold; }
+.rt-xp-dialog .char-value-cell,
+.rt-xp-dialog .char-advances-cell,
+.rt-xp-dialog .char-cost-cell {
+  text-align: center;
+  color: var(--rt-text-mid);
+}
+
+.rt-xp-dialog .xp-maxed-badge {
+  font-size: 10px;
+  color: var(--rt-text-faded);
+  font-style: italic;
+}
+
+.rt-xp-dialog .char-advance-btn,
+.rt-xp-dialog .skill-advance-btn {
+  background: var(--rt-gold);
+  border: 1px solid var(--rt-gold-pale);
+  border-radius: var(--rt-radius);
+  color: var(--rt-dark);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 10px;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.rt-xp-dialog .char-advance-btn:hover,
+.rt-xp-dialog .skill-advance-btn:hover { background: var(--rt-gold-pale); }
+.rt-xp-dialog .char-advance-btn:disabled,
+.rt-xp-dialog .skill-advance-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.rt-xp-dialog .manual-xp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rt-xp-dialog .manual-xp-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rt-xp-dialog .manual-xp-form label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+}
+
+.rt-xp-dialog .manual-xp-form input {
+  background: var(--rt-parchment-dark);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-dark);
+  font-size: 13px;
+  padding: 4px 8px;
+  font-family: inherit;
+}
+
+.rt-xp-dialog .manual-xp-form button {
+  background: var(--rt-gold);
+  border: none;
+  border-radius: var(--rt-radius);
+  color: var(--rt-dark);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 14px;
+  font-family: inherit;
+  align-self: flex-start;
+}
+
+.rt-xp-dialog .xp-empty {
+  color: var(--rt-text-faded);
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+  padding: 16px;
+}
+
+.rt-xp-dialog .xp-footer {
+  padding: 8px 12px;
+  border-top: 1px solid var(--rt-border-mid);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rt-xp-dialog .xp-footer button {
+  background: transparent;
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-faded);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 4px 12px;
+  font-family: inherit;
+}
+
+/* ---------------------------------------------------------------------------
+   PF Acquisition Dialog (rendered as standard Foundry Dialog)
+   --------------------------------------------------------------------------- */
+.rt-pf-dialog {
+  padding: 6px;
+  font-family: "Book Antiqua", "Palatino Linotype", Georgia, serif;
+}
+
+.rt-pf-dialog .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.rt-pf-dialog label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  font-weight: bold;
+}
+
+.rt-pf-dialog select,
+.rt-pf-dialog input {
+  width: 100%;
+  padding: 4px 6px;
+  font-family: inherit;
+  font-size: 13px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}
+
+.rt-pf-dialog .hint {
+  font-size: 10px;
+  color: #888;
+  font-style: italic;
+  margin: 0;
+}
+
+.rt-pf-dialog .pf-summary {
+  padding: 6px 10px;
+  background: rgba(184,136,42,0.1);
+  border: 1px solid rgba(184,136,42,0.3);
+  border-radius: 3px;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* ---------------------------------------------------------------------------
+   PF chat card extra styles
+   --------------------------------------------------------------------------- */
+.rt-chat-card .pf-modifier-breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--rt-text-faded);
+}
+
+.rt-chat-card .pf-mod-item { display: flex; gap: 2px; }
+.rt-chat-card .mod-positive { color: var(--rt-success); font-weight: bold; }
+.rt-chat-card .mod-negative { color: var(--rt-red-bright); font-weight: bold; }
+
+.rt-chat-card .pf-strain-result {
+  background: rgba(139,69,19,0.15);
+  color: #8b4513;
+  border: 1px solid rgba(139,69,19,0.3);
+}
+
+/* ============================================================================
+   STARSHIP SHEET
+   ============================================================================ */
+
+/* ---------------------------------------------------------------------------
+   Header
+   --------------------------------------------------------------------------- */
+.rt-sheet.starship-sheet .starship-header {
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: auto;
+}
+
+.rt-sheet.starship-sheet .ship-portrait {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.rt-sheet .ship-name {
+  font-size: 18px;
+}
+
+.rt-sheet .ship-class-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rt-sheet .ship-class-field label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--rt-gold);
+}
+
+.rt-sheet .ship-class-field input,
+.rt-sheet .ship-class-field select {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--rt-border-mid);
+  color: var(--rt-text-light);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: var(--rt-radius);
+}
+
+/* ---------------------------------------------------------------------------
+   Core hull stat blocks
+   --------------------------------------------------------------------------- */
+.rt-sheet .ship-stats-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-top: 5px;
+}
+
+.rt-sheet .ship-stat-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.rt-sheet .ship-stat-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rt-gold);
+}
+
+.rt-sheet .ship-stat-input {
+  width: 46px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-light);
+  padding: 1px 3px;
+  font-family: inherit;
+}
+
+.rt-sheet .ship-stat-signed {
+  display: flex;
+  align-items: center;
+  color: var(--rt-gold);
+  font-size: 14px;
+}
+
+/* ---------------------------------------------------------------------------
+   Resource bars (hull integrity, crew pop, morale)
+   --------------------------------------------------------------------------- */
+.rt-sheet .ship-resources-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  align-items: flex-start;
+}
+
+.rt-sheet .ship-resource {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 140px;
+  flex: 1 1 140px;
+}
+
+.rt-sheet .resource-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rt-gold);
+}
+
+.rt-sheet .resource-controls-inline {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.rt-sheet .resource-controls-inline a {
+  color: var(--rt-text-faded);
+  cursor: pointer;
+  font-size: 10px;
+  transition: color 0.15s;
+}
+.rt-sheet .resource-controls-inline a:hover { color: var(--rt-gold-light); }
+
+.rt-sheet .resource-number {
+  width: 38px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-light);
+  padding: 1px 2px;
+  font-family: inherit;
+}
+
+.rt-sheet .resource-number.resource-max {
+  font-size: 12px;
+  font-weight: normal;
+  opacity: 0.7;
+}
+
+.rt-sheet .resource-bar-track {
+  width: 100%;
+  height: 8px;
+  background: var(--rt-parchment-dark);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.rt-sheet .resource-bar-track.large {
+  height: 12px;
+}
+
+.rt-sheet .resource-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.rt-sheet .hull-bar    { background: linear-gradient(to right, var(--rt-red-dark), var(--rt-red-bright)); }
+.rt-sheet .pop-bar     { background: linear-gradient(to right, #2a5020, #4a9040); }
+.rt-sheet .morale-bar  { background: linear-gradient(to right, #203050, #3060a0); }
+
+.rt-sheet .crippled { animation: crippled-pulse 2s ease-in-out infinite; }
+@keyframes crippled-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+.rt-sheet .crippled-badge {
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--rt-red-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ---------------------------------------------------------------------------
+   Void shields
+   --------------------------------------------------------------------------- */
+.rt-sheet .shields-resource { min-width: 110px; }
+
+.rt-sheet .shield-pips {
+  display: flex;
+  gap: 6px;
+  padding: 3px 0;
+}
+
+.rt-sheet .void-shield-pip {
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.15s, filter 0.15s;
+  color: var(--rt-brown-light);
+}
+
+.rt-sheet .void-shield-pip.active {
+  color: #6080ff;
+  filter: drop-shadow(0 0 6px rgba(100, 130, 255, 0.7));
+}
+
+.rt-sheet .shield-max-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--rt-text-faded);
+}
+
+.rt-sheet .shield-max-input {
+  width: 32px;
+  text-align: center;
+  font-size: 11px;
+  padding: 1px 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   Void combat action bar
+   --------------------------------------------------------------------------- */
+.rt-sheet .void-combat-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: var(--rt-dark-mid);
+  border-bottom: 2px solid var(--rt-brown);
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.rt-sheet .vcb-label {
+  font-size: 11px;
+  color: var(--rt-gold);
+  white-space: nowrap;
+}
+
+.rt-sheet .crew-rating-select {
+  font-size: 11px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-light);
+  padding: 2px 4px;
+  font-family: inherit;
+}
+
+.rt-sheet .vcb-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--rt-border-mid);
+  margin: 0 4px;
+}
+
+.rt-sheet .vcb-btn {
+  background: rgba(184,136,42,0.15);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-light);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 3px 10px;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+  line-height: 1.4;
+}
+
+.rt-sheet .vcb-btn:hover {
+  background: rgba(184,136,42,0.3);
+  border-color: var(--rt-gold);
+  color: var(--rt-gold-pale);
+}
+
+/* ---------------------------------------------------------------------------
+   Power & Space budget bars (overview tab)
+   --------------------------------------------------------------------------- */
+.rt-sheet .budget-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.rt-sheet .budget-block {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rt-sheet .budget-label {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rt-gold);
+}
+
+.rt-sheet .budget-bar-track {
+  width: 100%;
+  height: 10px;
+  background: var(--rt-parchment-dark);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.rt-sheet .power-bar { background: linear-gradient(to right, #4a1a00, #cc6600); }
+.rt-sheet .space-bar { background: linear-gradient(to right, #1a3a1a, #3a7a3a); }
+
+.rt-sheet .budget-numbers {
+  font-size: 11px;
+  color: var(--rt-text-faded);
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.rt-sheet .budget-used { font-weight: bold; color: var(--rt-text-dark); }
+.rt-sheet .budget-free { color: var(--rt-text-faded); }
+.rt-sheet .budget-danger .budget-bar-track { border-color: var(--rt-red-bright); }
+.rt-sheet .budget-max-input { width: 42px; text-align: center; font-size: 11px; padding: 1px 3px; }
+.rt-sheet .overload { color: var(--rt-red-bright) !important; font-weight: bold; }
+
+/* ---------------------------------------------------------------------------
+   Ship weapon table (overview and weapons tab)
+   --------------------------------------------------------------------------- */
+.rt-sheet .ship-weapon-table th,
+.rt-sheet .ship-weapon-table td {
+  padding: 3px 5px;
+  font-size: 11px;
+}
+
+.rt-sheet .ship-weapon-table .wt-num    { width: 38px; text-align: center; }
+.rt-sheet .ship-weapon-table .wt-name   { min-width: 120px; }
+.rt-sheet .ship-weapon-table .lance-type { color: #8880cc; font-weight: bold; }
+.rt-sheet .weapon-remove-btn { color: var(--rt-text-faded); cursor: pointer; font-size: 11px; }
+.rt-sheet .weapon-remove-btn:hover { color: var(--rt-red-bright); }
+.rt-sheet .weapon-actions { display: flex; gap: 4px; align-items: center; }
+
+.rt-sheet .wt-name-input  { width: 100%; min-width: 100px; }
+.rt-sheet .wt-dmg-input   { width: 75px; }
+.rt-sheet .wt-qual-input  { width: 100%; }
+.rt-sheet .wt-num         { width: 38px; text-align: center; }
+
+.rt-sheet .weapon-arc-section {
+  margin-bottom: 14px;
+}
+
+/* ---------------------------------------------------------------------------
+   Component table
+   --------------------------------------------------------------------------- */
+.rt-sheet .component-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.rt-sheet .component-table th {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+  border-bottom: 1px solid var(--rt-border-gold);
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.rt-sheet .component-table td {
+  padding: 3px 5px;
+  border-bottom: 1px solid rgba(93,61,34,0.12);
+}
+
+.rt-sheet .ct-slot-label {
+  font-weight: bold;
+  font-size: 11px;
+  color: var(--rt-text-faded);
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.rt-sheet .ct-num        { width: 44px; text-align: center; }
+.rt-sheet .ct-name-input { width: 100%; min-width: 130px; }
+.rt-sheet .ct-notes-input { width: 100%; }
+
+.rt-sheet .supplemental-header a {
+  color: var(--rt-text-faded);
+  cursor: pointer;
+}
+.rt-sheet .supplemental-header a:hover { color: var(--rt-gold-light); }
+
+/* ---------------------------------------------------------------------------
+   Complications
+   --------------------------------------------------------------------------- */
+.rt-sheet .complications-section { margin-top: 14px; }
+
+.rt-sheet .complications-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.rt-sheet .complication-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rt-sheet .complication-block label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+}
+
+.rt-sheet .complication-block input,
+.rt-sheet .complication-block textarea {
+  width: 100%;
+}
+
+.rt-sheet .complication-block textarea {
+  resize: vertical;
+  min-height: 50px;
+}
+
+/* ---------------------------------------------------------------------------
+   Endeavour section
+   --------------------------------------------------------------------------- */
+.rt-sheet .endeavour-section { margin-top: 14px; }
+
+.rt-sheet .endeavour-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.rt-sheet .endeavour-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.rt-sheet .endeavour-field label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--rt-text-faded);
+}
+
+.rt-sheet .ap-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rt-sheet .ap-input {
+  width: 58px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* ---------------------------------------------------------------------------
+   Crew tab extras
+   --------------------------------------------------------------------------- */
+.rt-sheet .crew-rating-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.rt-sheet .crew-rating-select-full {
+  font-size: 13px;
+  padding: 4px 8px;
+}
+
+.rt-sheet .crew-status-section { margin-top: 14px; }
+
+.rt-sheet .crew-status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.rt-sheet .crew-status-block h4 {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-gold);
+  margin: 0 0 5px;
+}
+
+.rt-sheet .crew-max { width: 48px; text-align: center; }
+
+.rt-sheet .crew-reference-section { margin-top: 16px; }
+
+.rt-sheet .voc-reference-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.rt-sheet .voc-reference-table th {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--rt-text-faded);
+  border-bottom: 1px solid var(--rt-border-gold);
+  padding: 3px 6px;
+  text-align: left;
+}
+
+.rt-sheet .voc-reference-table td {
+  padding: 3px 6px;
+  border-bottom: 1px solid rgba(93,61,34,0.12);
+}
+
+/* ---------------------------------------------------------------------------
+   Biography tab (ship)
+   --------------------------------------------------------------------------- */
+.rt-sheet .bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 14px;
+  margin-bottom: 12px;
+}
+
+.rt-sheet .bio-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.rt-sheet .bio-field label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--rt-text-faded);
+}
+
+.rt-sheet .bio-section {
+  margin-top: 10px;
+}
+
+.rt-sheet .ship-hint {
+  font-size: 11px;
+  padding: 5px 8px;
+  border-left: 3px solid var(--rt-brown-light);
+  background: rgba(93,61,34,0.1);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------------------------
+   Starship weapon chat card extras
+   --------------------------------------------------------------------------- */
+.rt-chat-card.starship-weapon-result .card-header {
+  background: linear-gradient(135deg, #0d0b09, #1a1512);
+}
+
+.rt-chat-card .weapon-type-badge {
+  font-size: 10px;
+  font-weight: bold;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.rt-chat-card .macro-badge {
+  background: rgba(184,136,42,0.2);
+  color: var(--rt-gold-light);
+  border: 1px solid rgba(184,136,42,0.4);
+}
+
+.rt-chat-card .lance-badge {
+  background: rgba(100,130,255,0.2);
+  color: #8898ee;
+  border: 1px solid rgba(100,130,255,0.4);
+}
+
+.rt-chat-card .ship-hits {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--rt-fury);
+}
+
+.rt-chat-card .ship-damage-block {
+  margin: 8px 0;
+  padding: 6px 10px;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+}
+
+.rt-chat-card .ship-damage-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--rt-text-faded);
+  margin: 0 0 4px;
+}
+
+.rt-chat-card .ship-damage-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.rt-chat-card .ship-damage-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--rt-red-bright);
+}
+
+.rt-chat-card .ship-damage-note {
+  font-size: 11px;
+  color: var(--rt-text-faded);
+  font-style: italic;
+}
+
+.rt-chat-card .void-shields-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 11px;
+  color: #7788bb;
+  margin: 6px 0;
+  padding: 4px 8px;
+  border: 1px solid rgba(100,120,200,0.3);
+  border-radius: var(--rt-radius);
+  background: rgba(80,100,180,0.07);
+}
+
+.rt-chat-card .crit-ship {
+  background: rgba(80,20,20,0.2);
+  border: 1px solid rgba(180,50,50,0.4);
+  color: var(--rt-red-bright);
+}
+
+.rt-chat-card .armour-note {
+  margin-top: 6px;
+  font-size: 10px;
+}
+
+.rt-chat-card .weapon-stats-footer {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  font-size: 10px;
+  color: var(--rt-text-faded);
+  border-top: 1px solid rgba(93,61,34,0.2);
+  padding-top: 5px;
+  margin-top: 6px;
+}
+
+.rt-chat-card .ws-sep { opacity: 0.4; }
+.rt-chat-card .ws-qual { font-style: italic; }
+
+/* ============================================================================
+   PSYCHIC POWER CHAT CARD
+   ============================================================================ */
+
+.rt-chat-card .psychic-header {
+  background: linear-gradient(135deg, #0d0508, #1a0d1a);
+  border-bottom-color: #7060aa;
+}
+
+.rt-chat-card .strength-badge {
+  font-size: 10px;
+  font-weight: bold;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.rt-chat-card .strength-fettered  { background: rgba(60,80,160,0.25); color: #8898cc; border: 1px solid rgba(80,100,200,0.4); }
+.rt-chat-card .strength-unfettered { background: rgba(100,60,160,0.25); color: #aa88ee; border: 1px solid rgba(130,80,200,0.4); }
+.rt-chat-card .strength-push      { background: rgba(160,40,40,0.25);  color: #ee8888; border: 1px solid rgba(200,60,60,0.4); }
+
+.rt-chat-card .small-stat {
+  font-size: 15px !important;
+}
+
+.rt-chat-card .phenomena-block {
+  margin-top: 8px;
+  border: 1px solid rgba(100,80,160,0.4);
+  border-radius: var(--rt-radius);
+  background: rgba(60,30,80,0.12);
+  overflow: hidden;
+}
+
+.rt-chat-card .phenomena-block.perils-triggered {
+  border-color: rgba(180,40,40,0.5);
+}
+
+.rt-chat-card .phenomena-header,
+.rt-chat-card .perils-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.rt-chat-card .phenomena-header {
+  background: rgba(80,50,120,0.25);
+  color: #bb99ff;
+  border-bottom: 1px solid rgba(100,80,160,0.3);
+}
+
+.rt-chat-card .phenomena-roll {
+  font-weight: normal;
+  opacity: 0.6;
+  margin-left: auto;
+  font-size: 10px;
+}
+
+.rt-chat-card .phenomena-name {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 8px 2px;
+  color: #cc99ff;
+}
+
+.rt-chat-card .phenomena-effect {
+  font-size: 11px;
+  padding: 2px 8px 6px;
+  color: var(--rt-text-mid, #3d2b1a);
+  line-height: 1.5;
+}
+
+.rt-chat-card .perils-block {
+  border-top: 1px solid rgba(180,40,40,0.4);
+  background: rgba(80,20,20,0.15);
+}
+
+.rt-chat-card .perils-header {
+  background: rgba(120,30,30,0.35);
+  color: #ff9090;
+  border-bottom: 1px solid rgba(180,40,40,0.3);
+}
+
+.rt-chat-card .perils-name {
+  color: #ff7070 !important;
+}
+
+/* ============================================================================
+   OPPOSED TEST CHAT CARD
+   ============================================================================ */
+
+.rt-chat-card.opposed-result .opposed-header {
+  background: linear-gradient(135deg, var(--rt-dark, #1a1512), var(--rt-dark-mid, #251f18));
+}
+
+.rt-chat-card .opposed-title {
+  font-size: 14px !important;
+  font-weight: bold;
+}
+
+.rt-chat-card .opposed-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  align-items: start;
+  margin: 6px 0;
+}
+
+.rt-chat-card .opposed-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border-radius: var(--rt-radius);
+  border: 1px solid transparent;
+}
+
+.rt-chat-card .col-winner {
+  border-color: rgba(42,102,48,0.5);
+  background: rgba(42,102,48,0.08);
+}
+
+.rt-chat-card .col-loser {
+  border-color: rgba(139,0,0,0.3);
+  background: rgba(139,0,0,0.05);
+  opacity: 0.75;
+}
+
+.rt-chat-card .opposed-col-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--rt-text-dark, #1a1208);
+}
+
+.rt-chat-card .opposed-portrait {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid var(--rt-border-mid, #5c3d22);
+}
+
+.rt-chat-card .winner-crown {
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+.rt-chat-card .opposed-stat-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rt-chat-card .opposed-stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded, #7a6545);
+}
+
+.rt-chat-card .opposed-stat-value {
+  font-size: 10px;
+  color: var(--rt-text-faded, #7a6545);
+}
+
+.rt-chat-card .opposed-roll-display {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: var(--rt-radius);
+}
+
+.rt-chat-card .opposed-roll-display.roll-success {
+  color: var(--rt-success, #2a6630);
+}
+
+.rt-chat-card .opposed-roll-display.roll-failure {
+  color: var(--rt-failure, #8b0000);
+}
+
+.rt-chat-card .opposed-roll-display.auto-crit {
+  text-shadow: 0 0 8px rgba(42,102,48,0.5);
+}
+
+.rt-chat-card .opposed-roll-display.auto-fail {
+  text-shadow: 0 0 8px rgba(139,0,0,0.5);
+}
+
+.rt-chat-card .opposed-dos {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.rt-chat-card .opposed-mod {
+  font-size: 10px;
+  color: var(--rt-text-faded, #7a6545);
+}
+
+.rt-chat-card .opposed-vs-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--rt-text-faded, #7a6545);
+  padding-top: 32px;
+}
+
+.rt-chat-card .outcome-reason {
+  font-size: 11px;
+  color: var(--rt-text-faded, #7a6545);
+  font-style: italic;
+  border-top: 1px solid rgba(93,61,34,0.2);
+  padding-top: 6px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------------------
+   Psy Rating — header input (always visible, unlocks psychic tab)
+   --------------------------------------------------------------------------- */
+.rt-sheet .header-psy-input {
+  width: 40px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  background: rgba(80,50,120,0.25);
+  border: 1px solid rgba(100,80,160,0.5);
+  border-radius: var(--rt-radius);
+  color: #bb99ff;
+  padding: 1px 3px;
+  font-family: inherit;
+}
+
+.rt-sheet .header-psy-input:focus {
+  outline: none;
+  border-color: #9966ff;
+  box-shadow: 0 0 0 2px rgba(150,100,255,0.2);
+}
+
+/* Psy Rating display in the psychic tab (mirrors the number visually) */
+.rt-sheet .psy-rating-display-tab {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #8459da;
+  background: rgba(80,50,120,0.2);
+  border: 1px solid rgba(100,80,160,0.3);
+  border-radius: var(--rt-radius);
+  padding: 2px 4px;
+}
