@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "build": "rm -rf packs/weapons packs/armour packs/skills packs/talents packs/macros && node utils/build-packs.mjs"
+        
+    },
+    "dependencies": {
+        "@foundryvtt/foundryvtt-cli": "^3.0.0"
+    }
+}

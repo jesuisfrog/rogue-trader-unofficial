@@ -1,0 +1,274 @@
+{
+  "TYPES": {
+    "Actor": {
+      "character": "Explorer",
+      "npc": "NPC",
+      "starship": "Voidship"
+    },
+    "Item": {
+      "weapon": "Weapon",
+      "armour": "Armour",
+      "gear": "Gear",
+      "talent": "Talent",
+      "skill": "Skill",
+      "psychicPower": "Psychic Power",
+      "cybernetic": "Cybernetic"
+    }
+  },
+  "RT": {
+    "SystemName": "Rogue Trader (Unofficial)",
+    "Actor": {
+      "TypeCharacter": "Explorer",
+      "TypeNPC": "NPC",
+      "TypeStarship": "Voidship"
+    },
+    "Characteristics": {
+      "ws": "Weapon Skill",
+      "bs": "Ballistic Skill",
+      "str": "Strength",
+      "t": "Toughness",
+      "ag": "Agility",
+      "int": "Intelligence",
+      "per": "Perception",
+      "wp": "Willpower",
+      "fel": "Fellowship",
+      "wsAbbr": "WS",
+      "bsAbbr": "BS",
+      "strAbbr": "S",
+      "tAbbr": "T",
+      "agAbbr": "Ag",
+      "intAbbr": "Int",
+      "perAbbr": "Per",
+      "wpAbbr": "WP",
+      "felAbbr": "Fel"
+    },
+    "CharacterBio": {
+      "homeWorld": "Home World",
+      "birthright": "Birthright",
+      "lureOfVoid": "Lure of the Void",
+      "trialsAndTravails": "Trials & Travails",
+      "motivation": "Motivation",
+      "career": "Career",
+      "rank": "Rank",
+      "gender": "Gender",
+      "age": "Age",
+      "build": "Build",
+      "complexion": "Complexion",
+      "quirks": "Quirks & Mannerisms",
+      "superstitions": "Superstitions",
+      "piety": "Piety",
+      "mementos": "Mementos"
+    },
+    "HomeWorlds": {
+      "deathWorld": "Death World",
+      "voidBorn": "Void Born",
+      "forgeWorld": "Forge World",
+      "hiveWorld": "Hive World",
+      "imperialWorld": "Imperial World",
+      "nobleBorn": "Noble Born"
+    },
+    "Careers": {
+      "rogueTaTrader": "Rogue Trader",
+      "archMilitant": "Arch-Militant",
+      "astropathTranscendent": "Astropath Transcendent",
+      "explorator": "Explorator",
+      "missionary": "Missionary",
+      "navigator": "Navigator",
+      "seneschal": "Seneschal",
+      "voidmaster": "Void-Master"
+    },
+    "Derived": {
+      "wounds": "Wounds",
+      "fatePoints": "Fate Points",
+      "insanityPoints": "Insanity Points",
+      "corruptionPoints": "Corruption Points",
+      "fatigue": "Fatigue",
+      "movement": "Movement",
+      "half": "Half",
+      "full": "Full",
+      "charge": "Charge",
+      "run": "Run",
+      "initiative": "Initiative",
+      "psyRating": "Psy Rating",
+      "profitFactor": "Profit Factor"
+    },
+    "Experience": {
+      "total": "Total XP",
+      "spent": "Spent XP",
+      "unspent": "Available XP"
+    },
+    "Items": {
+      "TypeWeapon": "Weapon",
+      "TypeArmour": "Armour",
+      "TypeGear": "Gear",
+      "TypeTalent": "Talent",
+      "TypeSkill": "Skill",
+      "TypePsychic": "Psychic Power",
+      "TypeCybernetic": "Cybernetic",
+      "Class": "Class",
+      "Range": "Range",
+      "RateOfFire": "Rate of Fire",
+      "Damage": "Damage",
+      "Penetration": "Penetration",
+      "Clip": "Clip",
+      "Reload": "Reload",
+      "Qualities": "Qualities",
+      "Craftsmanship": "Craftsmanship",
+      "Availability": "Availability",
+      "Weight": "Weight (kg)",
+      "Description": "Description",
+      "Equipped": "Equipped",
+      "WeaponClasses": {
+        "pistol": "Pistol",
+        "basic": "Basic",
+        "heavy": "Heavy",
+        "melee": "Melee",
+        "thrown": "Thrown",
+        "exotic": "Exotic"
+      },
+      "DamageTypes": {
+        "i": "Impact",
+        "r": "Rending",
+        "x": "Explosive",
+        "e": "Energy"
+      },
+      "ArmourTypes": {
+        "none": "None",
+        "primitive": "Primitive",
+        "light": "Light",
+        "heavy": "Heavy",
+        "powered": "Powered"
+      },
+      "Craftsmanships": {
+        "poor": "Poor",
+        "common": "Common",
+        "good": "Good",
+        "best": "Best"
+      },
+      "Availabilities": {
+        "plentiful": "Plentiful",
+        "common": "Common",
+        "average": "Average",
+        "scarce": "Scarce",
+        "rare": "Rare",
+        "veryRare": "Very Rare",
+        "nearUnique": "Near Unique",
+        "unique": "Unique"
+      },
+      "SkillTypes": {
+        "basic": "Basic",
+        "advanced": "Advanced"
+      },
+      "SkillLevels": {
+        "0": "Known",
+        "1": "+10",
+        "2": "+20"
+      },
+      "PsyDisciplines": {
+        "telepathy": "Telepathy",
+        "divination": "Divination",
+        "telekinesis": "Telekinesis",
+        "biomancy": "Biomancy",
+        "pyromancy": "Pyromancy",
+        "sanctic": "Sanctic Daemonology"
+      }
+    },
+    "Chat": {
+      "CharacteristicTest": "Characteristic Test",
+      "SkillTest": "Skill Test",
+      "DamageRoll": "Damage Roll",
+      "Target": "Target",
+      "Roll": "Roll",
+      "Result": "Result",
+      "Success": "Success",
+      "Failure": "Failure",
+      "DegreesSuccess": "Degrees of Success",
+      "DegreesFailure": "Degrees of Failure",
+      "RighteousFury": "Righteous Fury!",
+      "Modifier": "Modifier",
+      "FumbleText": "Automatic failure \u2014 roll of 00",
+      "CritText": "Automatic success \u2014 roll of 01-05"
+    },
+    "Rolls": {
+      "RollCharacteristic": "Roll Characteristic Test",
+      "RollSkill": "Roll Skill Test",
+      "RollDamage": "Roll Damage",
+      "Modifier": "Additional Modifier",
+      "ModifierHint": "Positive = easier, Negative = harder"
+    },
+    "Tabs": {
+      "Main": "Main",
+      "Skills": "Skills",
+      "Talents": "Talents",
+      "Gear": "Gear",
+      "Wounds": "Wounds",
+      "Psychic": "Psychic",
+      "Biography": "Biography",
+      "Notes": "Notes"
+    },
+    "NPC": {
+      "Type": "Type / Classification",
+      "Environment": "Environment",
+      "Fear": "Fear Rating",
+      "Size": "Size",
+      "Traits": "Traits",
+      "Notes": "Notes",
+      "Sizes": {
+        "miniscule": "Miniscule",
+        "puny": "Puny",
+        "scrawny": "Scrawny",
+        "average": "Average",
+        "hulking": "Hulking",
+        "enormous": "Enormous",
+        "massive": "Massive"
+      }
+    },
+    "Starship": {
+      "Hull": {
+        "Speed": "Speed",
+        "Manoeuvrability": "Manoeuvrability",
+        "Detection": "Detection",
+        "Armour": "Armour",
+        "TurretRating": "Turret Rating",
+        "Integrity": "Hull Integrity",
+        "VoidShields": "Void Shields",
+        "Power": "Power",
+        "Space": "Hull Space",
+        "ShipPoints": "Ship Points"
+      },
+      "Crew": {
+        "Population": "Crew Population",
+        "Morale": "Morale",
+        "Rating": "Crew Rating",
+        "Incompetent": "Incompetent (20%)",
+        "Competent": "Competent (30%)",
+        "Crack": "Crack (40%)",
+        "Veteran": "Veteran (50%)",
+        "Elite": "Elite (60%)"
+      },
+      "Weapons": {
+        "Macrobattery": "Macrobattery",
+        "Lance": "Lance",
+        "Strength": "Strength",
+        "Damage": "Damage",
+        "CritRating": "Crit Rating",
+        "Range": "Range (VU)",
+        "Arcs": {
+          "prow": "Prow",
+          "dorsal": "Dorsal",
+          "port": "Port",
+          "starboard": "Starboard",
+          "keel": "Keel",
+          "aft": "Aft"
+        }
+      },
+      "Combat": {
+        "Fire": "Fire Weapons",
+        "Pilot": "Pilot (Space Craft)",
+        "Augury": "Augury / Scan",
+        "TechUse": "Tech-Use",
+        "Command": "Command"
+      }
+    }
+  }
+}

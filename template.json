@@ -1,0 +1,396 @@
+{
+  "Actor": {
+    "types": [
+      "character",
+      "npc",
+      "starship"
+    ],
+    "character": {
+      "biography": {
+        "homeWorld": "",
+        "birthright": "",
+        "lureOfVoid": "",
+        "trialsAndTravails": "",
+        "motivation": "",
+        "career": "",
+        "rank": 1,
+        "gender": "",
+        "age": "",
+        "build": "",
+        "complexion": "",
+        "quirks": "",
+        "superstitions": "",
+        "piety": "",
+        "mementos": ""
+      },
+      "experience": {
+        "total": 5000,
+        "spent": 5000,
+        "unspent": 0
+      },
+      "characteristics": {
+        "ws": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "bs": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "str": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "t": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "ag": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "int": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "per": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "wp": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "fel": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        }
+      },
+      "wounds": {
+        "value": 10,
+        "max": 10
+      },
+      "fate": {
+        "value": 3,
+        "max": 3
+      },
+      "insanity": {
+        "value": 0
+      },
+      "corruption": {
+        "value": 0
+      },
+      "fatigue": {
+        "value": 0
+      },
+      "movement": {
+        "half": 3,
+        "full": 6,
+        "charge": 9,
+        "run": 18
+      },
+      "psy": {
+        "rating": 0,
+        "class": "none"
+      },
+      "profitFactor": {
+        "total": 40
+      },
+      "initiative": {
+        "value": 0
+      }
+    },
+    "npc": {
+      "biography": {
+        "type": "",
+        "environment": "",
+        "notes": ""
+      },
+      "characteristics": {
+        "ws": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "bs": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "str": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "t": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "ag": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "int": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "per": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "wp": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        },
+        "fel": {
+          "base": 25,
+          "advances": 0,
+          "modifier": 0
+        }
+      },
+      "wounds": {
+        "value": 10,
+        "max": 10
+      },
+      "armourPoints": {
+        "all": 0,
+        "head": 0,
+        "body": 0,
+        "arms": 0,
+        "legs": 0
+      },
+      "movement": {
+        "half": 3,
+        "full": 6,
+        "charge": 9,
+        "run": 18
+      },
+      "size": "average",
+      "fear": 0,
+      "traits": "",
+      "initiative": {
+        "value": 0
+      }
+    },
+    "starship": {
+      "biography": {
+        "shipClass": "",
+        "hullType": "frigate",
+        "dimensions": "",
+        "mass": "",
+        "crew": "",
+        "accel": "",
+        "history": "",
+        "machineSpirit": "",
+        "notes": ""
+      },
+      "hull": {
+        "integrity": {
+          "value": 35,
+          "max": 35
+        },
+        "armour": 18,
+        "speed": 8,
+        "manoeuvrability": 20,
+        "detection": 15,
+        "turretRating": 1,
+        "voidShields": {
+          "value": 1,
+          "max": 1
+        },
+        "spaceCurrent": 10,
+        "spaceTotal": 40,
+        "powerCurrent": 10,
+        "powerTotal": 45,
+        "shipPoints": 40
+      },
+      "crew": {
+        "population": {
+          "value": 100,
+          "max": 100
+        },
+        "morale": {
+          "value": 100,
+          "max": 100
+        },
+        "rating": "competent",
+        "ratingValue": 30
+      },
+      "complications": {
+        "machineSpirit": {
+          "name": "",
+          "description": ""
+        },
+        "pastHistory": {
+          "name": "",
+          "description": ""
+        }
+      },
+      "components": {
+        "plasmaDrive": {
+          "name": "",
+          "power": 0,
+          "space": 0,
+          "notes": ""
+        },
+        "warpEngine": {
+          "name": "",
+          "power": 0,
+          "space": 0,
+          "notes": ""
+        },
+        "gellarField": {
+          "name": "",
+          "power": 0,
+          "space": 0,
+          "notes": ""
+        },
+        "voidShieldArray": {
+          "name": "",
+          "power": 0,
+          "space": 0,
+          "notes": ""
+        },
+        "bridge": {
+          "name": "",
+          "power": 0,
+          "space": 0,
+          "notes": ""
+        },
+        "lifeSustainer": {
+          "name": "",
+          "power": 0,
+          "space": 0,
+          "notes": ""
+        },
+        "crewQuarters": {
+          "name": "",
+          "power": 0,
+          "space": 0,
+          "notes": ""
+        },
+        "augerArray": {
+          "name": "",
+          "power": 0,
+          "space": 0,
+          "notes": ""
+        }
+      },
+      "supplementalComponents": [],
+      "weapons": {
+        "prow": [],
+        "dorsal": [],
+        "port": [],
+        "starboard": [],
+        "keel": [],
+        "aft": []
+      },
+      "endeavour": {
+        "name": "",
+        "objective": "",
+        "achievementPoints": {
+          "value": 0,
+          "max": 0
+        }
+      }
+    }
+  },
+  "Item": {
+    "types": [
+      "weapon",
+      "armour",
+      "gear",
+      "talent",
+      "skill",
+      "psychicPower",
+      "cybernetic"
+    ],
+    "weapon": {
+      "class": "basic",
+      "range": "",
+      "rateOfFire": {
+        "single": true,
+        "semi": 0,
+        "auto": 0
+      },
+      "damage": {
+        "formula": "1d10",
+        "type": "i",
+        "special": ""
+      },
+      "penetration": 0,
+      "clip": {
+        "value": 0,
+        "max": 0
+      },
+      "reload": "full",
+      "qualities": "",
+      "craftsmanship": "common",
+      "availability": "common",
+      "weight": 0,
+      "description": "",
+      "equipped": false
+    },
+    "armour": {
+      "type": "light",
+      "ap": {
+        "head": 0,
+        "body": 0,
+        "arms": 0,
+        "legs": 0
+      },
+      "maxAg": 0,
+      "qualities": "",
+      "craftsmanship": "common",
+      "availability": "common",
+      "weight": 0,
+      "description": "",
+      "equipped": false
+    },
+    "gear": {
+      "quantity": 1,
+      "weight": 0,
+      "craftsmanship": "common",
+      "availability": "common",
+      "description": ""
+    },
+    "talent": {
+      "prerequisites": "",
+      "source": "",
+      "description": ""
+    },
+    "skill": {
+      "characteristic": "int",
+      "type": "basic",
+      "level": 0,
+      "description": ""
+    },
+    "psychicPower": {
+      "discipline": "telepathy",
+      "psyRating": 1,
+      "action": "half",
+      "range": "5m",
+      "sustained": false,
+      "description": ""
+    },
+    "cybernetic": {
+      "type": "limb",
+      "craftsmanship": "common",
+      "description": ""
+    }
+  }
+}

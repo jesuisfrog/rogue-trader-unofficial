@@ -1,0 +1,69 @@
+{
+  "id": "rogue-trader-unofficial",
+  "title": "Warhammer 40,000: Rogue Trader (Unofficial)",
+  "description": "An unofficial Foundry VTT implementation of the Warhammer 40,000: Rogue Trader roleplaying game by Fantasy Flight Games.",
+  "version": "0.3.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13.351"
+  },
+  "esmodules": [
+    "scripts/rogue-trader.js"
+  ],
+  "styles": [
+    "styles/rogue-trader.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "weapons",
+      "label": "RT: Weapons",
+      "path": "packs/weapons",
+      "type": "Item",
+      "system": "rogue-trader-unofficial"
+    },
+    {
+      "name": "armour",
+      "label": "RT: Armour",
+      "path": "packs/armour",
+      "type": "Item",
+      "system": "rogue-trader-unofficial"
+    },
+    {
+      "name": "skills",
+      "label": "RT: Skills",
+      "path": "packs/skills",
+      "type": "Item",
+      "system": "rogue-trader-unofficial"
+    },
+    {
+      "name": "talents",
+      "label": "RT: Talents",
+      "path": "packs/talents",
+      "type": "Item",
+      "system": "rogue-trader-unofficial"
+    },
+    {
+      "name": "macros",
+      "label": "RT: Macros",
+      "path": "packs/macros",
+      "type": "Macro",
+      "system": "rogue-trader-unofficial"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Community"
+    }
+  ],
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "primaryType": "Actor"
+}
