@@ -1,22 +1,21 @@
-{{!-- templates/actors/starship-sheet.hbs --}}
-<form class="rt-sheet starship-sheet" autocomplete="off">
+{{!-- templates/actors/voidship-sheet.hbs --}}
+<form class="rt-sheet voidship-sheet" autocomplete="off">
 
   {{!-- ══════════════ HEADER ══════════════ --}}
-  <header class="sheet-header starship-header">
+  <header class="sheet-header voidship-header">
 
     <div class="portrait-block">
-      <img class="actor-portrait ship-portrait" src="{{actor.img}}" alt="{{actor.name}}"
-           data-edit="img" title="Change vessel image" />
+      <img class="actor-portrait ship-portrait" src="{{actor.img}}" alt="{{actor.name}}" data-edit="img"
+        title="Change vessel image" />
     </div>
 
     <div class="header-main">
       <div class="header-top-row">
-        <input class="actor-name ship-name" type="text" name="name"
-               value="{{actor.name}}" placeholder="Vessel Name" />
+        <input class="actor-name ship-name" type="text" name="name" value="{{actor.name}}" placeholder="Vessel Name" />
         <div class="ship-class-field">
           <label>Class</label>
-          <input type="text" name="system.biography.shipClass"
-                 value="{{system.biography.shipClass}}" placeholder="e.g. Sword-class Frigate" />
+          <input type="text" name="system.biography.shipClass" value="{{system.biography.shipClass}}"
+            placeholder="e.g. Sword-class Frigate" />
         </div>
         <div class="ship-class-field">
           <label>Hull Type</label>
@@ -40,14 +39,16 @@
           <span class="ship-stat-label">Manoeuvrability</span>
           <div class="ship-stat-signed">
             <span>+</span>
-            <input type="number" name="system.hull.manoeuvrability" value="{{system.hull.manoeuvrability}}" class="ship-stat-input" />
+            <input type="number" name="system.hull.manoeuvrability" value="{{system.hull.manoeuvrability}}"
+              class="ship-stat-input" />
           </div>
         </div>
         <div class="ship-stat-block">
           <span class="ship-stat-label">Detection</span>
           <div class="ship-stat-signed">
             <span>+</span>
-            <input type="number" name="system.hull.detection" value="{{system.hull.detection}}" class="ship-stat-input" />
+            <input type="number" name="system.hull.detection" value="{{system.hull.detection}}"
+              class="ship-stat-input" />
           </div>
         </div>
         <div class="ship-stat-block">
@@ -56,11 +57,13 @@
         </div>
         <div class="ship-stat-block">
           <span class="ship-stat-label">Turret Rating</span>
-          <input type="number" name="system.hull.turretRating" value="{{system.hull.turretRating}}" class="ship-stat-input" min="0" max="5" />
+          <input type="number" name="system.hull.turretRating" value="{{system.hull.turretRating}}"
+            class="ship-stat-input" min="0" max="5" />
         </div>
         <div class="ship-stat-block">
           <span class="ship-stat-label">Ship Points</span>
-          <input type="number" name="system.hull.shipPoints" value="{{system.hull.shipPoints}}" class="ship-stat-input" />
+          <input type="number" name="system.hull.shipPoints" value="{{system.hull.shipPoints}}"
+            class="ship-stat-input" />
         </div>
       </div>
 
@@ -74,11 +77,11 @@
             <a class="resource-control" data-action="decrease" data-field="hull.integrity.value">
               <i class="fa-solid fa-minus"></i>
             </a>
-            <input type="number" name="system.hull.integrity.value"
-                   value="{{system.hull.integrity.value}}" min="0" class="resource-number" />
+            <input type="number" name="system.hull.integrity.value" value="{{system.hull.integrity.value}}" min="0"
+              class="resource-number" />
             <span>/</span>
-            <input type="number" name="system.hull.integrity.max"
-                   value="{{system.hull.integrity.max}}" min="1" class="resource-number resource-max" />
+            <input type="number" name="system.hull.integrity.max" value="{{system.hull.integrity.max}}" min="1"
+              class="resource-number resource-max" />
             <a class="resource-control" data-action="increase" data-field="hull.integrity.value">
               <i class="fa-solid fa-plus"></i>
             </a>
@@ -97,15 +100,16 @@
           <div class="shield-pips">
             {{#each (range system.hull.voidShields.max)}}
             <span class="void-shield-pip {{#if (lt this ../system.hull.voidShields.value)}}active{{/if}}"
-                  data-index="{{this}}" title="{{#if (lt this ../system.hull.voidShields.value)}}Shield Active{{else}}Shield Down{{/if}}">
+              data-index="{{this}}"
+              title="{{#if (lt this ../system.hull.voidShields.value)}}Shield Active{{else}}Shield Down{{/if}}">
               <i class="fa-solid fa-shield"></i>
             </span>
             {{/each}}
           </div>
           <div class="shield-max-row">
             <label>Max:</label>
-            <input type="number" name="system.hull.voidShields.max"
-                   value="{{system.hull.voidShields.max}}" min="0" max="3" class="shield-max-input" />
+            <input type="number" name="system.hull.voidShields.max" value="{{system.hull.voidShields.max}}" min="0"
+              max="3" class="shield-max-input" />
           </div>
         </div>
 
@@ -116,11 +120,11 @@
             <a class="resource-control" data-action="decrease" data-field="crew.population.value">
               <i class="fa-solid fa-minus"></i>
             </a>
-            <input type="number" name="system.crew.population.value"
-                   value="{{system.crew.population.value}}" min="0" class="resource-number" />
+            <input type="number" name="system.crew.population.value" value="{{system.crew.population.value}}" min="0"
+              class="resource-number" />
             <span>/</span>
-            <input type="number" name="system.crew.population.max"
-                   value="{{system.crew.population.max}}" min="1" class="resource-number resource-max" />
+            <input type="number" name="system.crew.population.max" value="{{system.crew.population.max}}" min="1"
+              class="resource-number resource-max" />
             <a class="resource-control" data-action="increase" data-field="crew.population.value">
               <i class="fa-solid fa-plus"></i>
             </a>
@@ -137,11 +141,11 @@
             <a class="resource-control" data-action="decrease" data-field="crew.morale.value">
               <i class="fa-solid fa-minus"></i>
             </a>
-            <input type="number" name="system.crew.morale.value"
-                   value="{{system.crew.morale.value}}" min="0" class="resource-number" />
+            <input type="number" name="system.crew.morale.value" value="{{system.crew.morale.value}}" min="0"
+              class="resource-number" />
             <span>/</span>
-            <input type="number" name="system.crew.morale.max"
-                   value="{{system.crew.morale.max}}" min="1" class="resource-number resource-max" />
+            <input type="number" name="system.crew.morale.max" value="{{system.crew.morale.max}}" min="1"
+              class="resource-number resource-max" />
             <a class="resource-control" data-action="increase" data-field="crew.morale.value">
               <i class="fa-solid fa-plus"></i>
             </a>
@@ -164,16 +168,16 @@
       {{/each}}
     </select>
     <div class="vcb-divider"></div>
-    <button type="button" data-action="roll-bs"      class="vcb-btn" title="Ballistic Skill — fire weapons">
+    <button type="button" data-action="roll-bs" class="vcb-btn" title="Ballistic Skill — fire weapons">
       <i class="fa-solid fa-crosshairs"></i> Fire
     </button>
-    <button type="button" data-action="roll-pilot"   class="vcb-btn" title="Pilot (Space Craft) + Manoeuvrability">
+    <button type="button" data-action="roll-pilot" class="vcb-btn" title="Pilot (Space Craft) + Manoeuvrability">
       <i class="fa-solid fa-ship"></i> Pilot
     </button>
-    <button type="button" data-action="roll-augury"  class="vcb-btn" title="Scrutiny + Detection — augury scan">
+    <button type="button" data-action="roll-augury" class="vcb-btn" title="Scrutiny + Detection — augury scan">
       <i class="fa-solid fa-satellite-dish"></i> Augury
     </button>
-    <button type="button" data-action="roll-tech"    class="vcb-btn" title="Tech-Use — repairs &amp; flank speed">
+    <button type="button" data-action="roll-tech" class="vcb-btn" title="Tech-Use — repairs &amp; flank speed">
       <i class="fa-solid fa-wrench"></i> Tech
     </button>
     <button type="button" data-action="roll-command" class="vcb-btn" title="Command — boarding actions">
@@ -194,27 +198,27 @@
 
     {{!-- ═══ OVERVIEW TAB ═══ --}}
     <div class="tab" data-group="primary" data-tab="overview">
-      {{> "systems/rogue-trader-unofficial/templates/actors/partials/starship-overview.hbs"}}
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/voidship-overview.hbs"}}
     </div>
 
     {{!-- ═══ WEAPONS TAB ═══ --}}
     <div class="tab" data-group="primary" data-tab="weapons">
-      {{> "systems/rogue-trader-unofficial/templates/actors/partials/starship-weapons.hbs"}}
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/voidship-weapons.hbs"}}
     </div>
 
     {{!-- ═══ COMPONENTS TAB ═══ --}}
     <div class="tab" data-group="primary" data-tab="components">
-      {{> "systems/rogue-trader-unofficial/templates/actors/partials/starship-components.hbs"}}
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/voidship-components.hbs"}}
     </div>
 
     {{!-- ═══ CREW TAB ═══ --}}
     <div class="tab" data-group="primary" data-tab="crew">
-      {{> "systems/rogue-trader-unofficial/templates/actors/partials/starship-crew.hbs"}}
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/voidship-crew.hbs"}}
     </div>
 
     {{!-- ═══ BIOGRAPHY TAB ═══ --}}
     <div class="tab" data-group="primary" data-tab="biography">
-      {{> "systems/rogue-trader-unofficial/templates/actors/partials/starship-biography.hbs"}}
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/voidship-biography.hbs"}}
     </div>
 
   </section>

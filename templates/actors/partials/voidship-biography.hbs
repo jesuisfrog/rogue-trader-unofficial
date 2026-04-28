@@ -1,34 +1,30 @@
-{{!-- partials/starship-biography.hbs --}}
-<div class="starship-biography-tab">
+{{!-- partials/voidship-biography.hbs --}}
+<div class="voidship-biography-tab">
 
   <div class="bio-grid">
 
     <div class="bio-field">
       <label>Dimensions</label>
-      <input type="text" name="system.biography.dimensions"
-             value="{{system.biography.dimensions}}"
-             placeholder="e.g. 1.6 km long, 0.3 km abeam" />
+      <input type="text" name="system.biography.dimensions" value="{{system.biography.dimensions}}"
+        placeholder="e.g. 1.6 km long, 0.3 km abeam" />
     </div>
 
     <div class="bio-field">
       <label>Mass</label>
-      <input type="text" name="system.biography.mass"
-             value="{{system.biography.mass}}"
-             placeholder="e.g. 6 megatonnes approx." />
+      <input type="text" name="system.biography.mass" value="{{system.biography.mass}}"
+        placeholder="e.g. 6 megatonnes approx." />
     </div>
 
     <div class="bio-field">
       <label>Crew Complement</label>
-      <input type="text" name="system.biography.crew"
-             value="{{system.biography.crew}}"
-             placeholder="e.g. 26,000 crew, approx." />
+      <input type="text" name="system.biography.crew" value="{{system.biography.crew}}"
+        placeholder="e.g. 26,000 crew, approx." />
     </div>
 
     <div class="bio-field">
       <label>Acceleration</label>
-      <input type="text" name="system.biography.accel"
-             value="{{system.biography.accel}}"
-             placeholder="e.g. 4.5 gravities max sustainable" />
+      <input type="text" name="system.biography.accel" value="{{system.biography.accel}}"
+        placeholder="e.g. 4.5 gravities max sustainable" />
     </div>
 
   </div>
@@ -37,7 +33,7 @@
     <label class="section-title">Ship History</label>
     <div class="editor-wrapper">
       {{editor system.biography.history target="system.biography.history"
-               button=true owner=owner editable=editable}}
+      button=true owner=owner editable=editable}}
     </div>
   </div>
 
@@ -45,7 +41,7 @@
     <label class="section-title">Machine Spirit Notes</label>
     <div class="editor-wrapper">
       {{editor system.biography.machineSpirit target="system.biography.machineSpirit"
-               button=true owner=owner editable=editable}}
+      button=true owner=owner editable=editable}}
     </div>
   </div>
 
@@ -53,7 +49,7 @@
     <label class="section-title">Additional Notes</label>
     <div class="editor-wrapper">
       {{editor system.biography.notes target="system.biography.notes"
-               button=true owner=owner editable=editable}}
+      button=true owner=owner editable=editable}}
     </div>
   </div>
 

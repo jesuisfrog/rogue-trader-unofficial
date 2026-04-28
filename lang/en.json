@@ -3,7 +3,7 @@
     "Actor": {
       "character": "Explorer",
       "npc": "NPC",
-      "starship": "Voidship"
+      "voidship": "Voidship"
     },
     "Item": {
       "weapon": "Weapon",
@@ -20,7 +20,7 @@
     "Actor": {
       "TypeCharacter": "Explorer",
       "TypeNPC": "NPC",
-      "TypeStarship": "Voidship"
+      "TypeVoidship": "Voidship"
     },
     "Characteristics": {
       "ws": "Weapon Skill",
@@ -223,7 +223,7 @@
         "massive": "Massive"
       }
     },
-    "Starship": {
+    "Voidship": {
       "Hull": {
         "Speed": "Speed",
         "Manoeuvrability": "Manoeuvrability",

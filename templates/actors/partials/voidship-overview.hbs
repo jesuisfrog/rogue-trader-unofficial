@@ -1,5 +1,5 @@
-{{!-- partials/starship-overview.hbs --}}
-<div class="starship-overview">
+{{!-- partials/voidship-overview.hbs --}}
+<div class="voidship-overview">
 
   {{!-- Power & Space budget --}}
   <div class="budget-row">
@@ -7,14 +7,14 @@
       <span class="budget-label">Power</span>
       <div class="budget-bar-track">
         <div class="budget-bar power-bar"
-             style="width: {{#if system.hull.powerCurrent}}{{min (divide (multiply powerUsed 100) system.hull.powerCurrent) 100}}{{else}}0{{/if}}%">
+          style="width: {{#if system.hull.powerCurrent}}{{min (divide (multiply powerUsed 100) system.hull.powerCurrent) 100}}{{else}}0{{/if}}%">
         </div>
       </div>
       <span class="budget-numbers">
         <span class="budget-used {{#if powerOverload}}overload{{/if}}">{{powerUsed}}</span>
         /
         <input type="number" name="system.hull.powerCurrent" value="{{system.hull.powerCurrent}}"
-               class="budget-max-input" title="Power Generated" />
+          class="budget-max-input" title="Power Generated" />
         generated
         <span class="budget-free {{#if powerOverload}}overload{{/if}}">
           ({{powerFree}} {{#if powerOverload}}OVERLOADED{{else}}free{{/if}})
@@ -25,14 +25,14 @@
       <span class="budget-label">Space</span>
       <div class="budget-bar-track">
         <div class="budget-bar space-bar"
-             style="width: {{#if system.hull.spaceTotal}}{{min (divide (multiply spaceUsed 100) system.hull.spaceTotal) 100}}{{else}}0{{/if}}%">
+          style="width: {{#if system.hull.spaceTotal}}{{min (divide (multiply spaceUsed 100) system.hull.spaceTotal) 100}}{{else}}0{{/if}}%">
         </div>
       </div>
       <span class="budget-numbers">
         <span class="budget-used">{{spaceUsed}}</span>
         /
-        <input type="number" name="system.hull.spaceTotal" value="{{system.hull.spaceTotal}}"
-               class="budget-max-input" title="Hull Space" />
+        <input type="number" name="system.hull.spaceTotal" value="{{system.hull.spaceTotal}}" class="budget-max-input"
+          title="Hull Space" />
         spaces
         <span class="budget-free">({{spaceFree}} free)</span>
       </span>
@@ -69,9 +69,8 @@
           <td>{{w.critRating}}</td>
           <td>{{w.range}} VU</td>
           <td>
-            <button type="button" class="weapon-fire-btn vcb-btn"
-                    data-arc="{{w.arc}}" data-index="{{w.index}}"
-                    title="Fire {{w.name}}">
+            <button type="button" class="weapon-fire-btn vcb-btn" data-arc="{{w.arc}}" data-index="{{w.index}}"
+              title="Fire {{w.name}}">
               <i class="fa-solid fa-crosshairs"></i>
             </button>
           </td>
@@ -91,18 +90,16 @@
       <div class="complication-block">
         <label>Machine Spirit Oddity</label>
         <input type="text" name="system.complications.machineSpirit.name"
-               value="{{system.complications.machineSpirit.name}}"
-               placeholder="e.g. Wrothful, Ancient and Wise" />
-        <textarea name="system.complications.machineSpirit.description"
-                  rows="2" placeholder="Effects and description…">{{system.complications.machineSpirit.description}}</textarea>
+          value="{{system.complications.machineSpirit.name}}" placeholder="e.g. Wrothful, Ancient and Wise" />
+        <textarea name="system.complications.machineSpirit.description" rows="2"
+          placeholder="Effects and description…">{{system.complications.machineSpirit.description}}</textarea>
       </div>
       <div class="complication-block">
         <label>Past History</label>
         <input type="text" name="system.complications.pastHistory.name"
-               value="{{system.complications.pastHistory.name}}"
-               placeholder="e.g. Wrested from a Space Hulk" />
-        <textarea name="system.complications.pastHistory.description"
-                  rows="2" placeholder="Effects and description…">{{system.complications.pastHistory.description}}</textarea>
+          value="{{system.complications.pastHistory.name}}" placeholder="e.g. Wrested from a Space Hulk" />
+        <textarea name="system.complications.pastHistory.description" rows="2"
+          placeholder="Effects and description…">{{system.complications.pastHistory.description}}</textarea>
       </div>
     </div>
   </div>
@@ -113,22 +110,22 @@
     <div class="endeavour-grid">
       <div class="endeavour-field">
         <label>Endeavour Name</label>
-        <input type="text" name="system.endeavour.name"
-               value="{{system.endeavour.name}}" placeholder="Name of this Endeavour" />
+        <input type="text" name="system.endeavour.name" value="{{system.endeavour.name}}"
+          placeholder="Name of this Endeavour" />
       </div>
       <div class="endeavour-field">
         <label>Objective</label>
-        <input type="text" name="system.endeavour.objective"
-               value="{{system.endeavour.objective}}" placeholder="e.g. Trade, Exploration, Military" />
+        <input type="text" name="system.endeavour.objective" value="{{system.endeavour.objective}}"
+          placeholder="e.g. Trade, Exploration, Military" />
       </div>
       <div class="endeavour-field">
         <label>Achievement Points</label>
         <div class="ap-row">
           <input type="number" name="system.endeavour.achievementPoints.value"
-                 value="{{system.endeavour.achievementPoints.value}}" min="0" class="ap-input" />
+            value="{{system.endeavour.achievementPoints.value}}" min="0" class="ap-input" />
           <span>/</span>
           <input type="number" name="system.endeavour.achievementPoints.max"
-                 value="{{system.endeavour.achievementPoints.max}}" min="0" class="ap-input" />
+            value="{{system.endeavour.achievementPoints.max}}" min="0" class="ap-input" />
         </div>
       </div>
     </div>

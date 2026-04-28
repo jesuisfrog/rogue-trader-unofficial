@@ -3,7 +3,7 @@
     "types": [
       "character",
       "npc",
-      "starship"
+      "voidship"
     ],
     "character": {
       "biography": {
@@ -186,7 +186,7 @@
         "value": 0
       }
     },
-    "starship": {
+    "voidship": {
       "biography": {
         "shipClass": "",
         "hullType": "frigate",

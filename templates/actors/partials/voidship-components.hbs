@@ -1,5 +1,5 @@
-{{!-- partials/starship-components.hbs --}}
-<div class="starship-components-tab">
+{{!-- partials/voidship-components.hbs --}}
+<div class="voidship-components-tab">
 
   {{!-- ── Essential Components ─────────────────────────────────────────────── --}}
   <h3 class="section-title">Essential Components</h3>
@@ -23,21 +23,19 @@
       <tr class="component-row" data-slot="{{key}}">
         <td class="ct-slot-label">{{capitalize key}}</td>
         <td>
-          <input type="text" name="system.components.{{key}}.name"
-                 value="{{comp.name}}" placeholder="Component name" class="ct-name-input" />
+          <input type="text" name="system.components.{{key}}.name" value="{{comp.name}}" placeholder="Component name"
+            class="ct-name-input" />
         </td>
         <td>
-          <input type="number" name="system.components.{{key}}.power"
-                 value="{{comp.power}}" class="ct-num"
-                 title="{{#if (eq key 'plasmaDrive')}}Power Generated{{else}}Power Consumed{{/if}}" />
+          <input type="number" name="system.components.{{key}}.power" value="{{comp.power}}" class="ct-num"
+            title="{{#if (eq key 'plasmaDrive')}}Power Generated{{else}}Power Consumed{{/if}}" />
         </td>
         <td>
-          <input type="number" name="system.components.{{key}}.space"
-                 value="{{comp.space}}" class="ct-num" />
+          <input type="number" name="system.components.{{key}}.space" value="{{comp.space}}" class="ct-num" />
         </td>
         <td>
-          <input type="text" name="system.components.{{key}}.notes"
-                 value="{{comp.notes}}" placeholder="Special rules or effects" class="ct-notes-input" />
+          <input type="text" name="system.components.{{key}}.notes" value="{{comp.notes}}"
+            placeholder="Special rules or effects" class="ct-notes-input" />
         </td>
       </tr>
       {{/each}}
@@ -71,29 +69,23 @@
       {{#each supplementalComponents as |comp i|}}
       <tr class="component-row">
         <td>
-          <input type="text" class="component-input ct-name-input"
-                 data-index="{{i}}" data-field="name"
-                 value="{{comp.name}}" placeholder="Component name" />
+          <input type="text" class="component-input ct-name-input" data-index="{{i}}" data-field="name"
+            value="{{comp.name}}" placeholder="Component name" />
         </td>
         <td>
-          <input type="number" class="component-input ct-num"
-                 data-index="{{i}}" data-field="power"
-                 value="{{comp.power}}" />
+          <input type="number" class="component-input ct-num" data-index="{{i}}" data-field="power"
+            value="{{comp.power}}" />
         </td>
         <td>
-          <input type="number" class="component-input ct-num"
-                 data-index="{{i}}" data-field="space"
-                 value="{{comp.space}}" />
+          <input type="number" class="component-input ct-num" data-index="{{i}}" data-field="space"
+            value="{{comp.space}}" />
         </td>
         <td>
-          <input type="number" class="component-input ct-num"
-                 data-index="{{i}}" data-field="sp"
-                 value="{{comp.sp}}" />
+          <input type="number" class="component-input ct-num" data-index="{{i}}" data-field="sp" value="{{comp.sp}}" />
         </td>
         <td>
-          <input type="text" class="component-input ct-notes-input"
-                 data-index="{{i}}" data-field="notes"
-                 value="{{comp.notes}}" placeholder="Special rules or effects" />
+          <input type="text" class="component-input ct-notes-input" data-index="{{i}}" data-field="notes"
+            value="{{comp.notes}}" placeholder="Special rules or effects" />
         </td>
         <td>
           <a data-action="remove-component" data-index="{{i}}" title="Remove">

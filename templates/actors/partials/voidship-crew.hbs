@@ -1,5 +1,5 @@
-{{!-- partials/starship-crew.hbs --}}
-<div class="starship-crew-tab">
+{{!-- partials/voidship-crew.hbs --}}
+<div class="voidship-crew-tab">
 
   {{!-- Crew rating --}}
   <div class="crew-rating-section">
@@ -8,11 +8,12 @@
       <div class="crew-rating-block">
         <label>Rating</label>
         <select class="crew-rating-select-full">
-          <option value="incompetent" {{#if (eq system.crew.rating "incompetent")}}selected{{/if}}>Incompetent (20%)</option>
-          <option value="competent"   {{#if (eq system.crew.rating "competent")}}selected{{/if}}>Competent (30%)</option>
-          <option value="crack"       {{#if (eq system.crew.rating "crack")}}selected{{/if}}>Crack (40%)</option>
-          <option value="veteran"     {{#if (eq system.crew.rating "veteran")}}selected{{/if}}>Veteran (50%)</option>
-          <option value="elite"       {{#if (eq system.crew.rating "elite")}}selected{{/if}}>Elite (60%)</option>
+          <option value="incompetent" {{#if (eq system.crew.rating "incompetent" )}}selected{{/if}}>Incompetent (20%)
+          </option>
+          <option value="competent" {{#if (eq system.crew.rating "competent" )}}selected{{/if}}>Competent (30%)</option>
+          <option value="crack" {{#if (eq system.crew.rating "crack" )}}selected{{/if}}>Crack (40%)</option>
+          <option value="veteran" {{#if (eq system.crew.rating "veteran" )}}selected{{/if}}>Veteran (50%)</option>
+          <option value="elite" {{#if (eq system.crew.rating "elite" )}}selected{{/if}}>Elite (60%)</option>
         </select>
       </div>
       <div class="crew-rating-explainer">
@@ -37,11 +38,9 @@
           <a class="resource-control" data-action="decrease" data-field="crew.population.value">
             <i class="fa-solid fa-minus"></i>
           </a>
-          <input type="number" 
-                 value="{{system.crew.population.value}}" min="0" />
+          <input type="number" value="{{system.crew.population.value}}" min="0" />
           <span>/</span>
-          <input type="number"
-                 value="{{system.crew.population.max}}" min="1" class="crew-max" />
+          <input type="number" value="{{system.crew.population.max}}" min="1" class="crew-max" />
           <a class="resource-control" data-action="increase" data-field="crew.population.value">
             <i class="fa-solid fa-plus"></i>
           </a>
@@ -50,7 +49,7 @@
           <div class="resource-bar-fill pop-bar" style="width:{{popPct}}%"></div>
         </div>
         <p class="hint">Lost when the ship takes Hull Integrity damage (1 per HI lost).
-           Also lost in boarding actions and critical hits.</p>
+          Also lost in boarding actions and critical hits.</p>
       </div>
 
       <div class="crew-status-block">
@@ -59,11 +58,9 @@
           <a class="resource-control" data-action="decrease" data-field="crew.morale.value">
             <i class="fa-solid fa-minus"></i>
           </a>
-          <input type="number"
-                 value="{{system.crew.morale.value}}" min="0" max="100" />
+          <input type="number" value="{{system.crew.morale.value}}" min="0" max="100" />
           <span>/</span>
-          <input type="number"
-                 value="{{system.crew.morale.max}}" min="1" max="100" class="crew-max" />
+          <input type="number" value="{{system.crew.morale.max}}" min="1" max="100" class="crew-max" />
           <a class="resource-control" data-action="increase" data-field="crew.morale.value">
             <i class="fa-solid fa-plus"></i>
           </a>
@@ -84,17 +81,53 @@
     <h3 class="section-title">Void Combat Quick Reference</h3>
     <table class="voc-reference-table">
       <thead>
-        <tr><th>Action</th><th>Test</th><th>Effect</th></tr>
+        <tr>
+          <th>Action</th>
+          <th>Test</th>
+          <th>Effect</th>
+        </tr>
       </thead>
       <tbody>
-        <tr><td>Fire Weapons</td><td>BS (crew rating%)</td><td>1 hit + 1 per DoS (max Strength)</td></tr>
-        <tr><td>Manoeuvre</td><td>Pilot + Manoeuvrability bonus</td><td>Move, turn, evade</td></tr>
-        <tr><td>Augury / Scan</td><td>Scrutiny + Detection bonus</td><td>Reveal ships &amp; components</td></tr>
-        <tr><td>Emergency Repairs</td><td>Tech-Use (–10)</td><td>Restore 1 damaged component</td></tr>
-        <tr><td>Flank Speed</td><td>Tech-Use (±0)</td><td>+1 VU movement per DoS</td></tr>
-        <tr><td>Boarding Action</td><td>Opposed Command</td><td>1d5 Pop &amp; Morale or 1 HI per DoS</td></tr>
-        <tr><td>Hold Fast!</td><td>Willpower (±0)</td><td>Reduce Morale loss by 1 + DoS</td></tr>
-        <tr><td>Triage</td><td>Medicae (–10)</td><td>Reduce Pop loss by 1 + DoS</td></tr>
+        <tr>
+          <td>Fire Weapons</td>
+          <td>BS (crew rating%)</td>
+          <td>1 hit + 1 per DoS (max Strength)</td>
+        </tr>
+        <tr>
+          <td>Manoeuvre</td>
+          <td>Pilot + Manoeuvrability bonus</td>
+          <td>Move, turn, evade</td>
+        </tr>
+        <tr>
+          <td>Augury / Scan</td>
+          <td>Scrutiny + Detection bonus</td>
+          <td>Reveal ships &amp; components</td>
+        </tr>
+        <tr>
+          <td>Emergency Repairs</td>
+          <td>Tech-Use (–10)</td>
+          <td>Restore 1 damaged component</td>
+        </tr>
+        <tr>
+          <td>Flank Speed</td>
+          <td>Tech-Use (±0)</td>
+          <td>+1 VU movement per DoS</td>
+        </tr>
+        <tr>
+          <td>Boarding Action</td>
+          <td>Opposed Command</td>
+          <td>1d5 Pop &amp; Morale or 1 HI per DoS</td>
+        </tr>
+        <tr>
+          <td>Hold Fast!</td>
+          <td>Willpower (±0)</td>
+          <td>Reduce Morale loss by 1 + DoS</td>
+        </tr>
+        <tr>
+          <td>Triage</td>
+          <td>Medicae (–10)</td>
+          <td>Reduce Pop loss by 1 + DoS</td>
+        </tr>
       </tbody>
     </table>
   </div>

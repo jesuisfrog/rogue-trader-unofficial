@@ -60,7 +60,7 @@ Full character sheet covering:
 Compact sheet covering all 9 characteristics, Wounds, movement, armour points per location, Fear rating, size classification, traits/special rules textarea, weapons table, and GM notes.
 
 **Voidship**
-Full starship sheet covering:
+Full voidship sheet covering:
 - Core hull statistics: Speed, Manoeuvrability, Detection, Armour, Turret Rating, Ship Points
 - Hull Integrity with animated health bar and pulsing CRIPPLED badge at 0
 - Void Shield pips (blue glow when active, click to raise/lower)

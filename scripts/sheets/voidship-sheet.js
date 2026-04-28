@@ -1,12 +1,12 @@
 /**
- * rogue-trader-unofficial | starship-sheet.js
+ * rogue-trader-unofficial | voidship-sheet.js
  *
- * Sheet for the Starship actor type.
+ * Sheet for the Voidship actor type.
  *
  * VOID COMBAT MECHANICS (RT Core pp.210–221)
  *
  * Ships roll d100 equal-or-under a characteristic — same base resolution
- * as personal combat. Starship-specific tests:
+ * as personal combat. Voidship-specific tests:
  *
  *   Ballistic Skill (crew rating as %)   — firing weapons
  *   Pilot (Space Craft) + Manoeuvrability — manoeuvre actions
@@ -46,35 +46,35 @@ const SYSTEM_ID = "rogue-trader-unofficial";
 
 const CREW_RATING_VALUES = {
   incompetent: 20,
-  competent:   30,
-  crack:       40,
-  veteran:     50,
-  elite:       60,
+  competent: 30,
+  crack: 40,
+  veteran: 50,
+  elite: 60,
 };
 
 // Weapon location labels
 const WEAPON_ARCS = {
-  prow:      "Prow",
-  dorsal:    "Dorsal",
-  port:      "Port",
+  prow: "Prow",
+  dorsal: "Dorsal",
+  port: "Port",
   starboard: "Starboard",
-  keel:      "Keel",
-  aft:       "Aft",
+  keel: "Keel",
+  aft: "Aft",
 };
 
-export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
+export class RogueTraderVoidshipSheet extends foundry.appv1.sheets.ActorSheet {
 
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes:   ["rogue-trader", "sheet", "actor", "starship"],
-      template:  `systems/${SYSTEM_ID}/templates/actors/starship-sheet.hbs`,
-      width:     860,
-      height:    740,
+      classes: ["rogue-trader", "sheet", "actor", "voidship"],
+      template: `systems/${SYSTEM_ID}/templates/actors/voidship-sheet.hbs`,
+      width: 860,
+      height: 740,
       resizable: true,
       tabs: [{
-        navSelector:     ".sheet-tabs",
+        navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
-        initial:         "overview",
+        initial: "overview",
       }],
       scrollY: [".sheet-body"],
     });
@@ -89,21 +89,21 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
     const sys = this.actor.system;
 
     // Crew rating numeric value
-    const crewRating   = CREW_RATING_VALUES[sys.crew?.rating] ?? 30;
+    const crewRating = CREW_RATING_VALUES[sys.crew?.rating] ?? 30;
     ctx.crewRatingValue = crewRating;
 
     // Power budget
-    const components  = sys.components ?? {};
-    const powerUsed   = this._sumComponentPower(components, sys.supplementalComponents ?? []);
-    const powerGen    = sys.hull?.powerCurrent ?? 0;
-    ctx.powerUsed     = powerUsed;
-    ctx.powerFree     = powerGen - powerUsed;
+    const components = sys.components ?? {};
+    const powerUsed = this._sumComponentPower(components, sys.supplementalComponents ?? []);
+    const powerGen = sys.hull?.powerCurrent ?? 0;
+    ctx.powerUsed = powerUsed;
+    ctx.powerFree = powerGen - powerUsed;
     ctx.powerOverload = ctx.powerFree < 0;
 
     // Space budget
-    const spaceUsed   = this._sumComponentSpace(components, sys.supplementalComponents ?? []);
-    ctx.spaceUsed     = spaceUsed;
-    ctx.spaceFree     = (sys.hull?.spaceTotal ?? 40) - spaceUsed;
+    const spaceUsed = this._sumComponentSpace(components, sys.supplementalComponents ?? []);
+    ctx.spaceUsed = spaceUsed;
+    ctx.spaceFree = (sys.hull?.spaceTotal ?? 40) - spaceUsed;
 
     // Weapon arcs as list for template iteration
     ctx.weaponArcs = Object.entries(WEAPON_ARCS).map(([key, label]) => ({
@@ -118,17 +118,17 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
     );
 
     // Hull percentage for the integrity bar
-    const hiMax  = sys.hull?.integrity?.max ?? 1;
-    const hiVal  = sys.hull?.integrity?.value ?? hiMax;
+    const hiMax = sys.hull?.integrity?.max ?? 1;
+    const hiVal = sys.hull?.integrity?.value ?? hiMax;
     ctx.integrityPct = Math.round((hiVal / hiMax) * 100);
-    ctx.isCrippled   = hiVal <= 0;
+    ctx.isCrippled = hiVal <= 0;
 
     // Morale / crew pct bars
-    const popMax  = sys.crew?.population?.max ?? 100;
-    const popVal  = sys.crew?.population?.value ?? popMax;
-    ctx.popPct    = Math.round((popVal / popMax) * 100);
-    const morMax  = sys.crew?.morale?.max ?? 100;
-    const morVal  = sys.crew?.morale?.value ?? morMax;
+    const popMax = sys.crew?.population?.max ?? 100;
+    const popVal = sys.crew?.population?.value ?? popMax;
+    ctx.popPct = Math.round((popVal / popMax) * 100);
+    const morMax = sys.crew?.morale?.max ?? 100;
+    const morVal = sys.crew?.morale?.value ?? morMax;
     ctx.moralePct = Math.round((morVal / morMax) * 100);
 
     // Supplemental components for display
@@ -143,11 +143,11 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
 
     // Hull types
     ctx.hullTypes = [
-      { value: "transport",     label: "Transport" },
-      { value: "raider",        label: "Raider" },
-      { value: "frigate",       label: "Frigate" },
-      { value: "lightCruiser",  label: "Light Cruiser" },
-      { value: "cruiser",       label: "Cruiser" },
+      { value: "transport", label: "Transport" },
+      { value: "raider", label: "Raider" },
+      { value: "frigate", label: "Frigate" },
+      { value: "lightCruiser", label: "Light Cruiser" },
+      { value: "cruiser", label: "Cruiser" },
     ];
 
     ctx.system = sys;
@@ -185,30 +185,30 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
     if (!this.isEditable) return;
 
     // ── Void combat rolls ────────────────────────────────────────────────────
-    html.find("[data-action='roll-bs']").on("click",         () => this._onRollBS());
-    html.find("[data-action='roll-pilot']").on("click",      () => this._onRollPilot());
-    html.find("[data-action='roll-augury']").on("click",     () => this._onRollAugury());
-    html.find("[data-action='roll-tech']").on("click",       () => this._onRollTechUse());
-    html.find("[data-action='roll-command']").on("click",    () => this._onRollCommand());
-    html.find(".weapon-fire-btn").on("click",                this._onFireWeapon.bind(this));
+    html.find("[data-action='roll-bs']").on("click", () => this._onRollBS());
+    html.find("[data-action='roll-pilot']").on("click", () => this._onRollPilot());
+    html.find("[data-action='roll-augury']").on("click", () => this._onRollAugury());
+    html.find("[data-action='roll-tech']").on("click", () => this._onRollTechUse());
+    html.find("[data-action='roll-command']").on("click", () => this._onRollCommand());
+    html.find(".weapon-fire-btn").on("click", this._onFireWeapon.bind(this));
 
     // ── Resource controls ────────────────────────────────────────────────────
-    html.find(".resource-control").on("click",               this._onResourceControl.bind(this));
+    html.find(".resource-control").on("click", this._onResourceControl.bind(this));
 
     // ── Supplemental components ──────────────────────────────────────────────
-    html.find("[data-action='add-component']").on("click",   this._onAddComponent.bind(this));
-    html.find("[data-action='remove-component']").on("click",this._onRemoveComponent.bind(this));
+    html.find("[data-action='add-component']").on("click", this._onAddComponent.bind(this));
+    html.find("[data-action='remove-component']").on("click", this._onRemoveComponent.bind(this));
 
     // ── Weapon management ────────────────────────────────────────────────────
-    html.find("[data-action='add-weapon']").on("click",      this._onAddWeapon.bind(this));
-    html.find("[data-action='remove-weapon']").on("click",   this._onRemoveWeapon.bind(this));
+    html.find("[data-action='add-weapon']").on("click", this._onAddWeapon.bind(this));
+    html.find("[data-action='remove-weapon']").on("click", this._onRemoveWeapon.bind(this));
 
     // ── Inline editing (components / weapons) ────────────────────────────────
-    html.find(".component-input").on("change",               this._onComponentEdit.bind(this));
-    html.find(".weapon-input").on("change",                  this._onWeaponEdit.bind(this));
+    html.find(".component-input").on("change", this._onComponentEdit.bind(this));
+    html.find(".weapon-input").on("change", this._onWeaponEdit.bind(this));
 
     // ── Fate / void shields pips ─────────────────────────────────────────────
-    html.find(".void-shield-pip").on("click",                this._onShieldPipClick.bind(this));
+    html.find(".void-shield-pip").on("click", this._onShieldPipClick.bind(this));
   }
 
   // ---------------------------------------------------------------------------
@@ -216,51 +216,51 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
   // ---------------------------------------------------------------------------
 
   async _onRollBS(extraLabel = "") {
-    const crewVal  = CREW_RATING_VALUES[this.actor.system.crew?.rating] ?? 30;
-    const label    = extraLabel || "Ballistic Skill (Firing)";
-    const mod      = await promptModifier(`${label} Test`);
+    const crewVal = CREW_RATING_VALUES[this.actor.system.crew?.rating] ?? 30;
+    const label = extraLabel || "Ballistic Skill (Firing)";
+    const mod = await promptModifier(`${label} Test`);
     if (mod === null) return;
-    const result   = await rollCharacteristicTest(crewVal, mod);
+    const result = await rollCharacteristicTest(crewVal, mod);
     await sendTestToChat(this.actor, label, result);
   }
 
   async _onRollPilot() {
-    const sys    = this.actor.system;
-    const crew   = CREW_RATING_VALUES[sys.crew?.rating] ?? 30;
+    const sys = this.actor.system;
+    const crew = CREW_RATING_VALUES[sys.crew?.rating] ?? 30;
     const manoeu = sys.hull?.manoeuvrability ?? 0;
     // Pilot (Space Craft) + Manoeuvrability as bonus
-    const base   = crew;
-    const label  = "Pilot (Space Craft)";
-    const mod    = await promptModifier(`${label} Test (Manoeuvrability: +${manoeu})`);
+    const base = crew;
+    const label = "Pilot (Space Craft)";
+    const mod = await promptModifier(`${label} Test (Manoeuvrability: +${manoeu})`);
     if (mod === null) return;
     const result = await rollCharacteristicTest(base, mod + manoeu);
     await sendTestToChat(this.actor, label, result, `Manoeuvrability bonus: +${manoeu}`);
   }
 
   async _onRollAugury() {
-    const sys       = this.actor.system;
-    const crew      = CREW_RATING_VALUES[sys.crew?.rating] ?? 30;
+    const sys = this.actor.system;
+    const crew = CREW_RATING_VALUES[sys.crew?.rating] ?? 30;
     const detection = sys.hull?.detection ?? 0;
-    const label     = "Scrutiny + Detection (Augury)";
-    const mod       = await promptModifier(`${label} (Detection bonus: +${detection})`);
+    const label = "Scrutiny + Detection (Augury)";
+    const mod = await promptModifier(`${label} (Detection bonus: +${detection})`);
     if (mod === null) return;
-    const result    = await rollCharacteristicTest(crew, mod + detection);
+    const result = await rollCharacteristicTest(crew, mod + detection);
     await sendTestToChat(this.actor, label, result, `Detection bonus: +${detection}`);
   }
 
   async _onRollTechUse() {
-    const crew   = CREW_RATING_VALUES[this.actor.system.crew?.rating] ?? 30;
-    const label  = "Tech-Use";
-    const mod    = await promptModifier(`${label} Test`);
+    const crew = CREW_RATING_VALUES[this.actor.system.crew?.rating] ?? 30;
+    const label = "Tech-Use";
+    const mod = await promptModifier(`${label} Test`);
     if (mod === null) return;
     const result = await rollCharacteristicTest(crew, mod);
     await sendTestToChat(this.actor, label, result);
   }
 
   async _onRollCommand() {
-    const crew   = CREW_RATING_VALUES[this.actor.system.crew?.rating] ?? 30;
-    const label  = "Command";
-    const mod    = await promptModifier(`${label} Test`);
+    const crew = CREW_RATING_VALUES[this.actor.system.crew?.rating] ?? 30;
+    const label = "Command";
+    const mod = await promptModifier(`${label} Test`);
     if (mod === null) return;
     const result = await rollCharacteristicTest(crew, mod);
     await sendTestToChat(this.actor, label, result);
@@ -269,7 +269,7 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
   /** Fire a specific weapon — macrobattery or lance resolution. */
   async _onFireWeapon(event) {
     event.preventDefault();
-    const arc   = event.currentTarget.dataset.arc;
+    const arc = event.currentTarget.dataset.arc;
     const index = parseInt(event.currentTarget.dataset.index, 10);
     const weapon = this.actor.system.weapons?.[arc]?.[index];
     if (!weapon) return;
@@ -278,10 +278,10 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
   }
 
   async _fireWeapon(weapon) {
-    const sys        = this.actor.system;
-    const crewVal    = CREW_RATING_VALUES[sys.crew?.rating] ?? 30;
-    const isLance    = weapon.type === "lance";
-    const label      = `${weapon.name} (${isLance ? "Lance" : "Macrobattery"})`;
+    const sys = this.actor.system;
+    const crewVal = CREW_RATING_VALUES[sys.crew?.rating] ?? 30;
+    const isLance = weapon.type === "lance";
+    const label = `${weapon.name} (${isLance ? "Lance" : "Macrobattery"})`;
 
     const mod = await promptModifier(`Fire ${label}`);
     if (mod === null) return;
@@ -304,11 +304,11 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
 
     // Check for critical hit
     const critRating = parseInt(weapon.critRating) || 4;
-    const crit       = testResult.success && testResult.degrees >= critRating;
+    const crit = testResult.success && testResult.degrees >= critRating;
 
     // Roll damage for each hit
     const dmgFormula = weapon.damage || "1d10";
-    const dmgRolls   = [];
+    const dmgRolls = [];
     for (let i = 0; i < hits; i++) {
       const r = new Roll(dmgFormula);
       await r.evaluate();
@@ -334,8 +334,8 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
   }
 
   async _sendWeaponChatMessage(weapon, testResult, hits, dmgTotals, critRoll, isLance) {
-    const template = `systems/${SYSTEM_ID}/templates/chat/starship-weapon.hbs`;
-    const content  = await renderTemplate(template, {
+    const template = `systems/${SYSTEM_ID}/templates/chat/voidship-weapon.hbs`;
+    const content = await renderTemplate(template, {
       actor: this.actor,
       weapon,
       testResult,
@@ -363,14 +363,14 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
     event.preventDefault();
     const { action, field } = event.currentTarget.dataset;
     const current = foundry.utils.getProperty(this.actor, `system.${field}`) ?? 0;
-    const newVal  = action === "increase" ? current + 1 : current - 1;
+    const newVal = action === "increase" ? current + 1 : current - 1;
 
     // If decreasing hull integrity, also decrease crew population and morale
     if (field === "hull.integrity.value" && action === "decrease") {
       const updates = {
-        "system.hull.integrity.value":     Math.max(0, newVal),
-        "system.crew.population.value":    Math.max(0, (this.actor.system.crew?.population?.value ?? 0) - 1),
-        "system.crew.morale.value":        Math.max(0, (this.actor.system.crew?.morale?.value ?? 0) - 1),
+        "system.hull.integrity.value": Math.max(0, newVal),
+        "system.crew.population.value": Math.max(0, (this.actor.system.crew?.population?.value ?? 0) - 1),
+        "system.crew.morale.value": Math.max(0, (this.actor.system.crew?.morale?.value ?? 0) - 1),
       };
       await this.actor.update(updates);
     } else {
@@ -384,9 +384,9 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
 
   async _onShieldPipClick(event) {
     event.preventDefault();
-    const idx     = parseInt(event.currentTarget.dataset.index, 10);
+    const idx = parseInt(event.currentTarget.dataset.index, 10);
     const current = this.actor.system.hull?.voidShields?.value ?? 0;
-    const newVal  = idx < current ? idx : idx + 1;
+    const newVal = idx < current ? idx : idx + 1;
     await this.actor.update({
       "system.hull.voidShields.value": Math.clamp(newVal, 0, this.actor.system.hull?.voidShields?.max ?? 2),
     });
@@ -405,7 +405,7 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
 
   async _onRemoveComponent(event) {
     event.preventDefault();
-    const index      = parseInt(event.currentTarget.dataset.index, 10);
+    const index = parseInt(event.currentTarget.dataset.index, 10);
     const components = foundry.utils.deepClone(this.actor.system.supplementalComponents ?? []);
     components.splice(index, 1);
     await this.actor.update({ "system.supplementalComponents": components });
@@ -413,10 +413,10 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
 
   async _onComponentEdit(event) {
     event.preventDefault();
-    const el     = event.currentTarget;
-    const index  = parseInt(el.dataset.index, 10);
-    const field  = el.dataset.field;
-    const value  = el.type === "number" ? (parseFloat(el.value) || 0) : el.value;
+    const el = event.currentTarget;
+    const index = parseInt(el.dataset.index, 10);
+    const field = el.dataset.field;
+    const value = el.type === "number" ? (parseFloat(el.value) || 0) : el.value;
 
     const components = foundry.utils.deepClone(this.actor.system.supplementalComponents ?? []);
     if (!components[index]) return;
@@ -430,27 +430,27 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
 
   async _onAddWeapon(event) {
     event.preventDefault();
-    const arc     = event.currentTarget.dataset.arc;
+    const arc = event.currentTarget.dataset.arc;
     const weapons = foundry.utils.deepClone(this.actor.system.weapons ?? {});
     if (!weapons[arc]) weapons[arc] = [];
     weapons[arc].push({
-      name:       "New Weapon",
-      type:       "macrobattery",
-      strength:   3,
-      damage:     "1d10+2",
+      name: "New Weapon",
+      type: "macrobattery",
+      strength: 3,
+      damage: "1d10+2",
       critRating: 5,
-      range:      6,
-      power:      4,
-      space:      2,
-      sp:         1,
-      qualities:  "",
+      range: 6,
+      power: 4,
+      space: 2,
+      sp: 1,
+      qualities: "",
     });
     await this.actor.update({ "system.weapons": weapons });
   }
 
   async _onRemoveWeapon(event) {
     event.preventDefault();
-    const arc   = event.currentTarget.dataset.arc;
+    const arc = event.currentTarget.dataset.arc;
     const index = parseInt(event.currentTarget.dataset.index, 10);
     const weapons = foundry.utils.deepClone(this.actor.system.weapons ?? {});
     weapons[arc]?.splice(index, 1);
@@ -459,8 +459,8 @@ export class RogueTraderStarshipSheet extends foundry.appv1.sheets.ActorSheet {
 
   async _onWeaponEdit(event) {
     event.preventDefault();
-    const el    = event.currentTarget;
-    const arc   = el.dataset.arc;
+    const el = event.currentTarget;
+    const arc = el.dataset.arc;
     const index = parseInt(el.dataset.index, 10);
     const field = el.dataset.field;
     const value = el.type === "number" ? (parseFloat(el.value) || 0) : el.value;

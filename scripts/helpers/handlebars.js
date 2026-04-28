@@ -7,11 +7,11 @@ export function registerHandlebarsHelpers() {
 
   // ── Basic comparison helpers ───────────────────────────────────────────────
 
-  Handlebars.registerHelper("eq",  (a, b) => a === b);
+  Handlebars.registerHelper("eq", (a, b) => a === b);
   Handlebars.registerHelper("neq", (a, b) => a !== b);
-  Handlebars.registerHelper("lt",  (a, b) => a < b);
+  Handlebars.registerHelper("lt", (a, b) => a < b);
   Handlebars.registerHelper("lte", (a, b) => a <= b);
-  Handlebars.registerHelper("gt",  (a, b) => a > b);
+  Handlebars.registerHelper("gt", (a, b) => a > b);
   Handlebars.registerHelper("gte", (a, b) => a >= b);
 
   // ── Math helpers ───────────────────────────────────────────────────────────
@@ -47,7 +47,7 @@ export function registerHandlebarsHelpers() {
    * 41-60 Neurotic, 61-80 Deranged, 81+ Unhinged.
    */
   Handlebars.registerHelper("insanityBracket", (ip) => {
-    if (ip <= 9)  return "Unsettled";
+    if (ip <= 9) return "Unsettled";
     if (ip <= 20) return "Troubled";
     if (ip <= 40) return "Disturbed";
     if (ip <= 60) return "Neurotic";
@@ -72,12 +72,12 @@ export function registerHandlebarsHelpers() {
 
   // ── Math helpers used by chat cards and dialogs ────────────────────────────
 
-  Handlebars.registerHelper("absVal",   (n) => Math.abs(Number(n)));
-  Handlebars.registerHelper("negate",   (n) => -Number(n));
+  Handlebars.registerHelper("absVal", (n) => Math.abs(Number(n)));
+  Handlebars.registerHelper("negate", (n) => -Number(n));
   Handlebars.registerHelper("multiply", (a, b) => Number(a) * Number(b));
   Handlebars.registerHelper("subtract", (a, b) => Number(a) - Number(b));
 
-  // ── Starship helpers ──────────────────────────────────────────────────────
+  // ── Voidship helpers ──────────────────────────────────────────────────────
 
   /** Capitalize first letter */
   Handlebars.registerHelper("capitalize", (s) =>
