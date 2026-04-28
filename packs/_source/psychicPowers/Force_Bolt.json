@@ -1,0 +1,30 @@
+{
+  "_id": "Zd56BLpm6QxQ4IEz",
+  "name": "Force Bolt",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telekinesis",
+    "psyRating": 1,
+    "action": "half",
+    "range": "10m \u00d7 Psy Rating",
+    "sustained": false,
+    "description": "<p>The psyker hurls a bolt of force at an opponent. Makes a BS Test to hit, dealing 1d10 Impact Damage + 2 per Psy Rating.</p><p><strong>Focus Power Test:</strong> Willpower</p><p><strong>XP Cost:</strong> 100</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!Zd56BLpm6QxQ4IEz"
+}

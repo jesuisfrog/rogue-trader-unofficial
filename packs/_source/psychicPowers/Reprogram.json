@@ -1,0 +1,30 @@
+{
+  "_id": "OxmjoCFxqaapMelt",
+  "name": "Reprogram",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 4,
+    "action": "full",
+    "range": "1m",
+    "sustained": true,
+    "description": "<p>The psyker completely reprograms another mind, reshaping memories and experiences. Takes 2d5 Rounds minimum. Make an Opposed Willpower Test; gain +10 per 2 Psy Rating used. Depth depends on DoS: DoS 1 = Sow Confusion (\u201320 to recall one event); DoS 2 = Implant Falsehood; DoS 3 = Rewritten History; DoS 4 = Sculpt Synapses (inflicts 1d5 Insanity on subject); DoS 5+ = Psychic Block (+10 WP to resist future Mind Probes, conceals tampering). Effects are permanent unless forcibly broken down. If the target wins the Opposed Test, the psyker cannot re-attempt for 1d5 hours.</p><p><strong>Focus Power Test:</strong> Opposed Willpower</p><p><strong>Prerequisites:</strong> Dominate, Mind Probe</p><p><strong>XP Cost:</strong> 500</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!OxmjoCFxqaapMelt"
+}

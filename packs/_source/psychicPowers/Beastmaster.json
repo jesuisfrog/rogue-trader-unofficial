@@ -1,0 +1,30 @@
+{
+  "_id": "w6G8NksLUz6ELnV1",
+  "name": "Beastmaster",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 1,
+    "action": "half",
+    "range": "5m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The psyker establishes rudimentary control over animals (Bestial trait). Can affect a number of animals equal to his Psy Rating. If the Opposed Willpower Test succeeds, target animals must follow psychic commands. As a Reaction each Round, the psyker may give a single animal a simple command ('Come here', 'Guard me', 'Run', 'Attack'). If threatened, injured, or commanded contrary to its nature, the animal may make a further Opposed WP Test with +10 to break free.</p><p><strong>Focus Power Test:</strong> Opposed Willpower</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!w6G8NksLUz6ELnV1"
+}

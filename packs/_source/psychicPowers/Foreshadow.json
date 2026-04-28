@@ -1,0 +1,30 @@
+{
+  "_id": "0nfBfIYzGL5d13r2",
+  "name": "Foreshadow",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "divination",
+    "psyRating": 1,
+    "action": "half",
+    "range": "Personal",
+    "sustained": false,
+    "description": "<p>Peering into the future for a brief instant, the psyker can see possible outcomes and potential dangers. Until the end of the next turn, the psyker gains a +30 bonus to one skill roll. Must be used at Unfettered Psychic Strength.</p><p><strong>Focus Power Test:</strong> Willpower</p><p><strong>XP Cost:</strong> 100</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!0nfBfIYzGL5d13r2"
+}

@@ -1,0 +1,30 @@
+{
+  "_id": "07ue8wgMOonAGY8e",
+  "name": "Force Shards",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telekinesis",
+    "psyRating": 3,
+    "action": "half",
+    "range": "5m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The psyker brings a number of hovering force shards into existence equal to his Willpower Bonus. The shards orbit him, causing any opponent attacking him to suffer \u201310 to WS or BS Tests. Shards may be launched at ranged targets with a BS Test: each hit deals 1d10 Rending + 1 per Psy Rating. For every DoS, one additional shard hits (up to the total generated). Penetration equals the Psy Rating used.</p><p><strong>Focus Power Test:</strong> Willpower</p><p><strong>Prerequisites:</strong> Precision Telekinesis, Telekinetic Weapon</p><p><strong>XP Cost:</strong> 400</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!07ue8wgMOonAGY8e"
+}

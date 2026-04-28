@@ -1,0 +1,30 @@
+{
+  "_id": "GKLuz3HSWMSawkm2",
+  "name": "Mind Scan",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 2,
+    "action": "full",
+    "range": "250m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The psyker extends his mind to identify other sentient minds within range without line of sight. DoS 1 = crude impression of number of minds and rough position; DoS 2 = number, general location, relative strength, can identify psykers with a Psyniscience Test; DoS 3 = may attempt telepathic communication with any sensed mind; DoS 4+ = may attempt a Mind Probe on one sensed mind. Untouchables, mindless creatures, and psychically inert beings are invisible to this technique.</p><p><strong>Focus Power Test:</strong> Willpower</p><p><strong>Prerequisites:</strong> Mind's Eye, Mind Probe</p><p><strong>XP Cost:</strong> 300</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!GKLuz3HSWMSawkm2"
+}

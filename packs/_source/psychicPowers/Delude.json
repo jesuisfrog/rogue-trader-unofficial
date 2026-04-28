@@ -1,0 +1,30 @@
+{
+  "_id": "aSlcK51bcv9DQO7P",
+  "name": "Delude",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 1,
+    "action": "half",
+    "range": "1m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The psyker subtly masks his intentions and manipulates others into reacting favourably. Make an Opposed Willpower Test. If the psyker succeeds, the target finds him to be a person deserving of respect and reacts positively to friendly overtures. Grants +30 to all Interaction Skill Tests against the target while maintained. This is not mind control \u2014 the psyker cannot force the target to act against their better judgement or harm themselves.</p><p><strong>Focus Power Test:</strong> Opposed Willpower</p><p><strong>XP Cost:</strong> 100</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!aSlcK51bcv9DQO7P"
+}

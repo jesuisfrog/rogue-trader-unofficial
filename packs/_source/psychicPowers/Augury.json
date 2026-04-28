@@ -1,0 +1,30 @@
+{
+  "_id": "OEC4cY98ClsixSFQ",
+  "name": "Augury",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "divination",
+    "psyRating": 1,
+    "action": "half",
+    "range": "1m (the subject)",
+    "sustained": true,
+    "description": "<p>The psyker reads the Emperor's Tarot for a specific individual to grant insight into future troubles. A specific question must be asked. Takes typically 30 minutes. Psyniscience Test \u2014 every 2 DoS reveals more: DoS 0 = greatest opposition ahead; DoS 2 = fears in play (number equal to PR used); DoS 4 = greatest advantage or tool at hand; DoS 6+ = single sentence of advice on the clearest path. Psychic Phenomena rolls provoked by this technique add +10.</p><p><strong>Focus Power Test:</strong> Psyniscience</p><p><strong>Prerequisites:</strong> Foreshadow</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!OEC4cY98ClsixSFQ"
+}

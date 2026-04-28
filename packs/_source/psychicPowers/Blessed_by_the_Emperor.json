@@ -1,0 +1,30 @@
+{
+  "_id": "f2gll3NNkzQHGrCq",
+  "name": "Blessed by the Emperor",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "divination",
+    "psyRating": 3,
+    "action": "free",
+    "range": "5m \u00d7 Psy Rating (for ally warnings)",
+    "sustained": true,
+    "description": "<p>The psyker explores multiple outcomes and chooses the safest course. On a successful Focus Power Test, gains +20 to all WS and BS Tests; BS Tests against him suffer \u201330. Can warn comrades within 5m \u00d7 Psy Rating \u2014 BS attacks against them suffer \u201310. Allies beyond this range are outside the scope of his foresight. Cannot be used at Fettered Psychic Strength.</p><p><strong>Focus Power Test:</strong> Psyniscience</p><p><strong>Prerequisites:</strong> Divining the Future</p><p><strong>XP Cost:</strong> 300</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!f2gll3NNkzQHGrCq"
+}

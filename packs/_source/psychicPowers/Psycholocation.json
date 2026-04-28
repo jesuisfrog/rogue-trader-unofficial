@@ -1,0 +1,30 @@
+{
+  "_id": "HFmLFLuKuXLksp5C",
+  "name": "Psycholocation",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "divination",
+    "psyRating": 1,
+    "action": "half",
+    "range": "1km \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The psyker locates and tracks a single object or person. Must have familiarity with the target (have seen them, have their true name, or hold an associated object). Psyniscience Test modified by familiarity: +10 intimately familiar, +5 has a portion of the subject, +5 within 50m \u00d7 PR, \u201310 target in a crowd, \u201320 over 2km. DoS 0 = rough direction; DoS 2 = specific direction and rough distance; DoS 4 = specific direction and exact distance.</p><p><strong>Focus Power Test:</strong> Psyniscience</p><p><strong>XP Cost:</strong> 100</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!HFmLFLuKuXLksp5C"
+}

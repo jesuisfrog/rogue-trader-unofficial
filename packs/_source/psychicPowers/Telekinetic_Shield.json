@@ -1,0 +1,30 @@
+{
+  "_id": "UhpMbDSxsiAAolC6",
+  "name": "Telekinetic Shield",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telekinesis",
+    "psyRating": 1,
+    "action": "half",
+    "range": "Personal",
+    "sustained": true,
+    "description": "<p>The psyker creates a form-fitting field of telekinetic energy for self-defence. Grants 1 AP per Psy Rating, stacking with worn armour on all locations. Lasts one Round unless sustained. Not opaque \u2014 does not block line of sight. Also works against attacks with the Warp Weapon quality.</p><p><strong>Focus Power Test:</strong> Willpower</p><p><strong>Prerequisites:</strong> Telekinetic Crush</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!UhpMbDSxsiAAolC6"
+}

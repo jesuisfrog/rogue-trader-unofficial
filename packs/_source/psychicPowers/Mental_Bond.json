@@ -1,0 +1,30 @@
+{
+  "_id": "ugCQPamNuqbmoWpl",
+  "name": "Mental Bond",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 2,
+    "action": "extended",
+    "range": "1km \u00d7 Psy Rating",
+    "sustained": false,
+    "description": "<p>Creates a permanent Fettered Strength telepathic connection to another being. Forging the link takes 1d5 hours and requires a Difficult (\u201310) Focus Power Test. If successful, the link operates automatically at no effort within range. Only one Mental Bond may be maintained at a time. If the target dies, the bond dissolves and the psyker suffers 1d10 Insanity Points. Voluntarily breaking the bond requires a Hard (\u201320) Willpower Test.</p><p><strong>Focus Power Test:</strong> Willpower</p><p><strong>Prerequisites:</strong> Mind Link</p><p><strong>XP Cost:</strong> 300</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!ugCQPamNuqbmoWpl"
+}

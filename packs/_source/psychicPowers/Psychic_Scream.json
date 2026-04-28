@@ -1,0 +1,30 @@
+{
+  "_id": "aQeyj1sO3Fr2LngL",
+  "name": "Psychic Scream",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 2,
+    "action": "half",
+    "range": "5m \u00d7 Psy Rating",
+    "sustained": false,
+    "description": "<p>The psyker focuses all his will behind a massive psychic scream. Must pass a Focus Power Test to hit; deals 1d10 Impact Damage + 1 per Psy Rating with the Shocking quality. The target suffers a penalty to his Toughness Test to resist Stunning equal to \u20135 \u00d7 Psy Rating. If the target fails, he is Stunned for Rounds equal to half the psyker's Psy Rating (rounded up).</p><p><strong>Focus Power Test:</strong> Willpower</p><p><strong>Prerequisites:</strong> Mind Probe</p><p><strong>XP Cost:</strong> 300</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!aQeyj1sO3Fr2LngL"
+}

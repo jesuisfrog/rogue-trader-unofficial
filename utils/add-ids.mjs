@@ -23,16 +23,16 @@ import { join, extname } from "path";
 // Config — edit these if your folder layout differs
 // ---------------------------------------------------------------------------
 
-const PACKS_SOURCE = "../packs/_source";
+const PACKS_SOURCE = "./packs/_source";
 
 // Map each source subfolder name to its Foundry document type key prefix
 const PACK_TYPES = {
-  weapons:  "items",
-  armour:   "items",
-  skills:   "items",
-  talents:  "items",
-  macros:   "macros",
-  // add more here if you add more packs
+  weapons: "items",
+  armour: "items",
+  skills: "items",
+  talents: "items",
+  macros: "macros",
+  psychicPowers: "items",
 };
 
 // ---------------------------------------------------------------------------

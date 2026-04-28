@@ -1,0 +1,30 @@
+{
+  "_id": "h89Y2K1dMa87zVfy",
+  "name": "Compel",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 1,
+    "action": "half",
+    "range": "5m \u00d7 Psy Rating",
+    "sustained": false,
+    "description": "<p>The psyker forces others to briefly act against their will for one Round. Make an Opposed Willpower Test. If successful, the target must follow simple commands achievable in one Round ('Flee', 'Fall', 'Attack the closest target'). If the command is potentially suicidal, the target gains +20 to their Opposed Willpower Test.</p><p><strong>Focus Power Test:</strong> Opposed Willpower</p><p><strong>Prerequisites:</strong> Delude</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!h89Y2K1dMa87zVfy"
+}

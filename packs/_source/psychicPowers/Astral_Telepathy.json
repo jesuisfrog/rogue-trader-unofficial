@@ -1,0 +1,30 @@
+{
+  "_id": "Vcsth5ZzEuLpgOe1",
+  "name": "Astral Telepathy",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 2,
+    "action": "extended",
+    "range": "Interstellar (see Table 6-5)",
+    "sustained": false,
+    "description": "<p><strong>Astropaths only. Prerequisites: Soul-bound to the Emperor.</strong></p><p>The psyker can send and receive messages across vast distances using the warp as a medium. Requires careful concentration and meditation \u2014 cannot be done on the move or during combat. Transmitting a message normally takes 1d5 hours. Signal strength is determined by Psy Rating (see Astrotelepathic Signals table).</p><p><strong>Focus Power Test:</strong> Willpower (difficulty varies by distance)</p><p><strong>XP Cost:</strong> Free (Astropaths only)</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!Vcsth5ZzEuLpgOe1"
+}

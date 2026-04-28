@@ -1,0 +1,30 @@
+{
+  "_id": "yBR7EIe7W4gzmdNU",
+  "name": "Mind Probe",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 1,
+    "action": "full",
+    "range": "1m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The psyker peels back the layers of another's mind. Takes 5 Rounds of sustained effort. Each Round the psyker must win an Opposed Willpower Test, digging successively deeper: Round 1 = contact (name, mood, IP, physical health); Round 2 = surface thoughts (uppermost fears, conscious lies, CP); Round 3 = short-term memory (last 12 hours, simple passwords); Round 4 = subconscious (beliefs, motivations, contacts, pivotal memories); Round 5 = broken (full access, can identify implanted memories). A failed Opposed Test ends the probe and inflicts 1 Fatigue per DoF. The target is always aware their mind is being plundered.</p><p><strong>Focus Power Test:</strong> Opposed Willpower</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!yBR7EIe7W4gzmdNU"
+}

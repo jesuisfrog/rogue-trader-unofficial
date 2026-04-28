@@ -1,0 +1,30 @@
+{
+  "_id": "4wFxkaAR18MQpFlY",
+  "name": "Short Range Telepathy",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 1,
+    "action": "half",
+    "range": "10m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>A successful Focus Power Test establishes and maintains a single telepathic connection to another character at Unfettered Psychic Strength. Does not provoke Psychic Phenomena.</p><p><strong>Focus Power Test:</strong> Willpower</p><p><strong>XP Cost:</strong> 100</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!4wFxkaAR18MQpFlY"
+}

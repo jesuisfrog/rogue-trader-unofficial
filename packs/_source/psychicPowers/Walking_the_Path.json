@@ -1,0 +1,30 @@
+{
+  "_id": "H2HNZRlY5APRcW9d",
+  "name": "Walking the Path",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "divination",
+    "psyRating": 2,
+    "action": "free",
+    "range": "Personal (1m \u00d7 Psy Rating for ally warnings)",
+    "sustained": true,
+    "description": "<p>The psyker explores multiple future outcomes in less than a heartbeat. On a successful Focus Power Test, gains +10 to all WS and BS Tests; BS Tests against him suffer \u201320. Lasts one Round unless sustained. Can warn comrades within 1m \u00d7 Psy Rating \u2014 BS attacks against those warned suffer \u20135. Cannot be used at Fettered Psychic Strength.</p><p><strong>Focus Power Test:</strong> Psyniscience</p><p><strong>Prerequisites:</strong> Divining the Future</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!H2HNZRlY5APRcW9d"
+}

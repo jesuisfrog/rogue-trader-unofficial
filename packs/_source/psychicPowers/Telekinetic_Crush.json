@@ -1,0 +1,30 @@
+{
+  "_id": "6hrSlukeM5NzNF2d",
+  "name": "Telekinetic Crush",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telekinesis",
+    "psyRating": 1,
+    "action": "half",
+    "range": "10m \u00d7 Psy Rating",
+    "sustained": false,
+    "description": "<p>The psyker wraps a target in crushing bands of force. Opposed Test pitting Willpower vs. the target's Toughness. If the psyker wins, deals 1d10 Impact Damage + 1 per Psy Rating. The psyker may also Grapple the opponent, substituting his Willpower Bonus for Strength Bonus.</p><p><strong>Focus Power Test:</strong> Opposed Willpower vs. Toughness</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!6hrSlukeM5NzNF2d"
+}

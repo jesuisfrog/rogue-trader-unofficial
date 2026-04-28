@@ -1,0 +1,30 @@
+{
+  "_id": "VQVFJuXXpEtdxZ8t",
+  "name": "Sensory Deprivation",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 1,
+    "action": "half",
+    "range": "10m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The psyker blocks the target's senses. Make an Opposed Willpower Test. If successful, the target is struck deaf, blind, and unable to scent or taste for as long as the power is maintained plus 1d5 Rounds. Alternatively, select a number of targets equal to Willpower Bonus and suppress a single sense for each \u2014 those who fail notice nothing, granting the psyker crude invisibility from that sense.</p><p><strong>Focus Power Test:</strong> Opposed Willpower</p><p><strong>Prerequisites:</strong> Compel</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!VQVFJuXXpEtdxZ8t"
+}

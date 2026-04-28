@@ -50,6 +50,13 @@
       "system": "rogue-trader-unofficial"
     },
     {
+      "name": "psychicPowers",
+      "label": "RT: Psychic Powers",
+      "path": "packs/psychicPowers",
+      "type": "Item",
+      "system": "rogue-trader-unofficial"
+    },
+    {
       "name": "macros",
       "label": "RT: Macros",
       "path": "packs/macros",
@@ -64,6 +71,5 @@
   ],
   "url": "",
   "manifest": "",
-  "download": "",
-  "primaryType": "Actor"
+  "download": ""
 }

@@ -1,0 +1,30 @@
+{
+  "_id": "BHcVhtNnnmSucExI",
+  "name": "Thought Sending",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 1,
+    "action": "free",
+    "range": "1km \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p><strong>Basic Discipline Technique.</strong> The psyker can send his thoughts into the minds of those around him \u2014 to individuals he can see, minds he is familiar with within range, or a generalised broadcast to every mind within range. Attempting telepathy without a shared language imposes a \u201320 penalty. Unwilling minds resist with an Opposed Willpower Test.</p><p><strong>Focus Power Test:</strong> None</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!BHcVhtNnnmSucExI"
+}

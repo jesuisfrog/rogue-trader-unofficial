@@ -1,0 +1,30 @@
+{
+  "_id": "zFgatyFergvYlumo",
+  "name": "Mind's Eye",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 1,
+    "action": "free",
+    "range": "Multiplies all other Telepathy ranges \u00d710",
+    "sustained": false,
+    "description": "<p>Increases the range of all Telepathic communications (except Astral Telepathy) by a factor of 10. Standard Telepathy becomes 10km \u00d7 Psy Rating; Short Range Telepathy becomes 100m \u00d7 Psy Rating.</p><p><strong>Focus Power Test:</strong> None</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!zFgatyFergvYlumo"
+}

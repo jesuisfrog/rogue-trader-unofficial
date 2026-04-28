@@ -1,0 +1,30 @@
+{
+  "_id": "ishFzKtYzUQQjpVg",
+  "name": "Dominate",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 2,
+    "action": "half",
+    "range": "5m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The psyker controls another's mind like a puppet. Make an Opposed Willpower Test. If successful, the psyker can divide his Actions between himself and the target. The dominated target uses its own Characteristics at \u201310 to all Tests (except Opposed WP Tests). Suicidal actions force another Opposed WP Test. Range applies for both the initial Test and ongoing control.</p><p><strong>Focus Power Test:</strong> Opposed Willpower</p><p><strong>Prerequisites:</strong> Sensory Deprivation</p><p><strong>XP Cost:</strong> 300</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!ishFzKtYzUQQjpVg"
+}

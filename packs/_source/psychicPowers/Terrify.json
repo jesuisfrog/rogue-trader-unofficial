@@ -1,0 +1,30 @@
+{
+  "_id": "95hIvUmjLjxzPlle",
+  "name": "Terrify",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 1,
+    "action": "full",
+    "range": "5m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The psyker intrudes forcefully on another mind, assailing the target with raw fear and horrific imagery. On a successful Focus Power Test, the target is affected as if the psyker possessed the Fear (1) Trait. The Fear Trait level increases by 1 for every 3 Psy Rating used.</p><p><strong>Focus Power Test:</strong> Willpower</p><p><strong>Prerequisites:</strong> Mind Probe</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!95hIvUmjLjxzPlle"
+}

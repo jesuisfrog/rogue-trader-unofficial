@@ -1,0 +1,30 @@
+{
+  "_id": "0SNclAIFOMuQQFIS",
+  "name": "Divining the Future",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "divination",
+    "psyRating": 2,
+    "action": "full",
+    "range": "Personal",
+    "sustained": true,
+    "description": "<p>A faster, more precise version of Augury \u2014 only one minute required instead of 30. Uses the same degree of success table: DoS 0 = greatest opposition; DoS 2 = fears in play equal to PR; DoS 4 = greatest advantage at hand; DoS 6+ = two sentences of advice, granting the subject a +10 bonus to a number of Tests equal to Psy Rating for the next month or until the question is resolved. Psychic Phenomena rolls provoked add +10.</p><p><strong>Focus Power Test:</strong> Psyniscience</p><p><strong>Prerequisites:</strong> Augury</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!0SNclAIFOMuQQFIS"
+}

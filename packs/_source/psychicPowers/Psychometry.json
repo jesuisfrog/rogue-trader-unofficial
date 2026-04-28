@@ -1,0 +1,30 @@
+{
+  "_id": "Tg0xQL8BIrZ2SYPX",
+  "name": "Psychometry",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "divination",
+    "psyRating": 1,
+    "action": "half",
+    "range": "1m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The psyker gains psychic impressions from objects or areas through physical contact. More information requires sustained time: 10 Rounds = strongest associated emotion; 20 = general features of the person who experienced it; 30 = clear image of the person; 40 = occupation (Career and Rank); 50 = name; +10 Rounds = additional GM-determined fact. Subtract a number of Rounds equal to Psy Rating from each threshold.</p><p><strong>Focus Power Test:</strong> Psyniscience</p><p><strong>Prerequisites:</strong> Augury</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!Tg0xQL8BIrZ2SYPX"
+}

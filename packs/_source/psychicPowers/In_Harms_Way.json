@@ -1,0 +1,30 @@
+{
+  "_id": "YVk0yik7iJmKd6ab",
+  "name": "In Harm's Way",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "divination",
+    "psyRating": 1,
+    "action": "free",
+    "range": "Personal",
+    "sustained": false,
+    "description": "<p>By looking into the near future, the psyker anticipates the actions of his enemies. Until the end of the next turn, the psyker gains +20 to all WS and BS Tests. All BS Tests made against him are at \u201320. Must be used at Unfettered Psychic Strength.</p><p><strong>Focus Power Test:</strong> Willpower</p><p><strong>XP Cost:</strong> 200</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!YVk0yik7iJmKd6ab"
+}

@@ -1,0 +1,30 @@
+{
+  "_id": "ROXvCvItvviRuZLH",
+  "name": "Inspire",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 1,
+    "action": "half",
+    "range": "2m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The psyker bolsters comrades by sending out waves of reassurance and martial spite. A number of targets equal to the psyker's Psy Rating (including himself) immediately overcome Pinning and gain a +10 bonus to all Willpower Tests to resist Fear. Lasts as long as targets remain within range and the power is sustained.</p><p><strong>Focus Power Test:</strong> Willpower</p><p><strong>XP Cost:</strong> 100</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!ROXvCvItvviRuZLH"
+}

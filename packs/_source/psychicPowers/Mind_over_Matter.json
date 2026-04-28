@@ -1,0 +1,30 @@
+{
+  "_id": "zVfRkL9wl9Whn0VM",
+  "name": "Mind over Matter",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telekinesis",
+    "psyRating": 1,
+    "action": "half",
+    "range": "5m \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p><strong>Basic Discipline Technique.</strong> Three applications:<br><strong>Lift/Move:</strong> Any object up to 10 kg \u00d7 Psy Rating may be moved slowly within range. Cannot be used as a direct attack. Does not work on living beings.<br><strong>Throw:</strong> Objects up to 5 kg \u00d7 Psy Rating may be hurled. BS Test to hit; damage = 1d10 Impact + 1 per 5 kg of weight.<br><strong>Shove:</strong> Sharp wave of force. Opposed Willpower vs. target's Strength. If the psyker wins, the target is knocked to the ground and pushed away a number of metres equal to Psy Rating.</p><p><strong>Focus Power Test:</strong> Willpower / Opposed Willpower</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!zVfRkL9wl9Whn0VM"
+}

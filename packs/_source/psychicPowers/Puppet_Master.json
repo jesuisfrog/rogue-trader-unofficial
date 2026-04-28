@@ -1,0 +1,30 @@
+{
+  "_id": "nFLs4OtjA5aP70Ef",
+  "name": "Puppet Master",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "telepathy",
+    "psyRating": 3,
+    "action": "full",
+    "range": "1km \u00d7 Psy Rating",
+    "sustained": true,
+    "description": "<p>The ultimate psychic domination. Make an Opposed Willpower Test (psyker suffers \u201310). If successful, the psyker's mind leaves his body to completely take over the victim's body while the victim's consciousness is suppressed. The psyker's own body is vulnerable as if in deep sleep. The possessed body retains its physical characteristics; mental characteristics are those of the psyker (skills usable at \u201310 penalty). Suicidal actions force another Opposed WP Test. If the victim's body is killed, the psyker suffers 1d5 Wounds (bypassing all defences) and 1d10 Insanity Points. If the range is exceeded, the link is severed and the psyker suffers 1d5 Fatigue.</p><p><strong>Focus Power Test:</strong> Opposed Willpower</p><p><strong>Prerequisites:</strong> Dominate</p><p><strong>XP Cost:</strong> 300</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!nFLs4OtjA5aP70Ef"
+}

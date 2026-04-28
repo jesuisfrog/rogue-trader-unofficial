@@ -1,0 +1,30 @@
+{
+  "_id": "gWiL1ULNov10LCwL",
+  "name": "Aura Reading",
+  "type": "psychicPower",
+  "img": "icons/magic/light/beam-rays-magenta.webp",
+  "system": {
+    "discipline": "divination",
+    "psyRating": 1,
+    "action": "full",
+    "range": "Line of sight",
+    "sustained": true,
+    "description": "<p><strong>Basic Discipline Technique.</strong> The psyker reads a person's aura \u2014 the unconscious projection of their being into the warp. Can be attempted on any visible person as a Full Action. DoS 0 = three strongest emotions, race, psychic status, rough health; DoS 1 = deeper insight (+10 Fellowship Tests vs target), precise Wounds/Fatigue, Psy Rating if psyker; DoS 2 = Insanity Points, addictions, disciplines if psyker; DoS 3 = Corruption Points, whether the aura is genuine or artificial. Maintaining the power on the same target adds +1 DoS per Round cumulatively.</p><p><strong>Focus Power Test:</strong> Psyniscience</p>"
+  },
+  "_stats": {
+    "systemId": "rogue-trader-unofficial",
+    "systemVersion": "0.3.0",
+    "coreVersion": "13",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "flags": {},
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "folder": null,
+  "_key": "!items!gWiL1ULNov10LCwL"
+}
