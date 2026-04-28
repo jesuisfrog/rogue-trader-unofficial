@@ -9,6 +9,7 @@ import { RogueTraderCharacterSheet }   from "./sheets/actor-sheet.js";
 import { RogueTraderNPCSheet }         from "./sheets/npc-sheet.js";
 import { RogueTraderItemSheet }        from "./sheets/item-sheet.js";
 import { RogueTraderStarshipSheet }    from "./sheets/starship-sheet.js";
+import { RogueTraderCombatant } from "./combatant.js";
 import {
   macroRollOpposed,
   macroRollFocusPower,
@@ -57,6 +58,16 @@ Hooks.once("init", async () => {
     makeDefault: true,
     label:       "Rogue Trader Item Sheet",
   });
+
+    // Register custom Combatant class — this is where initiative formula lives
+    CONFIG.Combatant.documentClass = RogueTraderCombatant;
+  
+    // Initiative display: 2 decimals so the Ag/1000 tiebreaker is visible to GMs
+    // but small enough that it looks like a decimal, not a separate number.
+    CONFIG.Combat.initiative = {
+      formula:  "1d10",   // fallback only; RogueTraderCombatant overrides per-actor
+      decimals: 0,
+    };
 
   // Handlebars helpers
   registerHandlebarsHelpers();
