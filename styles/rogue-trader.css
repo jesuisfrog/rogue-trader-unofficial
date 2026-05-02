@@ -2978,6 +2978,152 @@ footer .pia-btn-primary {
   font-weight: bold;
 }
 
+/* ============================================================================
+   CAREER SYSTEM
+   ============================================================================ */
+
+/* ---------------------------------------------------------------------------
+   Career Selection Dialog
+   --------------------------------------------------------------------------- */
+.rt-career-select-dialog {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "Book Antiqua", "Palatino Linotype", Georgia, serif;
+}
+
+.career-select-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid var(--rt-border-gold);
+  border-radius: var(--rt-radius);
+}
+
+/* Left column — career cards */
+.career-card-list {
+  overflow-y: auto;
+  border-right: 1px solid var(--rt-border-gold);
+  background: var(--rt-dark);
+}
+
+.career-card {
+  padding: 9px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(184, 136, 42, 0.15);
+  transition: background 0.12s;
+}
+
+.career-card:hover {
+  background: var(--rt-dark-mid);
+}
+
+.career-card.selected {
+  background: var(--rt-brown);
+  border-left: 3px solid var(--rt-gold);
+}
+
+.career-card-name {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--rt-gold-light);
+}
+
+.career-card-desc {
+  font-size: 10px;
+  color: var(--rt-text-faded);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.custom-career-card .career-card-name {
+  color: var(--rt-text-faded);
+}
+
+.custom-career-card:hover .career-card-name {
+  color: var(--rt-gold-light);
+}
+
+/* Right column — preview */
+.career-preview-panel {
+  padding: 12px 14px;
+  overflow-y: auto;
+  background: var(--rt-parchment);
+  color: var(--rt-text-dark);
+}
+
+.career-preview-name {
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--rt-text-gold);
+  margin: 0 0 4px;
+  border-bottom: 1px solid var(--rt-border-gold);
+  padding-bottom: 4px;
+}
+
+.career-preview-desc {
+  font-size: 12px;
+  color: var(--rt-text-mid);
+  font-style: italic;
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+
+.career-preview-section {
+  margin-bottom: 8px;
+}
+
+.career-preview-section label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rt-text-faded);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.career-preview-section p {
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.career-rank-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12px;
+  columns: 2;
+}
+
+.career-select-footer {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding: 10px 0 0;
+  margin-top: 8px;
+  border-top: 1px solid var(--rt-border-mid);
+}
+
+.career-select-footer button {
+  padding: 5px 14px;
+  border-radius: var(--rt-radius);
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid var(--rt-border-mid);
+  background: var(--rt-parchment-dark);
+  color: var(--rt-text-dark);
+  font-family: inherit;
+}
+
+.career-select-footer .pia-btn-primary {
+  background: var(--rt-gold);
+  border-color: var(--rt-gold-pale);
+  color: var(--rt-dark);
+  font-weight: bold;
+}
+
 .career-select-footer .pia-btn-primary:hover {
   background: var(--rt-gold-pale);
 }

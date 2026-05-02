@@ -173,6 +173,10 @@ async function _preloadTemplates() {
     `systems/${SYSTEM_ID}/templates/chat/profit-factor.hbs`,
     // Dialogs
     `systems/${SYSTEM_ID}/templates/dialogs/xp-dialog.hbs`,
+    // Career tab + dialogs
+    `systems/${SYSTEM_ID}/templates/actors/partials/career-tab.hbs`,
+    `systems/${SYSTEM_ID}/templates/dialogs/career-select.hbs`,
+    `systems/${SYSTEM_ID}/templates/dialogs/custom-career.hbs`,
     // Voidship sheets
     `systems/${SYSTEM_ID}/templates/actors/voidship-sheet.hbs`,
     `systems/${SYSTEM_ID}/templates/actors/partials/voidship-overview.hbs`,
