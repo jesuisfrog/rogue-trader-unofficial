@@ -77,6 +77,22 @@ export function registerHandlebarsHelpers() {
   Handlebars.registerHelper("multiply", (a, b) => Number(a) * Number(b));
   Handlebars.registerHelper("subtract", (a, b) => Number(a) - Number(b));
 
+  // ── Career helpers ────────────────────────────────────────────────────────
+
+  /** Join an array with a separator */
+  Handlebars.registerHelper("join", (arr, sep) =>
+    Array.isArray(arr) ? arr.join(typeof sep === "string" ? sep : ", ") : ""
+  );
+
+  /** Create an inline array for use in templates */
+  Handlebars.registerHelper("array", (...args) => args.slice(0, -1));
+
+  /** lookup by computed key (already exists in Handlebars but aliased here for clarity) */
+  Handlebars.registerHelper("lookupIndex", (obj, idx) => {
+    if (Array.isArray(obj)) return obj[idx];
+    return undefined;
+  });
+
   // ── Voidship helpers ──────────────────────────────────────────────────────
 
   /** Capitalize first letter */

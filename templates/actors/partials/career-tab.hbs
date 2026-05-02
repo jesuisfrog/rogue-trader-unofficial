@@ -1,0 +1,155 @@
+{{!-- partials/career-tab.hbs --}}
+<div class="rt-career-tab">
+
+  {{!-- ── Career header block ──────────────────────────────────────────────── --}}
+  <div class="career-header-block">
+    {{#if hasCareer}}
+    <div class="career-identity">
+      <div class="career-name-display">{{career.name}}</div>
+      <div class="career-rank-display">
+        <span class="rank-badge">Rank {{rank}}</span>
+        <span class="rank-title">{{rankName}}</span>
+      </div>
+    </div>
+    {{else}}
+    <div class="career-identity no-career">
+      <span class="no-career-text">No career selected</span>
+    </div>
+    {{/if}}
+    <div class="career-header-buttons">
+      <button type="button" class="career-select-btn" data-action="select-career">
+        <i class="fa-solid fa-person-walking"></i>
+        {{#if hasCareer}}Change Career{{else}}Select Career{{/if}}
+      </button>
+      <button type="button" class="career-select-btn" data-action="new-custom-career">
+        <i class="fa-solid fa-pen-nib"></i> Custom Career
+      </button>
+    </div>
+  </div>
+
+  {{!-- ── XP progress to next rank ─────────────────────────────────────────── --}}
+  {{#if hasCareer}}
+  <div class="rank-progress-block">
+    {{#if xpToNextRank}}
+    <div class="rank-progress-label">
+      <span>Progress to Rank {{add rank 1}}</span>
+      <span>{{xpToNextRank}} XP needed</span>
+    </div>
+    <div class="rank-progress-track">
+      <div class="rank-progress-fill" style="width: {{rankProgressPct}}%"></div>
+    </div>
+    {{else}}
+    <div class="rank-progress-label max-rank">
+      <i class="fa-solid fa-star"></i> Maximum Rank Achieved
+    </div>
+    {{/if}}
+  </div>
+
+  {{!-- ── Characteristic advance costs ──────────────────────────────────────── --}}
+  <div class="section-title">Characteristic Advances</div>
+  <table class="char-advance-table">
+    <thead>
+      <tr>
+        <th>Char.</th>
+        <th>Advances</th>
+        <th>Simple</th>
+        <th>Intermediate</th>
+        <th>Trained</th>
+        <th>Expert</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each charAdvances as |ca|}}
+      <tr>
+        <td class="char-key-cell" title="{{ca.label}}">{{ca.abbr}}</td>
+        <td class="char-bought-cell">{{ca.bought}}/4</td>
+        {{#each ca.costs as |tier|}}
+        <td class="char-cost-cell
+          {{#if tier.purchased}}tier-purchased{{/if}}
+          {{#if tier.next}}tier-next{{/if}}
+          {{#if tier.locked}}tier-locked{{/if}}"
+          title="{{tier.levelName}}: {{tier.cost}} XP">
+          {{#if tier.purchased}}<i class="fa-solid fa-check"></i>
+          {{else}}{{tier.cost}}{{/if}}
+        </td>
+        {{/each}}
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  {{!-- ── Available advances by rank ─────────────────────────────────────────── --}}
+  <div class="section-title" style="margin-top:14px">Available Advances</div>
+  <p class="hint career-hint">
+    Green = in-career. Out-of-career purchases cost ×1.5 (rounded up to nearest 25 XP).
+    Use the <strong>Spend XP</strong> button in the sheet header to purchase advances.
+  </p>
+
+  {{#if advancesByRank}}
+    {{#each advancesByRank as |rankGroup|}}
+    <details class="rank-advances-block" {{#if (eq rankGroup.rank ../rank)}}open{{/if}}>
+      <summary class="rank-advances-summary">
+        Rank {{rankGroup.rank}} — {{rankGroup.rankName}}
+        <span class="advance-count-badge">{{rankGroup.advances.length}} advances</span>
+      </summary>
+      <div class="advance-list-wrap">
+        <table class="advance-list-table">
+          <thead>
+            <tr>
+              <th class="adv-type-col"></th>
+              <th>Name</th>
+              <th class="adv-cost-col">Cost</th>
+              <th class="adv-prereq-col">Prerequisites</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each rankGroup.advances as |adv|}}
+            <tr class="advance-row in-career">
+              <td class="adv-type-col">
+                <span class="adv-type-badge type-{{adv.type}}"
+                      title="{{#if (eq adv.type 'skill')}}Skill{{else}}Talent{{/if}}">
+                  {{#if (eq adv.type "skill")}}S{{else}}T{{/if}}
+                </span>
+              </td>
+              <td class="adv-name-cell">
+                {{adv.name}}
+                {{#if (gt adv.multiplier 1)}}
+                <span class="adv-mult-badge" title="Can be purchased {{adv.multiplier}} times">×{{adv.multiplier}}</span>
+                {{/if}}
+              </td>
+              <td class="adv-cost-cell in-career-cost">{{adv.cost}} XP</td>
+              <td class="adv-prereq-cell">{{#if adv.prerequisites}}{{adv.prerequisites}}{{else}}—{{/if}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </details>
+    {{/each}}
+  {{else}}
+  <p class="empty-list">No advances available yet. Select a career to see your advance list.</p>
+  {{/if}}
+
+  {{!-- ── Custom careers section ─────────────────────────────────────────────── --}}
+  {{#if customCareers.length}}
+  <div class="section-title" style="margin-top:14px">Custom Careers</div>
+  <ul class="custom-careers-list">
+    {{#each customCareers as |cc|}}
+    <li class="custom-career-item">
+      <span class="custom-career-name">{{cc.name}}</span>
+      <span class="item-controls">
+        <a data-action="edit-custom-career" data-career-id="{{cc.id}}" title="Edit">
+          <i class="fa-solid fa-pen"></i>
+        </a>
+        <a data-action="delete-custom-career" data-career-id="{{cc.id}}" title="Delete">
+          <i class="fa-solid fa-trash"></i>
+        </a>
+      </span>
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+
+  {{/if}}{{!-- hasCareer --}}
+
+</div>

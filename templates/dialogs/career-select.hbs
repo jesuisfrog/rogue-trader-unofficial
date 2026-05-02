@@ -1,0 +1,82 @@
+{{!-- templates/dialogs/career-select.hbs --}}
+<div class="rt-career-select-dialog">
+
+  <div class="career-select-layout">
+
+    {{!-- Left: career cards --}}
+    <div class="career-card-list">
+      {{#each careers as |c|}}
+      <div class="career-card {{#if c.selected}}selected{{/if}}" data-career-id="{{c.id}}">
+        <div class="career-card-name">{{c.name}}</div>
+        <div class="career-card-desc">{{c.description}}</div>
+      </div>
+      {{/each}}
+      <div class="career-card custom-career-card" data-action="custom">
+        <div class="career-card-name">
+          <i class="fa-solid fa-plus"></i> Create Custom Career
+        </div>
+        <div class="career-card-desc">Build a homebrew or expansion career path</div>
+      </div>
+    </div>
+
+    {{!-- Right: preview panel --}}
+    <div class="career-preview-panel">
+      {{#if selectedCareer}}
+      <h3 class="career-preview-name">{{selectedCareer.name}}</h3>
+      <p class="career-preview-desc">{{selectedCareer.description}}</p>
+      {{else}}
+      <h3 class="career-preview-name">Select a Career</h3>
+      <p class="career-preview-desc">Click a career on the left to preview it.</p>
+      {{/if}}
+
+      <div class="career-preview-section">
+        <label>Rank Titles</label>
+        <ol class="career-rank-list">
+          {{#if selectedCareer}}
+          {{#each selectedCareer.rankNames as |rn|}}
+          <li>{{rn}}</li>
+          {{/each}}
+          {{else}}
+          <li class="placeholder">—</li>
+          {{/if}}
+        </ol>
+      </div>
+
+      <div class="career-preview-section">
+        <label>Starting Skills</label>
+        <p class="career-preview-skills">
+          {{#if selectedCareer}}{{selectedCareer.startingSkills}}{{else}}—{{/if}}
+        </p>
+      </div>
+
+      <div class="career-preview-section">
+        <label>Starting Talents</label>
+        <p class="career-preview-talents">
+          {{#if selectedCareer}}{{selectedCareer.startingTalents}}{{else}}—{{/if}}
+        </p>
+      </div>
+
+      <div class="career-preview-section">
+        <label>Starting Gear</label>
+        <p class="career-preview-gear">
+          {{#if selectedCareer}}{{selectedCareer.startingGear}}{{else}}—{{/if}}
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="career-select-footer">
+    <button type="button" data-action="cancel">
+      <i class="fa-solid fa-times"></i> Cancel
+    </button>
+    <button type="button" data-action="custom">
+      <i class="fa-solid fa-pen-nib"></i> Custom Career
+    </button>
+    <button type="button" data-action="confirm" class="pia-btn-primary"
+            {{#unless selectedCareer}}disabled{{/unless}}>
+      <i class="fa-solid fa-check"></i> {{#if isNew}}Select Career{{else}}Change Career{{/if}}
+    </button>
+  </div>
+
+</div>

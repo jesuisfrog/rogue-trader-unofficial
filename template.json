@@ -21,7 +21,9 @@
         "quirks": "",
         "superstitions": "",
         "piety": "",
-        "mementos": ""
+        "mementos": "",
+        "careerId": "",
+        "careerName": ""
       },
       "experience": {
         "total": 5000,
@@ -107,7 +109,8 @@
       },
       "initiative": {
         "value": 0
-      }
+      },
+      "customCareers": {}
     },
     "npc": {
       "biography": {

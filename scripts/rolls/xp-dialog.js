@@ -26,6 +26,14 @@
 
 const MODULE = "rogue-trader-unofficial";
 
+import {
+  getActorCareer,
+  getAvailableAdvances,
+  isInCareer,
+  outOfCareerCost,
+  getCharAdvanceCost,
+} from "../careers.js";
+
 /** Cost table for characteristic advances (advance number 1–4). */
 const CHAR_ADVANCE_COSTS = [100, 250, 500, 750];
 
@@ -65,19 +73,31 @@ class XPSpendDialog extends Application {
     const chars = sys.characteristics ?? {};
     const unspent = (sys.experience?.total ?? 0) - (sys.experience?.spent ?? 0);
 
+    // Career awareness
+    const career        = getActorCareer(this._actor);
+    const careerAdvances = career ? getAvailableAdvances(this._actor) : [];
+
     // Build characteristic options — show current value and next advance cost
     const charOptions = Object.entries(chars).map(([key, char]) => {
-      const advNum   = Math.min(char.advances ?? 0, 3); // cap at 4th advance
-      const cost     = CHAR_ADVANCE_COSTS[advNum] ?? 750;
-      const maxed    = (char.advances ?? 0) >= 4;
-      const canAfford = unspent >= cost;
+      const advNum   = Math.min(char.advances ?? 0, 3);
+      // Use career-specific cost if available, else fall back to generic table
+      const careerCost    = getCharAdvanceCost(this._actor, key, advNum);
+      const genericCost   = CHAR_ADVANCE_COSTS[advNum] ?? 750;
+      const inCareerCost  = careerCost ?? genericCost;
+      const oocCost       = outOfCareerCost(inCareerCost);
+      const hasCareer     = !!career;
+      const cost          = hasCareer ? inCareerCost : genericCost;
+      const maxed         = (char.advances ?? 0) >= 4;
+      const canAfford     = unspent >= cost;
       return {
         key,
-        label:    game.i18n.localize(`RT.Characteristics.${key}Abbr`),
-        fullName: game.i18n.localize(`RT.Characteristics.${key}`),
-        current:  char.value,
-        advances: char.advances ?? 0,
-        nextCost: cost,
+        label:         game.i18n.localize(`RT.Characteristics.${key}Abbr`),
+        fullName:      game.i18n.localize(`RT.Characteristics.${key}`),
+        current:       char.value,
+        advances:      char.advances ?? 0,
+        nextCost:      cost,
+        oocCost,
+        hasCareer,
         maxed,
         canAfford: !maxed && canAfford,
       };
@@ -86,19 +106,24 @@ class XPSpendDialog extends Application {
     // Build skill options
     const skillItems = this._actor.items.filter(i => i.type === "skill");
     const skillOptions = skillItems.map(item => {
-      const level   = item.system.level ?? 0;
-      const isAdv   = item.system.type === "advanced";
-      const cost    = level === 0 ? (isAdv ? 200 : 100) : 100;
-      const maxed   = level >= 2;
+      const level        = item.system.level ?? 0;
+      const isAdv        = item.system.type === "advanced";
+      const inC          = isInCareer(this._actor, item.name);
+      const baseCost     = level === 0 ? (isAdv ? 200 : 100) : 100;
+      const cost         = (career && !inC) ? outOfCareerCost(baseCost) : baseCost;
+      const maxed        = level >= 2;
       return {
-        id:       item.id,
-        name:     item.name,
+        id:           item.id,
+        name:         item.name,
         level,
-        levelLabel: ["Trained", "+10", "+20"][level] ?? "+20",
-        nextLabel:  level < 2 ? ["+10", "+20"][level] : "Mastered",
+        levelLabel:   ["Trained", "+10", "+20"][level] ?? "+20",
+        nextLabel:    level < 2 ? ["+10", "+20"][level] : "Mastered",
         cost,
+        baseCost,
+        inCareer:     !career || inC,
+        outOfCareer:  !!career && !inC,
         maxed,
-        canAfford: !maxed && unspent >= cost,
+        canAfford:    !maxed && unspent >= cost,
       };
     });
 
@@ -147,8 +172,9 @@ class XPSpendDialog extends Application {
     const sys     = this._actor.system;
     const char    = sys.characteristics[key];
     const unspent = (sys.experience.total ?? 0) - (sys.experience.spent ?? 0);
-    const advNum  = Math.min(char.advances ?? 0, 3);
-    const cost    = CHAR_ADVANCE_COSTS[advNum];
+    const advNum    = Math.min(char.advances ?? 0, 3);
+    const careerCost = getCharAdvanceCost(this._actor, key, advNum);
+    const cost       = careerCost ?? CHAR_ADVANCE_COSTS[advNum];
 
     if (unspent < cost) {
       ui.notifications.warn(`Not enough XP. Need ${cost}, have ${unspent}.`);
@@ -183,9 +209,11 @@ class XPSpendDialog extends Application {
 
     const sys     = this._actor.system;
     const unspent = (sys.experience.total ?? 0) - (sys.experience.spent ?? 0);
-    const level   = item.system.level ?? 0;
-    const isAdv   = item.system.type === "advanced";
-    const cost    = level === 0 ? (isAdv ? 200 : 100) : 100;
+    const level    = item.system.level ?? 0;
+    const isAdv    = item.system.type === "advanced";
+    const baseCost = level === 0 ? (isAdv ? 200 : 100) : 100;
+    const inC      = isInCareer(this._actor, item.name);
+    const cost     = (getActorCareer(this._actor) && !inC) ? outOfCareerCost(baseCost) : baseCost;
     const nextLbl = ["+10", "+20"][level] ?? "";
 
     if (level >= 2) {
@@ -198,9 +226,13 @@ class XPSpendDialog extends Application {
       return;
     }
 
+    const ooc     = !!getActorCareer(this._actor) && !isInCareer(this._actor, item.name);
+    const oocWarn = ooc
+      ? `<p class="ooc-warning"><i class="fa-solid fa-triangle-exclamation"></i> <strong>Out-of-career advance</strong> — costs ×1.5 (${cost} XP instead of ${baseCost} XP).</p>`
+      : "";
     const confirmed = await Dialog.confirm({
       title:   `Train ${item.name} ${nextLbl}?`,
-      content: `<p>Spend <strong>${cost} XP</strong> to improve <strong>${item.name}</strong> to ${nextLbl}?</p>`,
+      content: `${oocWarn}<p>Spend <strong>${cost} XP</strong> to improve <strong>${item.name}</strong> to ${nextLbl}?</p>`,
     });
     if (!confirmed) return;
 

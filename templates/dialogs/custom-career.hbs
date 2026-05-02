@@ -1,0 +1,186 @@
+{{!-- templates/dialogs/custom-career.hbs --}}
+<div class="rt-custom-career-dialog">
+
+  <nav class="career-editor-tabs" data-group="career-editor">
+    <a class="item" data-tab="basics">Basics</a>
+    <a class="item" data-tab="chars">Characteristics</a>
+    {{#each rankNums as |r|}}
+    <a class="item" data-tab="rank{{r}}">Rank {{r}}</a>
+    {{/each}}
+  </nav>
+
+  <div class="career-editor-body">
+
+    {{!-- ── Basics tab ──────────────────────────────────────────────────── --}}
+    <div class="tab" data-group="career-editor" data-tab="basics">
+      <div class="form-grid">
+
+        <div class="form-group full-width">
+          <label>Career Name</label>
+          <input type="text" data-draft="name" value="{{draft.name}}"
+                 placeholder="e.g. Rogue Psyker" />
+        </div>
+
+        <div class="form-group full-width">
+          <label>Description</label>
+          <textarea data-draft="description" rows="2"
+                    placeholder="Short flavour description">{{draft.description}}</textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Rank Titles (one per row, Ranks 1–8)</label>
+          <div class="rank-names-grid">
+            {{#each draft.rankNames as |rn idx|}}
+            <div class="rank-name-row">
+              <span class="rank-num-label">Rank {{add @index 1}}</span>
+              <input type="text" class="rank-name-input" data-rank-idx="{{@index}}"
+                     value="{{rn}}" placeholder="Rank {{add @index 1}} title" />
+            </div>
+            {{/each}}
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Starting Skills (one per line)</label>
+          <textarea data-starting="skills" rows="5"
+                    placeholder="Awareness&#10;Common Lore (Imperium)&#10;Dodge">{{join draft.startingSkills "\n"}}</textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Starting Talents (one per line)</label>
+          <textarea data-starting="talents" rows="4"
+                    placeholder="Basic Weapon Training (Universal)&#10;Sound Constitution">{{join draft.startingTalents "\n"}}</textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Starting Gear</label>
+          <textarea data-draft="startingGear" rows="3"
+                    placeholder="Describe starting equipment...">{{draft.startingGear}}</textarea>
+        </div>
+
+      </div>
+    </div>
+
+    {{!-- ── Characteristics tab ─────────────────────────────────────────── --}}
+    <div class="tab" data-group="career-editor" data-tab="chars">
+      <p class="hint career-hint">
+        Set the XP costs for each tier of characteristic advance.
+        Standard in-career costs: Simple 100 / Intermediate 250 / Trained 500 / Expert 750.
+        Out-of-career is ×1.5 (handled automatically — enter in-career costs only).
+      </p>
+      <table class="char-advance-cost-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Simple</th>
+            <th>Intermediate</th>
+            <th>Trained</th>
+            <th>Expert</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each charKeys as |c|}}
+          <tr>
+            <td class="char-key-cell">{{c.label}} ({{c.abbr}})</td>
+            {{#each (array 0 1 2 3) as |level|}}
+            <td>
+              <input type="number" class="char-advance-input"
+                     data-char="{{c.key}}" data-level="{{level}}"
+                     value="{{lookup (lookup ../draft.characteristicAdvances c.key) level}}"
+                     min="100" step="50" />
+            </td>
+            {{/each}}
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    {{!-- ── Rank tabs (1–8) ─────────────────────────────────────────────── --}}
+    {{#each rankNums as |r|}}
+    {{#with (lookup ../draft.ranks (subtract r 1))}}
+    <div class="tab" data-group="career-editor" data-tab="rank{{r}}">
+      <div class="rank-editor-header">
+        <span class="rank-editor-title">
+          Rank {{r}}
+          {{#if (lookup ../../draft.rankNames (subtract r 1))}}
+          — {{lookup ../../draft.rankNames (subtract r 1)}}
+          {{/if}}
+        </span>
+        <button type="button" data-action="add-advance" data-rank="{{r}}"
+                class="advance-add-btn">
+          <i class="fa-solid fa-plus"></i> Add Advance
+        </button>
+      </div>
+
+      {{#if advances.length}}
+      <table class="advance-table">
+        <thead>
+          <tr>
+            <th class="adv-name">Name</th>
+            <th class="adv-type">Type</th>
+            <th class="adv-cost">XP Cost</th>
+            <th class="adv-prereq">Prerequisites</th>
+            <th class="adv-mult">×</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each advances as |adv ai|}}
+          <tr class="advance-row">
+            <td>
+              <input type="text" class="advance-field adv-name-input"
+                     data-rank="{{../r}}" data-idx="{{ai}}" data-field="name"
+                     value="{{adv.name}}" placeholder="Skill or Talent name" />
+            </td>
+            <td>
+              <select class="advance-field"
+                      data-rank="{{../r}}" data-idx="{{ai}}" data-field="type">
+                <option value="skill"  {{#if (eq adv.type "skill")}}selected{{/if}}>Skill</option>
+                <option value="talent" {{#if (eq adv.type "talent")}}selected{{/if}}>Talent</option>
+              </select>
+            </td>
+            <td>
+              <input type="number" class="advance-field adv-cost-input"
+                     data-rank="{{../r}}" data-idx="{{ai}}" data-field="cost"
+                     value="{{adv.cost}}" min="100" step="50" />
+            </td>
+            <td>
+              <input type="text" class="advance-field adv-prereq-input"
+                     data-rank="{{../r}}" data-idx="{{ai}}" data-field="prerequisites"
+                     value="{{adv.prerequisites}}" placeholder="None" />
+            </td>
+            <td>
+              <input type="number" class="advance-field adv-mult-input"
+                     data-rank="{{../r}}" data-idx="{{ai}}" data-field="multiplier"
+                     value="{{adv.multiplier}}" min="1" max="10" title="Max purchases" />
+            </td>
+            <td>
+              <a data-action="remove-advance" data-rank="{{../r}}" data-idx="{{ai}}"
+                 class="advance-remove-btn" title="Remove">
+                <i class="fa-solid fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      {{else}}
+      <p class="empty-list">No advances for this rank. Click 'Add Advance' to begin.</p>
+      {{/if}}
+    </div>
+    {{/with}}
+    {{/each}}
+
+  </div>{{!-- .career-editor-body --}}
+
+  <div class="career-editor-footer">
+    <button type="button" data-action="cancel">
+      <i class="fa-solid fa-times"></i> Cancel
+    </button>
+    <button type="button" data-action="save" class="pia-btn-primary">
+      <i class="fa-solid fa-floppy-disk"></i> Save Career
+    </button>
+  </div>
+
+</div>

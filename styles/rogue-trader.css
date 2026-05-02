@@ -2970,3 +2970,606 @@
   border-radius: var(--rt-radius);
   padding: 2px 4px;
 }
+
+footer .pia-btn-primary {
+  background: var(--rt-gold);
+  border-color: var(--rt-gold-pale);
+  color: var(--rt-dark);
+  font-weight: bold;
+}
+
+.career-select-footer .pia-btn-primary:hover {
+  background: var(--rt-gold-pale);
+}
+
+.career-select-footer .pia-btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------------------------------------------------
+   Career Tab (on character sheet)
+   --------------------------------------------------------------------------- */
+.rt-sheet .rt-career-tab {
+  padding: 2px 0;
+}
+
+.rt-sheet .career-header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rt-border-gold);
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rt-sheet .career-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rt-sheet .career-name-display {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--rt-text-gold);
+}
+
+.rt-sheet .career-rank-display {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.rt-sheet .rank-badge {
+  background: var(--rt-dark);
+  color: var(--rt-gold-light);
+  font-size: 10px;
+  font-weight: bold;
+  padding: 1px 7px;
+  border-radius: 10px;
+  border: 1px solid var(--rt-gold);
+}
+
+.rt-sheet .rank-title {
+  font-size: 13px;
+  color: var(--rt-text-mid);
+  font-style: italic;
+}
+
+.rt-sheet .no-career-text {
+  font-size: 13px;
+  color: var(--rt-text-faded);
+  font-style: italic;
+}
+
+.rt-sheet .career-header-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.rt-sheet .career-select-btn {
+  background: rgba(184, 136, 42, 0.12);
+  border: 1px solid var(--rt-border-gold);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-gold);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 4px 10px;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.rt-sheet .career-select-btn:hover {
+  background: rgba(184, 136, 42, 0.28);
+}
+
+/* Rank progress bar */
+.rt-sheet .rank-progress-block {
+  margin-bottom: 12px;
+}
+
+.rt-sheet .rank-progress-label {
+  font-size: 11px;
+  color: var(--rt-text-faded);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.rt-sheet .rank-progress-label.max-rank {
+  color: var(--rt-gold);
+  font-weight: bold;
+  font-style: italic;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.rt-sheet .rank-progress-track {
+  height: 6px;
+  background: var(--rt-parchment-dark);
+  border: 1px solid var(--rt-border-mid);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.rt-sheet .rank-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--rt-gold), var(--rt-gold-pale));
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+/* Characteristic advance cost table */
+.rt-sheet .char-advance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.rt-sheet .char-advance-table th {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rt-text-faded);
+  border-bottom: 1px solid var(--rt-border-gold);
+  padding: 2px 5px;
+  text-align: center;
+}
+
+.rt-sheet .char-advance-table th:first-child {
+  text-align: left;
+}
+
+.rt-sheet .char-advance-table td {
+  padding: 3px 5px;
+  border-bottom: 1px solid rgba(93, 61, 34, 0.1);
+  text-align: center;
+}
+
+.rt-sheet .char-advance-table .char-key-cell {
+  text-align: left;
+  font-weight: 600;
+}
+
+.rt-sheet .char-advance-table .char-bought-cell {
+  color: var(--rt-text-faded);
+}
+
+.rt-sheet .char-cost-cell.tier-purchased {
+  color: var(--rt-success);
+  font-size: 12px;
+}
+
+.rt-sheet .char-cost-cell.tier-next {
+  color: var(--rt-gold);
+  font-weight: bold;
+  background: rgba(184, 136, 42, 0.08);
+}
+
+.rt-sheet .char-cost-cell.tier-locked {
+  color: var(--rt-text-faded);
+  opacity: 0.5;
+}
+
+/* Advance list */
+.rt-sheet .rank-advances-block {
+  border: 1px solid var(--rt-border-mid);
+  border-radius: var(--rt-radius);
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.rt-sheet .rank-advances-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--rt-parchment-dark);
+  cursor: pointer;
+  user-select: none;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--rt-text-gold);
+  list-style: none;
+}
+
+.rt-sheet .rank-advances-summary::-webkit-details-marker {
+  display: none;
+}
+
+.rt-sheet .rank-advances-summary:hover {
+  background: rgba(184, 136, 42, 0.1);
+}
+
+.rt-sheet .advance-count-badge {
+  font-size: 10px;
+  font-weight: normal;
+  color: var(--rt-text-faded);
+  margin-left: auto;
+}
+
+.rt-sheet .advance-list-wrap {
+  padding: 4px 0;
+}
+
+.rt-sheet .advance-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.rt-sheet .advance-list-table th {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--rt-text-faded);
+  padding: 2px 6px;
+  text-align: left;
+  border-bottom: 1px solid rgba(93, 61, 34, 0.15);
+}
+
+.rt-sheet .advance-list-table td {
+  padding: 3px 6px;
+  border-bottom: 1px solid rgba(93, 61, 34, 0.08);
+  vertical-align: middle;
+}
+
+.rt-sheet .adv-type-col {
+  width: 22px;
+  text-align: center;
+}
+
+.rt-sheet .adv-cost-col {
+  width: 70px;
+  text-align: right;
+}
+
+.rt-sheet .adv-prereq-col {
+  color: var(--rt-text-faded);
+  font-style: italic;
+}
+
+.rt-sheet .adv-type-badge {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.rt-sheet .adv-type-badge.type-skill {
+  background: rgba(42, 102, 48, 0.2);
+  color: #4a9050;
+}
+
+.rt-sheet .adv-type-badge.type-talent {
+  background: rgba(80, 60, 160, 0.2);
+  color: #8878cc;
+}
+
+.rt-sheet .adv-mult-badge {
+  font-size: 9px;
+  color: var(--rt-text-faded);
+  margin-left: 3px;
+}
+
+.rt-sheet .in-career-cost {
+  color: var(--rt-success);
+}
+
+.rt-sheet .career-hint {
+  font-size: 11px;
+  color: var(--rt-text-faded);
+  font-style: italic;
+  margin: 0 0 8px;
+  padding: 4px 8px;
+  border-left: 3px solid var(--rt-brown-light);
+  background: rgba(93, 61, 34, 0.08);
+  line-height: 1.5;
+}
+
+/* Custom careers list */
+.rt-sheet .custom-careers-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rt-sheet .custom-career-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-bottom: 1px solid rgba(93, 61, 34, 0.15);
+}
+
+.rt-sheet .custom-career-name {
+  flex: 1;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------------------------
+   XP Dialog — career badges
+   --------------------------------------------------------------------------- */
+.rt-xp-dialog .in-career-badge {
+  color: var(--rt-success);
+  font-size: 11px;
+  margin-left: 3px;
+}
+
+.rt-xp-dialog .ooc-badge {
+  color: #cc8800;
+  font-size: 11px;
+  margin-left: 3px;
+}
+
+.rt-xp-dialog .ooc-row {
+  opacity: 0.85;
+}
+
+.rt-xp-dialog .ooc-cost {
+  color: #cc8800;
+  font-weight: bold;
+}
+
+.rt-xp-dialog .ooc-warning {
+  color: #cc8800;
+  font-size: 11px;
+  margin: 0 0 6px;
+  padding: 5px 8px;
+  background: rgba(204, 136, 0, 0.1);
+  border: 1px solid rgba(204, 136, 0, 0.3);
+  border-radius: var(--rt-radius);
+}
+
+.rt-xp-dialog .skill-career-legend {
+  display: flex;
+  gap: 14px;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.rt-xp-dialog .in-career-pill {
+  color: var(--rt-success);
+}
+
+.rt-xp-dialog .ooc-pill {
+  color: #cc8800;
+}
+
+.rt-xp-dialog .skill-name-with-badge {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   Custom Career Editor Dialog
+   --------------------------------------------------------------------------- */
+.rt-custom-career-dialog {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "Book Antiqua", "Palatino Linotype", Georgia, serif;
+}
+
+.rt-custom-career-dialog .career-editor-tabs {
+  display: flex;
+  gap: 1px;
+  background: var(--rt-brown);
+  border-bottom: 2px solid var(--rt-gold);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.rt-custom-career-dialog .career-editor-tabs .item {
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--rt-text-faded);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.12s;
+  white-space: nowrap;
+}
+
+.rt-custom-career-dialog .career-editor-tabs .item:hover {
+  color: var(--rt-gold-light);
+}
+
+.rt-custom-career-dialog .career-editor-tabs .item.active {
+  color: var(--rt-gold-light);
+  border-bottom-color: var(--rt-gold-light);
+}
+
+.rt-custom-career-dialog .career-editor-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 12px;
+}
+
+.rt-custom-career-dialog .tab {
+  display: none;
+}
+
+.rt-custom-career-dialog .tab.active {
+  display: block;
+}
+
+/* Rank names grid */
+.rank-names-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+}
+
+.rank-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rank-num-label {
+  font-size: 10px;
+  color: var(--rt-text-faded);
+  width: 46px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* Characteristic advance cost table */
+.char-advance-cost-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.char-advance-cost-table th {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--rt-text-faded);
+  border-bottom: 1px solid var(--rt-border-gold);
+  padding: 3px 6px;
+  text-align: center;
+}
+
+.char-advance-cost-table th:first-child {
+  text-align: left;
+}
+
+.char-advance-cost-table .char-key-cell {
+  text-align: left;
+  font-weight: 600;
+}
+
+.char-advance-cost-table td {
+  padding: 3px 6px;
+  border-bottom: 1px solid rgba(93, 61, 34, 0.1);
+}
+
+.char-advance-cost-table input {
+  width: 60px;
+  text-align: center;
+}
+
+/* Rank editor */
+.rank-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--rt-border-gold);
+}
+
+.rank-editor-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--rt-text-gold);
+}
+
+.advance-add-btn {
+  background: rgba(184, 136, 42, 0.15);
+  border: 1px solid var(--rt-border-gold);
+  border-radius: var(--rt-radius);
+  color: var(--rt-text-gold);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 3px 10px;
+  font-family: inherit;
+}
+
+.advance-add-btn:hover {
+  background: rgba(184, 136, 42, 0.3);
+}
+
+.advance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.advance-table th {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--rt-text-faded);
+  border-bottom: 1px solid var(--rt-border-gold);
+  padding: 2px 4px;
+  text-align: left;
+}
+
+.advance-table td {
+  padding: 3px 4px;
+  border-bottom: 1px solid rgba(93, 61, 34, 0.1);
+}
+
+.advance-table .adv-name-input {
+  width: 100%;
+  min-width: 120px;
+}
+
+.advance-table .adv-cost-input {
+  width: 55px;
+}
+
+.advance-table .adv-prereq-input {
+  width: 100%;
+  min-width: 100px;
+}
+
+.advance-table .adv-mult-input {
+  width: 38px;
+  text-align: center;
+}
+
+.advance-remove-btn {
+  color: var(--rt-text-faded);
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.advance-remove-btn:hover {
+  color: var(--rt-red-bright);
+}
+
+.career-editor-footer {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding: 8px 0 0;
+  border-top: 1px solid var(--rt-border-mid);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.career-editor-footer button {
+  padding: 5px 14px;
+  border-radius: var(--rt-radius);
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid var(--rt-border-mid);
+  background: var(--rt-parchment-dark);
+  color: var(--rt-text-dark);
+  font-family: inherit;
+}
+
+.career-editor-footer .pia-btn-primary {
+  background: var(--rt-gold);
+  border-color: var(--rt-gold-pale);
+  color: var(--rt-dark);
+  font-weight: bold;
+}
+
+.career-editor-footer .pia-btn-primary:hover {
+  background: var(--rt-gold-pale);
+}

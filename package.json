@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "build": "rm -rf packs/weapons packs/armour packs/skills packs/talents packs/macros && node utils/build-packs.mjs"
+        "build": "rm -rf packs/weapons packs/armour packs/skills packs/talents packs/macros packs/psychicPowers && node utils/build-packs.mjs"
         
     },
     "dependencies": {

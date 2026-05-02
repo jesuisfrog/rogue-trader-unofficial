@@ -14,6 +14,16 @@ import { openXPDialog }       from "../rolls/xp-dialog.js";
 import { rollProfitFactor }   from "../rolls/profit-factor.js";
 import { rollFocusPower, promptFocusPower } from "../rolls/psychic-roll.js";
 import { rollOpposedTest }    from "../rolls/opposed-test.js";
+import {
+  CareerSelectionDialog,
+  CustomCareerEditorDialog,
+  buildCareerTabData,
+  isInCareer,
+  outOfCareerCost,
+  getCharAdvanceCost,
+  rankFromXP,
+  getRankName,
+} from "../rolls/career-dialog.js";
 
 const CHAR_LABELS = {
   ws:  "RT.Characteristics.ws",
@@ -113,6 +123,26 @@ export class RogueTraderCharacterSheet extends foundry.appv1.sheets.ActorSheet {
     const fateVal = sys.fate?.value ?? 0;
     ctx.fatePips = Array.from({ length: fateMax }, (_, i) => ({ filled: i < fateVal, index: i }));
 
+    // ── Career tab data ──────────────────────────────────────────────────────
+    const careerData = buildCareerTabData(this.actor);
+    ctx.career = careerData.career;
+    ctx.allCareers = careerData.allCareers;
+    ctx.rank = careerData.rank;
+    ctx.rankName = careerData.rankName;
+    ctx.nextThreshold = careerData.nextThreshold;
+    ctx.xpToNextRank = careerData.xpToNextRank;
+    ctx.advancesByRank = careerData.advancesByRank;
+    ctx.charAdvances = careerData.charAdvances;
+    ctx.hasCareer = careerData.hasCareer;
+    ctx.customCareers = careerData.customCareers;
+
+    // Rank progress bar percentage
+    const prevThreshold = [5000, 7000, 10000, 13000, 17000, 21000, 25000, 30000][ctx.rank - 2] ?? 0;
+    const nextT = ctx.nextThreshold ?? 35000;
+    ctx.rankProgressPct = Math.min(100, Math.round(
+      ((sys.experience?.spent ?? 0) - prevThreshold) / (nextT - prevThreshold) * 100
+    ));
+
     // System reference shorthand
     ctx.system = sys;
 
@@ -162,6 +192,30 @@ export class RogueTraderCharacterSheet extends foundry.appv1.sheets.ActorSheet {
 
     // ── Opposed test (context menu / button) ──────────────────────────────────
     html.find(".opposed-test-btn").on("click", this._onOpposedTest.bind(this));
+
+    // ── Career tab ──────────────────────────────────────────────────────────
+    html.find("[data-action='select-career']").on("click", () =>
+      new CareerSelectionDialog(this.actor).render(true)
+    );
+    html.find("[data-action='new-custom-career']").on("click", () =>
+      new CustomCareerEditorDialog(this.actor).render(true)
+    );
+    html.find("[data-action='edit-custom-career']").on("click", (e) => {
+      const id = e.currentTarget.dataset.careerId;
+      new CustomCareerEditorDialog(this.actor, id).render(true);
+    });
+    html.find("[data-action='delete-custom-career']").on("click", async (e) => {
+      const id = e.currentTarget.dataset.careerId;
+      const ok = await Dialog.confirm({
+        title: "Delete Custom Career?",
+        content: `<p>Permanently delete custom career <strong>${id}</strong>?</p>`,
+      });
+      if (!ok) return;
+      const custom = foundry.utils.deepClone(this.actor.system.customCareers ?? {});
+      delete custom[id];
+      await this.actor.update({ "system.customCareers": custom });
+    });
+
 
     // ── Wound / resource adjustment ──────────────────────────────────────────
     html.find(".resource-control").on("click", this._onResourceControl.bind(this));

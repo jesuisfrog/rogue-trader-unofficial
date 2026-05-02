@@ -209,6 +209,15 @@
     </div>
     {{/if}}
 
+    {{!-- Career tab --}}
+    <div class="tab" data-group="primary" data-tab="career">
+      {{> "systems/rogue-trader-unofficial/templates/actors/partials/career-tab.hbs"
+      career=career allCareers=allCareers rank=rank rankName=rankName
+      nextThreshold=nextThreshold xpToNextRank=xpToNextRank rankProgressPct=rankProgressPct
+      advancesByRank=advancesByRank charAdvances=charAdvances
+      hasCareer=hasCareer customCareers=customCareers editable=editable}}
+    </div>
+
     {{!-- Biography tab --}}
     <div class="tab" data-group="primary" data-tab="biography">
       {{> "systems/rogue-trader-unofficial/templates/actors/partials/biography-tab.hbs"
